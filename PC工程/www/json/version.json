@@ -1,0 +1,87 @@
+{
+  "FRONT_VERSION": "39396",
+  "DAILY_NEWS_VERSON":"1",
+  "IMG_VERSION": "219",
+  "FC_VERSION":24,
+  "PK_NAME": "com.hao.hun2",
+  "REVIEW_VERSION_IOS": 10,
+  "MINI_APP":{
+	"fake_version":2,
+	"fake_url":"https://allopen.hun333.com/hun2/tour/index.html",
+	"gameURL":"https://h2jp.hun333.com/static/html/hun_japan.html",
+	"refresh_page_time":1800000
+  },
+  "TOUTIAO_MINI_APP":{
+	"fake_version":2,
+	"fake_url":"https://allopen.hun333.com/hun2/tour/index.html",
+	"gameURL":"https://h2jp.hun333.com/static/html/hun_japan.html",
+	"refresh_page_time":1800000
+  },
+  "MK_REVIEW_VERSION": [
+	{
+	  "mk":"amazon",
+	  "version":1
+	},
+	{
+	  "mk":"hykb",
+	  "version":3
+	},
+	{
+	  "mk":"4399",
+	  "version":3
+	},
+	{
+	  "mk":"gplay",
+	  "version":6
+	},
+	{
+	  "mk":"anzhi",
+	  "version":3
+	},
+	{
+	  "mk": "sh",
+	  "version": 1
+	},
+	{
+	  "mk": "tap",
+	  "version": 2
+	},
+	{
+	  "mk": "tx",
+	  "version": 2
+	},
+	{
+	  "mk": "360",
+	  "version": 2
+	},
+	{
+	  "mk": "al",
+	  "version": 2
+	},
+	{
+	  "mk": "hw",
+	  "version": 2
+	},
+	{
+	  "mk": "bd",
+	  "version": 2
+	},
+	{
+	  "mk": "xm",
+	  "version": 2
+	},
+	{
+	  "mk": "ka",
+	  "version": 2
+	}
+  ],
+  "shareInfo": [
+	{
+	  "app_name":"【混二】",
+	  "title": "只能在日本玩的游戏",
+	  "content": "去日本混出个人样",
+	  "pic": "https://jingtaiweb.applinzi.com/download_app_h2/images/512x512.png",
+	  "url":"https://statichun.nbn369.com/hun2web/share_nes/index.html?v=1"
+	}
+  ]
+}

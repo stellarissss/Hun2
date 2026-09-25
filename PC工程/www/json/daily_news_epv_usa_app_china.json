@@ -1,0 +1,397 @@
+{
+  "Root": {
+	"news": [
+	  {
+		"id": 16,
+		"b_url": "//player.bilibili.com/player.html?aid=592426186&bvid=BV1hq4y1B7dR&cid=464005704&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7043251972488561192?autoplay=0",
+		"memo": "【实况美国】马路上，很危险",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中的警察将要去追一辆什么车？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "手扶拖拉机"
+			},
+			{
+			  "id": 2,
+			  "c": "自行车"
+			},
+			{
+			  "id": 3,
+			  "c": "皮卡"
+			}
+		  ,
+			{
+			  "id": 4,
+			  "c": "校车"
+			}
+		  ],
+		  "right_id": 3
+		}
+	  },
+	  {
+		"id": 15,
+		"b_url": "//player.bilibili.com/player.html?aid=592426186&bvid=BV1hq4y1B7dR&cid=464005704&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7043251972488561192?autoplay=0",
+		"memo": "【实况美国】马路上，很危险",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中的警察被车撞了吗？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "被撞了"
+			},
+			{
+			  "id": 2,
+			  "c": "没被撞"
+			}
+		  ],
+		  "right_id": 2
+		}
+	  },
+	  {
+		"id": 14,
+		"b_url": "//player.bilibili.com/player.html?aid=507416624&bvid=BV1cg411A7xN&cid=462230526&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7042251996643983912?autoplay=0",
+		"memo": "【实况美国】美国女警真实枪战",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中出现了几名警察？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "1名警察"
+			},
+			{
+			  "id": 2,
+			  "c": "2名警察"
+			},
+			{
+			  "id": 3,
+			  "c": "3名警察"
+			}
+		  ],
+		  "right_id": 2
+		}
+	  },
+	  {
+		"id": 13,
+		"b_url": "//player.bilibili.com/player.html?aid=507416624&bvid=BV1cg411A7xN&cid=462230526&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7042251996643983912?autoplay=0",
+		"memo": "【实况美国】美国女警真实枪战",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中女警那只手腕戴了银手镯？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "左手"
+			},
+			{
+			  "id": 2,
+			  "c": "右手"
+			}
+		  ],
+		  "right_id": 1
+		}
+	  },
+	  {
+		"id": 12,
+		"b_url": "//player.bilibili.com/player.html?aid=507416624&bvid=BV1cg411A7xN&cid=462230526&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7042251996643983912?autoplay=0",
+		"memo": "【实况美国】美国女警真实枪战",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中嫌疑犯是否被抓获？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "没抓获"
+			},
+			{
+			  "id": 2,
+			  "c": "抓住了"
+			}
+		  ],
+		  "right_id": 1
+		}
+	  },
+	  {
+		"id": 11,
+		"b_url": "//player.bilibili.com/player.html?aid=892320358&bvid=BV1YP4y1G7AL&cid=460153227&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"memo": "【实况美国】美国公路悍匪枪击警察",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中被枪击的警察事后怎么样了？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "已殉职"
+			},
+			{
+			  "id": 2,
+			  "c": "已康复"
+			},
+			{
+			  "id": 3,
+			  "c": "已成植物人"
+			}
+		  ],
+		  "right_id": 2
+		}
+	  },
+	  {
+		"id": 10,
+		"b_url": "//player.bilibili.com/player.html?aid=892320358&bvid=BV1YP4y1G7AL&cid=460153227&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"memo": "【实况美国】美国公路悍匪枪击警察",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频发生在美国哪个州？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "科罗拉多州"
+			},
+			{
+			  "id": 2,
+			  "c": "德克萨斯州"
+			},
+			{
+			  "id": 3,
+			  "c": "蒙大拿州"
+			}
+		  ],
+		  "right_id": 1
+		}
+	  },
+	  {
+		"id": 9,
+		"b_url": "//player.bilibili.com/player.html?aid=892320358&bvid=BV1YP4y1G7AL&cid=460153227&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"memo": "【实况美国】美国公路悍匪枪击警察",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中执法的警察有几名？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "1名警察"
+			},
+			{
+			  "id": 2,
+			  "c": "2名警察"
+			},
+			{
+			  "id": 3,
+			  "c": "3名警察"
+			}
+		  ],
+		  "right_id": 2
+		}
+	  },
+	  {
+		"id": 8,
+		"b_url": "//player.bilibili.com/player.html?aid=849778599&bvid=BV11L4y1H7ZP&cid=458971440&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7040602194537775656?autoplay=0",
+		"memo": "警察超市现场击毙嫌疑人",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中被枪击的是？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "白种人"
+			},
+			{
+			  "id": 2,
+			  "c": "黑种人"
+			},
+			{
+			  "id": 3,
+			  "c": "黄种人"
+			}
+		  ],
+		  "right_id": 1
+		}
+	  },
+	  {
+		"id": 7,
+		"b_url": "//player.bilibili.com/player.html?aid=549736693&bvid=BV1Ri4y1R7ZQ&cid=457800930&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"memo": "高速开斗气车，一言不合拔枪就干！",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中“尼哥”的反应是？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "捂脸躲避"
+			},
+			{
+			  "id": 2,
+			  "c": "辅助射击"
+			},
+			{
+			  "id": 3,
+			  "c": "跳车逃跑"
+			}
+		  ],
+		  "right_id": 1
+		}
+	  },
+	  {
+		"id": 6,
+		"b_url": "//player.bilibili.com/player.html?aid=549736693&bvid=BV1Ri4y1R7ZQ&cid=457800930&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"memo": "高速开斗气车，一言不合拔枪就干！",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中被射击的车辆是？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "SUV"
+			},
+			{
+			  "id": 2,
+			  "c": "小轿车"
+			},
+			{
+			  "id": 3,
+			  "c": "货车"
+			},
+			{
+			  "id": 4,
+			  "c": "手扶拖拉机"
+			}
+		  ],
+		  "right_id": 2
+		}
+	  },
+	  {
+		"id": 5,
+		"b_url": "//player.bilibili.com/player.html?aid=634794361&bvid=BV1ub4y1q7zw&cid=458448503&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7040065718791963136?autoplay=0",
+		"memo": "入室抢劫，地点：美国南加州",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中入室抢劫的是？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "两名白人"
+			},
+			{
+			  "id": 2,
+			  "c": "一名黑人一名白人"
+			},
+			{
+			  "id": 3,
+			  "c": "两名黑人"
+			}
+		  ],
+		  "right_id": 3
+		}
+	  },
+	  {
+		"id": 4,
+		"b_url": "//player.bilibili.com/player.html?aid=634794361&bvid=BV1ub4y1q7zw&cid=458448503&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7040065718791963136?autoplay=0",
+		"memo": "入室抢劫，地点：美国南加州",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中被抢劫的是？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "一男一女"
+			},
+			{
+			  "id": 2,
+			  "c": "两名女士"
+			},
+			{
+			  "id": 3,
+			  "c": "两名男士"
+			}
+		  ],
+		  "right_id": 1
+		}
+	  },
+	  {
+		"id": 3,
+		"b_url": "//player.bilibili.com/player.html?aid=849778599&bvid=BV11L4y1H7ZP&cid=458971440&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7040602194537775656?autoplay=0",
+		"memo": "警察超市现场击毙嫌疑人",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中枪击嫌疑人时，有几名警察在场？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "1名警察"
+			},
+			{
+			  "id": 2,
+			  "c": "2名警察"
+			},
+			{
+			  "id": 3,
+			  "c": "3名警察"
+			},
+			{
+			  "id": 4,
+			  "c": "4名警察"
+			}
+		  ],
+		  "right_id": 4
+		}
+	  },
+	  {
+		"id": 2,
+		"b_url": "//player.bilibili.com/player.html?aid=549736693&bvid=BV1Ri4y1R7ZQ&cid=457800930&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"memo": "高速开斗气车，一言不合拔枪就干！",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中开枪的是黑人还是白人？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "黑人"
+			},
+			{
+			  "id": 2,
+			  "c": "白人"
+			}
+		  ],
+		  "right_id": 2
+		}
+	  },
+	  {
+		"id": 1,
+		"b_url": "//player.bilibili.com/player.html?aid=634794361&bvid=BV1ub4y1q7zw&cid=458448503&page=1&as_wide=1&high_quality=1&danmaku=0&t=0",
+		"x_url": "https://www.ixigua.com/iframe/7040065718791963136?autoplay=0",
+		"memo": "入室抢劫，地点：美国南加州",
+		"video_url": "b_url",
+		"QA": {
+		  "title": "视频中入室抢劫的有几人？",
+		  "options": [
+			{
+			  "id": 1,
+			  "c": "4个人"
+			},
+			{
+			  "id": 2,
+			  "c": "2个人"
+			},
+			{
+			  "id": 3,
+			  "c": "3个人"
+			}
+		  ],
+		  "right_id": 2
+		}
+	  }
+	]
+  }
+}

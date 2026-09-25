@@ -1,0 +1,38 @@
+name: Probe CDN Speed
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Probe
+        shell: bash
+        run: |
+          set -x
+          echo "=== Runner: ${{ matrix.os }} / $RUNNER_OS ==="
+          # 取链
+          API="https://tz2.xiaota.com/api/download.php?package_id=472&name=%E6%B7%B7%E4%BA%8C&package=com.hao.hun&uuid=abcdefghijklmnopqrstuvwx123456&refer=0&h=&x=1&referurl=&nowurl=https%3A%2F%2Fwww.iefans.net%2Fsoft%2Fv974051.html&t=1789783089&sg=deea8c88bd9c4bb5da5c760c31cf87aa&r=0.5"
+          node=$(curl -sk --max-time 40 "$API" | sed -n 's/.*"url":"\([^"]*\)".*/\1/p' | sed 's#\\/#/#g')
+          echo "NODE=$node"
+          # 单连接 20s 测速
+          echo "--- 单连接 20s ---"
+          curl -sk -r 0-20971519 -A "Mozilla/5.0" -H "Referer: https://www.iefans.net/" \
+            --max-time 20 "$node" -o /tmp/c1.bin -w "单连: HTTP:%{http_code} SIZE:%{size_download} SPEED:%{speed_download}B/s\n"
+          # 8 并发各 20s
+          echo "--- 8 并发 20s ---"
+          for i in 0 1 2 3 4 5 6 7; do
+            off=$((i*3500000)); end=$((off+3499999))
+            curl -sk -r ${off}-${end} -A "Mozilla/5.0" -H "Referer: https://www.iefans.net/" \
+              --max-time 20 "$node" -o /tmp/p$i.bin -s &
+          done
+          wait
+          tot=0; for f in /tmp/p*.bin; do s=$(stat -c%s "$f" 2>/dev/null || stat -f%z "$f" 2>/dev/null || echo 0); tot=$((tot+s)); done
+          echo "并发合计: $tot bytes"
+          echo "本机对外带宽基准（GitHub 自身）:"
+          curl -sk --max-time 20 -o /dev/null -w "github基准: %{speed_download}B/s\n" \
+            "https://github.com/cli/cli/releases/download/v2.55.0/gh_2.55.0_checksums.txt"

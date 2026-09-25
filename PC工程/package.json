@@ -1,0 +1,79 @@
+{
+  "name": "hun-japan-pc",
+  "version": "4.1.0",
+  "description": "《混在日本》PC 单机版 —— 完全离线的策略养成游戏",
+  "main": "electron/main.js",
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "scripts": {
+    "postinstall": "python3 scripts/patch_builder.py",
+    "patch": "python3 scripts/patch_builder.py",
+    "patch:check": "python3 scripts/patch_builder.py --check",
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "test": "node scripts/deep_play.js",
+    "build": "electron-builder --win --x64",
+    "build:dir": "electron-builder --win --x64 --dir",
+    "pack": "electron-builder --dir",
+    "overlay": "python3 scripts/make_overlay.py",
+    "test:overlay": "bash scripts/verify_overlay.sh",
+    "test:pcux": "node scripts/probe_pcux.js"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^24.9.1",
+    "ws": "^8.21.3"
+  },
+  "build": {
+    "appId": "com.hao.hun2.pc",
+    "productName": "混在日本",
+    "copyright": "版权所有 归原作者所有",
+    "directories": {
+      "output": "../dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**/*",
+      "www/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "混在日本-${version}-${arch}.${ext}",
+      "signAndEditExecutable": false,
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "script": "build/nsis/installer.nsi",
+      "warningsAsErrors": false,
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "混在日本",
+      "installerLanguages": [
+        "zh_CN"
+      ],
+      "language": "2052",
+      "deleteAppDataOnUninstall": false
+    },
+    "portable": {
+      "artifactName": "混在日本-便携版-${version}.${ext}"
+    }
+  }
+}

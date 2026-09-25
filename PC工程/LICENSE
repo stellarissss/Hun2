@@ -1,0 +1,89 @@
+版权所有（C）原作者 保留所有权利
+Copyright (C) The Original Author. All Rights Reserved.
+
+---
+
+## 中文说明
+
+### 1. 权利归属
+
+《混在日本》（又名《混二》）游戏的**全部知识产权**——包括但不限于游戏策划、
+剧本文字、美术素材、音乐音效、角色形象、界面设计、代码逻辑——**均归原作者所有**。
+
+本仓库（下称"本工程"）**不主张**对上述任何游戏内容享有权利。本工程仅包含
+使其能在个人计算机上**离线运行**所必需的适配代码与打包配置。
+
+### 2. 本工程的授权范围
+
+本工程中由本工程作者原创的适配代码（`electron/`、`www/offline/`、`scripts/`、
+`build/` 及根目录构建配置），仅授权用于：
+
+- **个人学习、研究与技术验证**；
+- 在**已获得游戏内容合法授权**的前提下进行个人使用。
+
+本授权**不构成**对游戏本身的使用许可。
+
+### 3. 明确禁止
+
+未经原作者书面许可，**禁止**：
+
+- 将本工程或由其构建的任何产物用于**任何商业用途**，包括但不限于销售、
+  租赁、付费分发、植入广告、应用商店上架；
+- 以本工程为基础进行**二次分发**并从中获利；
+- 移除、篡改或规避本文件及任何界面中的版权标识；
+- 将游戏内容用于任何派生商业产品。
+
+### 4. 免责声明
+
+本工程按"现状"提供，不附带任何明示或暗示的担保。使用者须自行承担使用风险。
+因使用本工程而产生的任何直接或间接损失、以及任何法律纠纷，
+本工程作者**概不负责**。
+
+使用者应确保其使用行为符合所在国家或地区的法律法规，并尊重原作者的合法权益。
+若原作者认为本工程侵犯其权益，请通过仓库 Issue 联系，本工程将立即配合处理。
+
+---
+
+## English Notice
+
+### 1. Ownership
+
+All intellectual property rights in the game **"Hun Zai Ri Ben" (a.k.a. "Hun Er")** —
+including but not limited to game design, script, artwork, music, audio, character
+designs, UI design, and source code — **belong exclusively to the original author**.
+
+This repository (the "Project") **claims no rights** over any of the aforementioned
+game content. It contains only the adaptation code and packaging configuration
+required to run the game **offline** on a personal computer.
+
+### 2. Scope of License
+
+The adaptation code originally authored for this Project (`electron/`, `www/offline/`,
+`scripts/`, `build/`, and root-level build configuration) is licensed solely for:
+
+- **Personal study, research, and technical verification**;
+- Personal use **where lawful authorization for the game content has been obtained**.
+
+This license **does not constitute** a license to use the game itself.
+
+### 3. Prohibited Uses
+
+Without the express written permission of the original author, you **may not**:
+
+- Use this Project or any artifact built from it for **any commercial purpose**,
+  including sale, rental, paid distribution, advertising, or app-store publishing;
+- **Redistribute** derivatives of this Project for profit;
+- Remove, alter, or circumvent this notice or any copyright notice in the software;
+- Create any derivative commercial product from the game content.
+
+### 4. Disclaimer
+
+This Project is provided "AS IS", without warranty of any kind, express or implied.
+The entire risk arising out of use remains with the user. In no event shall the
+author of this Project be liable for any direct or indirect damages, or for any
+legal dispute arising from its use.
+
+Users are responsible for ensuring their use complies with the laws of their
+jurisdiction and respects the legitimate rights of the original author.
+If the original author believes this Project infringes their rights, please open
+an Issue in this repository and we will cooperate immediately.

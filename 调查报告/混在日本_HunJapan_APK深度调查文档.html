@@ -1,0 +1,3960 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《混在日本》(混二) APK 深度调查文档</title>
+<style>
+:root {
+  --bg:#0f1115; --panel:#161a22; --panel2:#1c222c; --fg:#e6e9ef; --muted:#9aa4b2;
+  --accent:#ff4d4d; --accent2:#ffc14d; --line:#2a3140; --code-bg:#0b0e13;
+  --link:#6db3ff;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.8; font-size:15px;
+}
+.layout { display:flex; max-width:1600px; margin:0 auto; }
+nav {
+  position:sticky; top:0; height:100vh; overflow-y:auto; width:310px; flex:0 0 310px;
+  padding:24px 16px; border-right:1px solid var(--line); background:var(--panel);
+  font-size:13px;
+}
+nav::-webkit-scrollbar { width:6px; }
+nav::-webkit-scrollbar-thumb { background:#333c4d; border-radius:3px; }
+nav .brand { font-weight:700; font-size:15px; color:var(--accent); margin-bottom:4px; }
+nav .sub { color:var(--muted); font-size:11px; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+nav a { display:block; color:var(--muted); text-decoration:none; padding:4px 8px; border-radius:5px; }
+nav a:hover { background:var(--panel2); color:var(--fg); }
+nav .nav-h2 { font-weight:600; color:#c9d1dc; margin-top:8px; }
+nav .nav-h3 { padding-left:20px; font-size:12px; }
+main { flex:1; min-width:0; padding:40px 56px 120px; }
+h1 { font-size:30px; border-bottom:3px solid var(--accent); padding-bottom:14px; margin-top:0; }
+h2 { font-size:23px; margin-top:56px; padding:10px 0 10px 14px; border-left:5px solid var(--accent);
+      background:linear-gradient(90deg,rgba(255,77,77,.10),transparent); border-radius:0 6px 6px 0; }
+h3 { font-size:18px; margin-top:34px; color:#ffd9a0; }
+h4 { font-size:16px; color:#a8d8ff; margin-top:24px; }
+p { margin:12px 0; }
+a { color:var(--link); }
+table { border-collapse:collapse; width:100%; margin:16px 0; font-size:13.5px; display:block; overflow-x:auto; }
+th,td { border:1px solid var(--line); padding:8px 12px; text-align:left; vertical-align:top; }
+th { background:var(--panel2); color:#fff; font-weight:600; white-space:nowrap; }
+tr:nth-child(even) td { background:rgba(255,255,255,.02); }
+tr:hover td { background:rgba(255,193,77,.05); }
+code { background:var(--code-bg); color:#ffb86c; padding:2px 6px; border-radius:4px;
+        font-family:"SF Mono",Consolas,Monaco,monospace; font-size:12.5px; }
+pre { background:var(--code-bg); border:1px solid var(--line); border-radius:8px; padding:16px;
+       overflow-x:auto; line-height:1.6; }
+pre code { background:none; color:#c9d1dc; padding:0; font-size:12.5px; }
+blockquote { margin:18px 0; padding:12px 20px; border-left:4px solid var(--accent2);
+              background:rgba(255,193,77,.07); border-radius:0 6px 6px 0; color:#e8d9bb; }
+blockquote p { margin:6px 0; }
+ul,ol { padding-left:26px; }
+li { margin:6px 0; }
+hr { border:none; border-top:1px solid var(--line); margin:36px 0; }
+strong { color:#fff; }
+em { color:var(--accent2); font-style:normal; }
+.top { position:fixed; right:26px; bottom:26px; background:var(--accent); color:#fff;
+        border:none; border-radius:50%; width:44px; height:44px; cursor:pointer; font-size:18px;
+        box-shadow:0 4px 14px rgba(255,77,77,.4); }
+.badge { display:inline-block; background:var(--panel2); border:1px solid var(--line);
+          border-radius:20px; padding:2px 10px; font-size:11px; color:var(--muted); margin-right:6px; }
+@media(max-width:900px) { nav { display:none; } main { padding:24px; } }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav>
+  <div class="brand">《混在日本》调查报告</div>
+  <div class="sub">com.hao.hun.japan v4.0 · Google Play 官方版</div>
+  <a class="nav-h2" href="#目录">目录</a>
+<a class="nav-h2" href="#一调查摘要">一、调查摘要</a>
+<a class="nav-h2" href="#二样本基本信息">二、样本基本信息</a>
+<a class="nav-h3" href="#21-文件指纹">2.1 文件指纹</a>
+<a class="nav-h3" href="#22-应用元数据">2.2 应用元数据</a>
+<a class="nav-h3" href="#23-签名信息关键证据">2.3 签名信息（关键证据）</a>
+<a class="nav-h2" href="#三整体架构双层结构">三、整体架构：双层结构</a>
+<a class="nav-h3" href="#31-架构总览">3.1 架构总览</a>
+<a class="nav-h3" href="#32-关键设计特征">3.2 关键设计特征</a>
+<a class="nav-h2" href="#四apk-静态结构分析">四、APK 静态结构分析</a>
+<a class="nav-h3" href="#41-目录结构">4.1 目录结构</a>
+<a class="nav-h3" href="#42-资源分布分析">4.2 资源分布分析</a>
+<a class="nav-h3" href="#43-权限清单">4.3 权限清单</a>
+<a class="nav-h3" href="#44-组件清单">4.4 组件清单</a>
+<a class="nav-h3" href="#45-网络与安全配置">4.5 网络与安全配置</a>
+<a class="nav-h2" href="#五外观与视觉设计">五、外观与视觉设计</a>
+<a class="nav-h3" href="#51-应用图标">5.1 应用图标</a>
+<a class="nav-h3" href="#52-视觉设计推断基于文案与配置">5.2 视觉设计推断（基于文案与配置）</a>
+<a class="nav-h3" href="#53-游戏内文字风格">5.3 游戏内文字风格</a>
+<a class="nav-h2" href="#六原生层代码分析">六、原生层代码分析</a>
+<a class="nav-h3" href="#61-代码规模">6.1 代码规模</a>
+<a class="nav-h3" href="#62-mainactivity--启动流程">6.2 MainActivity —— 启动流程</a>
+<a class="nav-h3" href="#63-safewebview--一个-22-行的补丁类">6.3 SafeWebView —— 一个 22 行的"补丁类"</a>
+<a class="nav-h3" href="#64-haodaren--埋下的签名彩蛋">6.4 Haodaren —— 埋下的"签名彩蛋"</a>
+<a class="nav-h3" href="#65-deviceutils--设备指纹">6.5 DeviceUtils —— 设备指纹</a>
+<a class="nav-h2" href="#七js-桥接机制核心">七、JS 桥接机制（核心）</a>
+<a class="nav-h3" href="#71-通道总览">7.1 通道总览</a>
+<a class="nav-h3" href="#72-jstoandroid--js-调用原生上行">7.2 JsToAndroid —— JS 调用原生（上行）</a>
+<a class="nav-h3" href="#73-androidtojs--原生回调-js下行">7.3 AndroidToJs —— 原生回调 JS（下行）</a>
+<a class="nav-h3" href="#74-billingmanager--内购实现">7.4 BillingManager —— 内购实现</a>
+<a class="nav-h3" href="#75-内购商品线索">7.5 内购商品线索</a>
+<a class="nav-h2" href="#八游戏内容层h5-逆向">八、游戏内容层：H5 逆向</a>
+<a class="nav-h3" href="#81-内容获取方式">8.1 内容获取方式</a>
+<a class="nav-h3" href="#82-加载链路">8.2 加载链路</a>
+<a class="nav-h3" href="#83-word_cnjs--文案数据库">8.3 word_cn.js —— 文案数据库</a>
+<a class="nav-h3" href="#84-hun_minjs--游戏核心逻辑">8.4 hun_min.js —— 游戏核心逻辑</a>
+<a class="nav-h2" href="#九玩法系统全解析">九、玩法系统全解析</a>
+<a class="nav-h3" href="#91-世界观与主线">9.1 世界观与主线</a>
+<a class="nav-h3" href="#92-核心属性系统">9.2 核心属性系统</a>
+<a class="nav-h3" href="#93-八大技能系统">9.3 八大技能系统</a>
+<a class="nav-h3" href="#94-犯罪任务体系">9.4 犯罪任务体系</a>
+<a class="nav-h3" href="#95-战斗机制">9.5 战斗机制</a>
+<a class="nav-h3" href="#96-飙车系统">9.6 飙车系统</a>
+<a class="nav-h3" href="#97-社团帮派系统--社交核心">9.7 社团（帮派）系统 —— 社交核心</a>
+<a class="nav-h3" href="#98-经济活动体系">9.8 经济活动体系</a>
+<a class="nav-h3" href="#99-任务章节">9.9 任务章节</a>
+<a class="nav-h3" href="#910-小游戏矩阵氪金--留存">9.10 小游戏矩阵（氪金 + 留存）</a>
+<a class="nav-h3" href="#911-艺伎系统成人向社交">9.11 艺伎系统（成人向社交）</a>
+<a class="nav-h3" href="#912-家庭任务线情感支线">9.12 家庭任务线（情感支线）</a>
+<a class="nav-h3" href="#913-多地图城市系统">9.13 多地图城市系统</a>
+<a class="nav-h3" href="#914-医院与培训系统">9.14 医院与培训系统</a>
+<a class="nav-h2" href="#十元素数据库">十、元素数据库</a>
+<a class="nav-h3" href="#101-全部物品清单从文案提取">10.1 全部物品清单（从文案提取）</a>
+<a class="nav-h3" href="#102-资产类型">10.2 资产类型</a>
+<a class="nav-h3" href="#103-状态标记">10.3 状态标记</a>
+<a class="nav-h2" href="#十一后端与网络架构">十一、后端与网络架构</a>
+<a class="nav-h3" href="#111-域名资产清单27-个唯一域名">11.1 域名资产清单（27 个唯一域名）</a>
+<a class="nav-h3" href="#112-核心接口清单">11.2 核心接口清单</a>
+<a class="nav-h3" href="#113-静态资源路径结构">11.3 静态资源路径结构</a>
+<a class="nav-h3" href="#114-数据安全分析">11.4 数据安全分析</a>
+<a class="nav-h2" href="#十二商业化与经济系统">十二、商业化与经济系统</a>
+<a class="nav-h3" href="#121-双货币体系">12.1 双货币体系</a>
+<a class="nav-h3" href="#122-魂币消费点完整清单">12.2 魂币消费点（完整清单）</a>
+<a class="nav-h3" href="#123-魂币回收规则防止套利">12.3 魂币回收规则（防止套利）</a>
+<a class="nav-h3" href="#124-每日魂币激励免费获取渠道">12.4 每日魂币激励（免费获取渠道）</a>
+<a class="nav-h3" href="#125-支付渠道">12.5 支付渠道</a>
+<a class="nav-h2" href="#十三安全与风控机制">十三、安全与风控机制</a>
+<a class="nav-h3" href="#131-root-检测">13.1 Root 检测</a>
+<a class="nav-h3" href="#132-google-play-pairip-加固">13.2 Google Play PairIP 加固</a>
+<a class="nav-h3" href="#133-存档与状态存储">13.3 存档与状态存储</a>
+<a class="nav-h2" href="#十四特殊功能模块">十四、特殊功能模块</a>
+<a class="nav-h3" href="#141-fc-红白机模拟器最有趣的功能">14.1 FC 红白机模拟器（最有趣的功能）</a>
+<a class="nav-h3" href="#142-分享系统">14.2 分享系统</a>
+<a class="nav-h3" href="#143-小程序版本">14.3 小程序版本</a>
+<a class="nav-h3" href="#144-多语言系统">14.4 多语言系统</a>
+<a class="nav-h3" href="#145-渠道系统">14.5 渠道系统</a>
+<a class="nav-h3" href="#146-双地区内容日本版--美国版">14.6 双地区内容（日本版 / 美国版）</a>
+<a class="nav-h2" href="#十五版本迭代与运营体系">十五、版本迭代与运营体系</a>
+<a class="nav-h3" href="#151-版本清单versionjson">15.1 版本清单（`version.json`）</a>
+<a class="nav-h3" href="#152-热更新机制">15.2 热更新机制</a>
+<a class="nav-h3" href="#153-埋点系统">15.3 埋点系统</a>
+<a class="nav-h3" href="#154-社交矩阵">15.4 社交矩阵</a>
+<a class="nav-h2" href="#十六风险与合规评估">十六、风险与合规评估</a>
+<a class="nav-h3" href="#161-内容风险">16.1 内容风险</a>
+<a class="nav-h3" href="#162-技术风险">16.2 技术风险</a>
+<a class="nav-h3" href="#163-合规建议如涉及评估">16.3 合规建议（如涉及评估）</a>
+<a class="nav-h2" href="#十七技术结论">十七、技术结论</a>
+<a class="nav-h3" href="#171-架构亮点值得学习">17.1 架构亮点（值得学习）</a>
+<a class="nav-h3" href="#172-技术缺陷">17.2 技术缺陷</a>
+<a class="nav-h3" href="#173-一句话总结">17.3 一句话总结</a>
+<a class="nav-h2" href="#十八附录">十八、附录</a>
+<a class="nav-h3" href="#附录-aapk-关键文件清单">附录 A：APK 关键文件清单</a>
+<a class="nav-h3" href="#附录-b完整自研类源码行数">附录 B：完整自研类源码行数</a>
+<a class="nav-h3" href="#附录-c后端接口速查表">附录 C：后端接口速查表</a>
+<a class="nav-h3" href="#附录-d调查工具与方法">附录 D：调查工具与方法</a>
+<a class="nav-h3" href="#附录-e调查产出文件">附录 E：调查产出文件</a>
+</nav>
+<main>
+<h1 id="apk">《混在日本》（混二）APK 深度调查文档</h1>
+<blockquote>
+<p><strong>调查对象</strong>：<code>com.hao.hun.japan</code> v4.0（Google Play 官方发行版）
+<strong>调查日期</strong>：2026-09-19
+<strong>调查方式</strong>：APK 静态解包 + Java 反编译 + 线上 H5 资源逆向 + 后端接口验证
+<strong>文档版本</strong>：v1.0</p>
+</blockquote>
+<hr />
+<h2 id="_1">目录</h2>
+<ol>
+<li><a href="#一调查摘要">调查摘要</a></li>
+<li><a href="#二样本基本信息">样本基本信息</a></li>
+<li><a href="#三整体架构双层结构">整体架构：双层结构</a></li>
+<li><a href="#四apk-静态结构分析">APK 静态结构分析</a></li>
+<li><a href="#五外观与视觉设计">外观与视觉设计</a></li>
+<li><a href="#六原生层代码分析">原生层代码分析</a></li>
+<li><a href="#七js-桥接机制核心">JS 桥接机制（核心）</a></li>
+<li><a href="#八游戏内容层h5-逆向">游戏内容层：H5 逆向</a></li>
+<li><a href="#九玩法系统全解析">玩法系统全解析</a></li>
+<li><a href="#十元素数据库">元素数据库</a></li>
+<li><a href="#十一后端与网络架构">后端与网络架构</a></li>
+<li><a href="#十二商业化与经济系统">商业化与经济系统</a></li>
+<li><a href="#十三安全与风控机制">安全与风控机制</a></li>
+<li><a href="#十四特殊功能模块">特殊功能模块</a></li>
+<li><a href="#十五版本迭代与运营体系">版本迭代与运营体系</a></li>
+<li><a href="#十六风险与合规评估">风险与合规评估</a></li>
+<li><a href="#十七技术结论">技术结论</a></li>
+<li><a href="#十八附录">附录</a></li>
+</ol>
+<hr />
+<h2 id="_2">一、调查摘要</h2>
+<p>本次调查对《混在日本》（亦名《混二》）的 Android 安装包进行了完整解包与逆向分析，得到以下核心结论：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>真实性质</strong></td>
+<td><strong>WebView 空壳容器 + 服务端 H5 游戏</strong>。APK 本体不含任何游戏逻辑、图片、音频资源</td>
+</tr>
+<tr>
+<td><strong>APK 体积构成</strong></td>
+<td>10.3 MB 中，约 7.5 MB 为 <code>classes.dex</code>（其中绝大部分是 AndroidX/Firebase/Google Play 依赖库），游戏内容体积为 <strong>0 字节</strong></td>
+</tr>
+<tr>
+<td><strong>游戏引擎</strong></td>
+<td>非商业引擎（无 LayaAir/Cocos/Egret/CreateJS 痕迹），为<strong>自研 Closure 编译型 H5 框架</strong>，6241 个函数、2349 个构造器</td>
+</tr>
+<tr>
+<td><strong>游戏框架</strong></td>
+<td>WebView + <code>@JavascriptInterface</code> 双向 JS 桥（<code>jsbridge_android</code>）</td>
+</tr>
+<tr>
+<td><strong>发行渠道</strong></td>
+<td><strong>Google Play 官方签名</strong>（证书颁发者 <code>CN=Android, O=Google Inc.</code>），非第三方渠道包</td>
+</tr>
+<tr>
+<td><strong>商业模型</strong></td>
+<td>免费下载 + 虚拟货币「魂币(HunCoin)」内购 + Google Play Billing 7.1.1</td>
+</tr>
+<tr>
+<td><strong>题材性质</strong></td>
+<td>成人向黑帮犯罪题材中文手游（含性暗示、暴力、犯罪教唆元素）</td>
+</tr>
+<tr>
+<td><strong>后端存活状态</strong></td>
+<td>部分存活（OSS/CDN 全部可用），主域名 <code>h2jp.hun333.com</code> 返回 522</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>一句话概括</strong>：这是一个「App 只是浏览器，游戏全在云上」的典型形态。想要获取游戏的"完整内容"，必须连服务器资源一起抓取——APK 本身解密后基本是个空盒子。</p>
+</blockquote>
+<hr />
+<h2 id="_3">二、样本基本信息</h2>
+<h3 id="21">2.1 文件指纹</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件名</td>
+<td><code>hun.apk</code></td>
+</tr>
+<tr>
+<td>文件大小</td>
+<td>10,296,686 字节（9.82 MiB）</td>
+</tr>
+<tr>
+<td>MD5</td>
+<td><code>6b7823e48373f97b0020dd1716314139</code></td>
+</tr>
+<tr>
+<td>SHA-256</td>
+<td><code>21998cb7b674574a9b3c96e992a970ff6ef2cc7f74497c7fa83448e5d728ac4f</code></td>
+</tr>
+<tr>
+<td>ZIP 条目数</td>
+<td>458</td>
+</tr>
+<tr>
+<td>完整性校验</td>
+<td>通过（<code>unzip -t</code> 无错误）</td>
+</tr>
+<tr>
+<td>压缩方式</td>
+<td>标准 ZIP（文件头 <code>50 4B 03 04</code>）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 应用元数据</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>包名</td>
+<td><code>com.hao.hun.japan</code></td>
+</tr>
+<tr>
+<td>应用显示名</td>
+<td><strong>混在日本</strong></td>
+</tr>
+<tr>
+<td>版本名 / 版本号</td>
+<td><code>4.0</code> / <code>4</code></td>
+</tr>
+<tr>
+<td>minSdkVersion</td>
+<td><strong>24</strong>（Android 7.0）</td>
+</tr>
+<tr>
+<td>targetSdkVersion</td>
+<td><strong>35</strong>（Android 15）</td>
+</tr>
+<tr>
+<td>compileSdkVersion</td>
+<td><strong>35</strong> (Android 15 / <code>VanillaIceCream</code>)</td>
+</tr>
+<tr>
+<td>MainActivity</td>
+<td><code>com.hao.hun.japan.MainActivity</code></td>
+</tr>
+<tr>
+<td>屏幕方向</td>
+<td><code>screenOrientation=1</code>（<strong>竖屏锁定</strong>）</td>
+</tr>
+<tr>
+<td>主题</td>
+<td><code>@7F0F0108</code></td>
+</tr>
+<tr>
+<td>允许备份</td>
+<td><code>allowBackup=true</code></td>
+</tr>
+<tr>
+<td>明文流量</td>
+<td><strong><code>usesCleartextTraffic=true</code></strong>（允许 HTTP）</td>
+</tr>
+<tr>
+<td>原生库</td>
+<td><strong>无</strong>（<code>lib/</code> 目录不存在，<code>extractNativeLibs=false</code>）</td>
+</tr>
+<tr>
+<td>应用分类</td>
+<td><code>appCategory=0</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>竖屏锁定</strong> 是一个值得注意的细节：说明游戏采用手机竖屏单手操作模式，而非横屏 SLG。</p>
+</blockquote>
+<h3 id="23">2.3 签名信息（关键证据）</h3>
+<p>APK 采用 <strong>APK Signature Scheme v2 + v3</strong> 双重签名（无 v1 JAR 签名）。</p>
+<p><strong>V2 签名证书链</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>长度</th>
+<th>SHA-256</th>
+<th>SHA-1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>叶子证书</td>
+<td>1416 B</td>
+<td><code>ef5b1dd61379d223d285a87984f56bb56c819bdc13aa840f68dd27947e80716e</code></td>
+<td><code>dc714e74a15d54e8bd917a705613d19de45cfc52</code></td>
+</tr>
+<tr>
+<td>中间证书</td>
+<td>546 B</td>
+<td><code>29f0cef1acf924eed818a6f3d28978b1576cbdb3bc0808467f4f30ef2a0b0a2f</code></td>
+<td><code>d82453e9880b87db799c2964a831e981f57e4bf0</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>证书主题（Subject）</strong>：</p>
+<pre><code>C  = US
+ST = California
+L  = Mountain View
+O  = Google Inc.
+CN = Android
+</code></pre>
+<p><strong>有效期</strong>：<code>2025-07-22</code> → <code>2055-07-22</code>（30 年）</p>
+<blockquote>
+<p><strong>结论</strong>：证书颁发者为 <code>Google Inc. / Android</code>，这是 Google 为开发者提供的 <strong>Play App Signing（应用签名服务）</strong> 标准证书。
+结合 manifest 中的 <code>com.android.stamp.source = https://play.google.com/store</code>、<code>com.android.stamp.type = STAMP_TYPE_DISTRIBUTION_APK</code> 与 <code>com.android.vending.derived.apk.id=3</code>，
+<strong>可 100% 确认此包是从 Google Play 官方渠道下载的正版发行包</strong>，而非第三方修改版或渠道包。</p>
+</blockquote>
+<p><strong>签名块结构</strong>（block size = 12,280 字节）：</p>
+<table>
+<thead>
+<tr>
+<th>Pair ID</th>
+<th>长度</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x7109871A</code></td>
+<td>2626</td>
+<td>V2 签名</td>
+</tr>
+<tr>
+<td><code>0xF05368C0</code></td>
+<td>2626</td>
+<td>V3 签名</td>
+</tr>
+<tr>
+<td><code>0x6DFF800D</code></td>
+<td>3061</td>
+<td>V3.1 签名</td>
+</tr>
+<tr>
+<td><code>0xFA1CFABE</code></td>
+<td>1762</td>
+<td><strong>Source Stamp</strong>（源码戳，Google Play 归属验证）</td>
+</tr>
+<tr>
+<td><code>0x2146444E</code></td>
+<td>228</td>
+<td>证明轮转（Proof of Rotation）相关</td>
+</tr>
+<tr>
+<td><code>0x42726577</code></td>
+<td>1905</td>
+<td>验证器信息</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">三、整体架构：双层结构</h2>
+<h3 id="31">3.1 架构总览</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                     Android 容器层 (APK 本体)                 │
+│                    体积 ≈ 10.3 MB，游戏内容 0 字节             │
+├─────────────────────────────────────────────────────────────┤
+│  MainActivity  ──继承──►  Activity                            │
+│      │                                                       │
+│      ├─ SafeWebView  (WebView 子类，屏蔽 setInitialScale)     │
+│      ├─ BillingManager (Google Play Billing 7.1.1)           │
+│      ├─ DeviceUtils / MD5 / SharedPrefUtil                   │
+│      ├─ RootCheck / RootCheckPlus  (Root 检测)                │
+│      └─ PairIP LicenseCheck  (Google 加固壳)                  │
+│                                                              │
+│          │ addJavascriptInterface(&quot;jsbridge_android&quot;)        │
+│          ▼                                                   │
+├─────────────────────────────────────────────────────────────┤
+│                  H5 游戏层（完全在云端）                       │
+│                                                              │
+│  jump.html (路由)  ──►  hun_japan.html (启动器)               │
+│                              │                               │
+│                              ├─ word_cn.js   (2423 条文案)    │
+│                              └─ hun_min.js   (2.1MB 核心逻辑) │
+│                                     │                        │
+│                                     ▼                        │
+│              hun2-cn.oss-cn-hangzhou.aliyuncs.com            │
+│              (LayaAir 风格资源 / 图片 / 音效 / 数据)           │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                       后端服务层                              │
+│  h2jp.hun333.com      (主 API / 参数下发)                     │
+│  h2jpen.hun333.com    (英文/国际版 API)                      │
+│  hun1.hun333.com      (统计埋点)                             │
+│  www.hun369.cn/h2pay  (支付网关)                             │
+│  hun2web*.myqcloud.com / oss-accelerate (静态 CDN)           │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="32">3.2 关键设计特征</h3>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>内容零本地化</strong></td>
+<td>APK 中完全没有游戏图片、音频、关卡数据。所有内容实时从 CDN 拉取</td>
+</tr>
+<tr>
+<td><strong>热更新能力</strong></td>
+<td>修改服务端 <code>hun_min.js</code> 即可全网更新游戏逻辑，无需重新发版</td>
+</tr>
+<tr>
+<td><strong>双版本共存</strong></td>
+<td>代码内置 <code>日本版(jp)</code> 与 <code>美国版(usa)</code> 两套内容，通过 <code>EXPENSION_PACK_VERSION</code> 切换</td>
+</tr>
+<tr>
+<td><strong>多端复用</strong></td>
+<td>同一套 H5 同时支撑 Android / iOS / PC / 微信小程序 / 头条小程序</td>
+</tr>
+<tr>
+<td><strong>强依赖网络</strong></td>
+<td>断网即无法启动游戏（除壳层崩溃外，无任何离线降级）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="apk_1">四、APK 静态结构分析</h2>
+<h3 id="41">4.1 目录结构</h3>
+<pre><code>hun.apk
+├── AndroidManifest.xml      (9,044 B，二进制)
+├── classes.dex              (7,563,816 B — 唯一的 dex)
+├── resources.arsc           (398,304 B)
+├── assets/
+│   └── dexopt/
+│       ├── baseline.prof
+│       └── baseline.profm   (共 8 KB)
+├── res/
+│   ├── mipmap-*/            应用图标（5 档密度）
+│   ├── drawable*/           全部为 AndroidX 默认资源
+│   ├── layout*/             AndroidX 布局
+│   ├── xml/                 网络与 Billing 配置
+│   └── raw/                 Billing 配置
+├── META-INF/                AndroidX/Firebase 版本标记
+├── kotlin/                  Kotlin 元数据
+└── (无 lib/ 目录)           无任何 .so 原生库
+</code></pre>
+<h3 id="42">4.2 资源分布分析</h3>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>内容</th>
+<th>与游戏相关性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>res/drawable*</code></td>
+<td>全部为 <code>abc_*</code>（AppCompat）、<code>notification_*</code> 等系统资源</td>
+<td><strong>无</strong></td>
+</tr>
+<tr>
+<td><code>res/mipmap-*</code></td>
+<td>仅 3 个图标（<code>ic_launcher</code>、<code>ic_launcher_round</code>、<code>ic_launcher_foreground</code>）</td>
+<td><strong>仅图标</strong></td>
+</tr>
+<tr>
+<td><code>res/layout*</code></td>
+<td>AndroidX 系统布局</td>
+<td><strong>无</strong></td>
+</tr>
+<tr>
+<td><code>res/raw</code></td>
+<td><code>com_android_billingclient_*</code></td>
+<td>Billing 配置</td>
+</tr>
+<tr>
+<td><code>assets</code></td>
+<td>仅 dexopt profile</td>
+<td><strong>无</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>重要结论</strong>：除应用图标外，<strong>APK 中不含任何游戏美术资源</strong>。所有游戏画面均在运行时从 CDN 下载。</p>
+</blockquote>
+<h3 id="43">4.3 权限清单</h3>
+<table>
+<thead>
+<tr>
+<th>权限</th>
+<th>类型</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>android.permission.INTERNET</code></td>
+<td>普通</td>
+<td>网络访问（核心）</td>
+</tr>
+<tr>
+<td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+<td>普通</td>
+<td>网络状态检测</td>
+</tr>
+<tr>
+<td><code>android.permission.VIBRATE</code></td>
+<td>普通</td>
+<td>震动反馈（JS 桥 <code>audiovibrate</code>）</td>
+</tr>
+<tr>
+<td><code>com.android.vending.BILLING</code></td>
+<td>普通</td>
+<td><strong>Google Play 内购</strong></td>
+</tr>
+<tr>
+<td><code>com.android.vending.CHECK_LICENSE</code></td>
+<td>普通</td>
+<td><strong>License 校验（PairIP）</strong></td>
+</tr>
+<tr>
+<td><code>com.hao.hun.japan.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td>
+<td>signature</td>
+<td>AndroidX 自动生成</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>权限极简</strong>：无位置、无存储、无相机、无联系人、无电话。这一点与游戏本身的"犯罪题材"形成强烈反差——<strong>它并不需要敏感权限，因为它的一切都在云端完成</strong>。</p>
+</blockquote>
+<h3 id="44">4.4 组件清单</h3>
+<p><strong>Activity（4 个）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>导出</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>com.hao.hun.japan.MainActivity</code></td>
+<td>✅ exported=true</td>
+<td>主入口，LAUNCHER</td>
+</tr>
+<tr>
+<td><code>com.android.billingclient.api.ProxyBillingActivity</code></td>
+<td>❌</td>
+<td>内购代理</td>
+</tr>
+<tr>
+<td><code>com.android.billingclient.api.ProxyBillingActivityV2</code></td>
+<td>❌</td>
+<td>内购代理 V2</td>
+</tr>
+<tr>
+<td><code>com.google.android.gms.common.api.GoogleApiActivity</code></td>
+<td>❌</td>
+<td>GMS 通用</td>
+</tr>
+<tr>
+<td><code>com.pairip.licensecheck.LicenseActivity</code></td>
+<td>❌</td>
+<td><strong>PairIP 授权校验页</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provider（3 个）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>Authority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>androidx.startup.InitializationProvider</code></td>
+<td><code>com.hao.hun.japan.androidx-startup</code></td>
+</tr>
+<tr>
+<td><code>com.pairip.licensecheck.LicenseContentProvider</code></td>
+<td><code>com.hao.hun.japan.com.pairip.licensecheck.LicenseContentProvider</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Service / Receiver</strong>：</p>
+<ul>
+<li><code>com.google.android.datatransport.runtime.backends.TransportBackendDiscovery</code>（Firebase 遥测传输）</li>
+<li><code>com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService</code></li>
+<li><code>com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver</code></li>
+</ul>
+<h3 id="45">4.5 网络与安全配置</h3>
+<p><code>res/xml/network_security_config.xml</code>：</p>
+<pre><code class="language-xml">&lt;network-security-config&gt;
+  &lt;base-config cleartextTrafficPermitted=&quot;true&quot;/&gt;
+&lt;/network-security-config&gt;
+</code></pre>
+<blockquote>
+<p><strong><code>cleartextTrafficPermitted=true</code></strong> 意味着应用允许 HTTP 明文传输。结合游戏 URL 中确实存在 <code>http://hkh2jp.hun333.com/...</code> 这样的明文地址，<strong>用户流量存在被中间人监听的风险</strong>。</p>
+</blockquote>
+<p>另外，manifest 中同时设置了 <code>android:usesCleartextTraffic="true"</code>——双重确认放开明文。</p>
+<hr />
+<h2 id="_5">五、外观与视觉设计</h2>
+<h3 id="51">5.1 应用图标</h3>
+<p>应用图标是整个 APK 中<strong>唯一的自研美术资源</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设计风格</td>
+<td><strong>黑白高对比 + 书法字体</strong></td>
+</tr>
+<tr>
+<td>主体文字</td>
+<td>单个汉字「<strong>混</strong>」</td>
+</tr>
+<tr>
+<td>构图</td>
+<td>上半部白底黑字，下半部黑底白字，形成"分割"效果</td>
+</tr>
+<tr>
+<td>字体</td>
+<td>行书/草书风格毛笔字，笔画飞白明显</td>
+</tr>
+<tr>
+<td>背景</td>
+<td>纯白 → 纯黑横向分界（营造"混"字的双面意象）</td>
+</tr>
+<tr>
+<td>文件格式</td>
+<td>WebP（自适应图标 foreground + 圆形 round 两套）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>图标规格</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>密度</th>
+<th>ic_launcher</th>
+<th>ic_launcher_round</th>
+<th>foreground</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mdpi</td>
+<td>48×48</td>
+<td>48×48</td>
+<td>108×108</td>
+</tr>
+<tr>
+<td>hdpi</td>
+<td>72×72</td>
+<td>72×72</td>
+<td>162×162</td>
+</tr>
+<tr>
+<td>xhdpi</td>
+<td>96×96</td>
+<td>96×96</td>
+<td>216×216</td>
+</tr>
+<tr>
+<td>xxhdpi</td>
+<td>144×144</td>
+<td>144×144</td>
+<td>324×324</td>
+</tr>
+<tr>
+<td>xxxhdpi</td>
+<td>192×192</td>
+<td>192×192</td>
+<td>432×432</td>
+</tr>
+</tbody>
+</table>
+<p><strong>自适应图标配置</strong>（<code>mipmap-anydpi-v26/ic_launcher.xml</code>）：</p>
+<pre><code class="language-xml">&lt;adaptive-icon&gt;
+  &lt;background android:drawable=&quot;@7F07006C&quot;/&gt;
+  &lt;foreground android:drawable=&quot;@7F0C0001&quot;/&gt;
+&lt;/adaptive-icon&gt;
+</code></pre>
+<blockquote>
+<p><strong>设计解读</strong>：极简黑白书法「混」字，不露任何游戏内容，属于高度品牌化的"LOGO 型"图标。黑白分割暗示"亦正亦邪"，与游戏"在黑白两道夹缝求生"的主题高度吻合。这种极简设计在 Google Play 上更易通过审核（避免暴露敏感内容）。</p>
+</blockquote>
+<h3 id="52">5.2 视觉设计推断（基于文案与配置）</h3>
+<p>由于美术资源在云端，视觉风格从文案与配置反推：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>推断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主色调</strong></td>
+<td>黑（<code>[000000]</code>）、白、<strong>血红（<code>[FF0000]</code>）</strong>、<strong>金黄（<code>[FF9912]</code>）</strong>、<strong>紫蓝（<code>[8A2BE2]</code>）</strong></td>
+</tr>
+<tr>
+<td><strong>文字表现</strong></td>
+<td>大量使用 RichText 彩色标记（<code>[FF0000]...[-]</code>），典型港式黑帮题材</td>
+</tr>
+<tr>
+<td><strong>氛围词</strong></td>
+<td>「猛龙过江」「独闯龙潭」「暴尸街头」「刀口舔血」「不眠之街」</td>
+</tr>
+<tr>
+<td><strong>UI 构成</strong></td>
+<td>竖屏、地图热点（天平/银行/黑店图标）、进度条、对话框</td>
+</tr>
+<tr>
+<td><strong>音效</strong></td>
+<td>移动端通过 JS 桥 <code>audiovibrate</code> 触发原生震动 + BGM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>颜色标记语义</strong>（从 <code>word_cn.js</code> 统计）：</p>
+<table>
+<thead>
+<tr>
+<th>色值</th>
+<th>出现语境</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[FF0000]</code> 红</td>
+<td>危险、损失、死亡、警告、领导力下降</td>
+<td>⚠️ 负面</td>
+</tr>
+<tr>
+<td><code>[00FF00]</code> 绿</td>
+<td>获得、成功、离开</td>
+<td>✅ 正面</td>
+</tr>
+<tr>
+<td><code>[FF9912]</code> 橙金</td>
+<td>数字、金额、奖励、提示</td>
+<td>💰 数值</td>
+</tr>
+<tr>
+<td><code>[00AAFF]</code> / <code>[00AAAA]</code> 蓝</td>
+<td>地点、场所、功能入口</td>
+<td>📍 指引</td>
+</tr>
+<tr>
+<td><code>[FF69B4]</code> 粉</td>
+<td>歌舞伎町等"特殊场所"</td>
+<td>🔞 成人</td>
+</tr>
+<tr>
+<td><code>[8A2BE2]</code> 紫</td>
+<td>近战距离</td>
+<td>⚔️ 战斗</td>
+</tr>
+<tr>
+<td><code>[00FFFF]</code> 青</td>
+<td>可点击链接</td>
+<td>🔗 交互</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53">5.3 游戏内文字风格</h3>
+<p>从 2423 条文案可见，游戏语言风格为<strong>港式黑帮片语气 + 东北/网络俚语</strong>：</p>
+<ul>
+<li>「猛龙过江　独闯龙潭」（主标题）</li>
+<li>「去日本混出个人样」（宣传语）</li>
+<li>「你的人被打的屁滚尿流，全军覆没」（失败文案）</li>
+<li>「逗我呢？你钱够吗？」（嘲讽式提示）</li>
+<li>「老子不降」（战斗选项）</li>
+</ul>
+<blockquote>
+<p>这种"痞气 + 幽默"的文案风格是该系列的核心辨识度，也是其在中国港澳台及海外华人圈流行的原因。</p>
+</blockquote>
+<hr />
+<h2 id="_6">六、原生层代码分析</h2>
+<h3 id="61">6.1 代码规模</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dex 文件</td>
+<td>1 个（<code>classes.dex</code>）</td>
+</tr>
+<tr>
+<td>dex 大小</td>
+<td>7,563,816 B（占 APK 的 73.5%）</td>
+</tr>
+<tr>
+<td>自研类</td>
+<td><strong>仅 13 个 Java 文件</strong></td>
+</tr>
+<tr>
+<td>其余</td>
+<td>AndroidX / Firebase / GMS / Billing / PairIP（第三方库）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>自研类清单</strong>：</p>
+<pre><code>com/hao/hun/BillingManager.java          (127 行)
+com/hao/hun/japan/MainActivity.java      (255 行)
+com/hao/hun/japan/SafeWebView.java       (22 行)
+com/hao/hun/japan/R.java                 (自动生成)
+com/hao/js/JsToAndroid.java              (111 行)
+com/hao/js/AndroidToJs.java              (173 行)
+com/hao/stuff/Haodaren.java              (12 行)
+com/util/DeviceUtils.java                (138 行)
+com/util/MD5.java
+com/util/ResizableImageView.java
+com/util/RootCheck.java                  (50 行)
+com/util/RootCheckPlus.java              (217 行)
+com/util/SharedPrefUtil.java
+</code></pre>
+<blockquote>
+<p><strong>关键结论</strong>：自研代码总量 <strong>不足 1100 行</strong>。7.5 MB 的 dex 中 99% 是第三方依赖库（AndroidX、Firebase、Google Play Services、Billing）。<strong>这印证了"空壳"判断</strong>。</p>
+</blockquote>
+<h3 id="62-mainactivity">6.2 MainActivity —— 启动流程</h3>
+<p><code>MainActivity</code> 是唯一入口，核心逻辑：</p>
+<pre><code class="language-java">// 关键常量
+static final String APP_VERSION   = &quot;4&quot;;
+static final String CHANNEL       = &quot;android&quot;;
+static final String baseURL       = &quot;https://h2jp.hun333.com&quot;;
+static final String market_channel = &quot;google_play&quot;;
+
+// 核心：构造首页 URL
+private String createHomeULR() {
+    return &quot;https://h2jp.nbn369.com/jump/jump.html&quot;
+         + &quot;?openid=&quot;      + OPENID
+         + &quot;&amp;channel=android&quot;
+         + &quot;&amp;app_version=4&quot;
+         + &quot;&amp;app_lg=&quot;      + locale.getLanguage()
+         + &quot;&amp;pkname=&quot;      + PKNAME
+         + &quot;&amp;mk=&quot;          + market_channel        // google_play
+         + &quot;&amp;lg_sc=&quot;       + locale.getScript()
+         + &quot;&amp;lg_cr=&quot;       + locale.getCountry()
+         + &quot;&amp;epv=jp&quot;                               // 版本：日本
+         + &quot;&amp;cac=&quot;         + DeviceUtils.getRandomInt(0, 99999999);
+}
+</code></pre>
+<p><strong>流程</strong>：</p>
+<pre><code>onCreate()
+  ├─ 初始化 BillingManager
+  ├─ 创建 SafeWebView
+  ├─ WebSettings 配置：
+  │    ├─ setJavaScriptEnabled(true)
+  │    ├─ setDomStorageEnabled(true)
+  │    ├─ setAllowFileAccess(true)
+  │    ├─ setMediaPlaybackRequiresUserGesture(false)  // 允许媒体自动播放
+  │    └─ ...
+  ├─ addJavascriptInterface(new JsToAndroid(), &quot;jsbridge_android&quot;)
+  ├─ 注入 AndroidToJs（供 JS 调用）
+  ├─ 加载 createHomeULR()
+  └─ 显示启动流程
+</code></pre>
+<p><strong>WebView 设置要点</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>设置</th>
+<th>值</th>
+<th>风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JavaScript</td>
+<td>✅ 启用</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>DOM Storage</td>
+<td>✅ 启用</td>
+<td>存 openid 等</td>
+</tr>
+<tr>
+<td>File Access</td>
+<td>✅ 启用</td>
+<td>⚠️ 允许 JS 访问本地文件</td>
+</tr>
+<tr>
+<td>Media 自动播放</td>
+<td>✅ 允许</td>
+<td>无需用户手势</td>
+</tr>
+<tr>
+<td>明文流量</td>
+<td>✅ 允许</td>
+<td>⚠️ HTTP 可用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63-safewebview-22">6.3 SafeWebView —— 一个 22 行的"补丁类"</h3>
+<pre><code class="language-java">public class SafeWebView extends WebView {
+    @Override
+    public void setInitialScale(int scaleInPercent) {
+        // 空实现——屏蔽缩放设置
+    }
+    // 可能还有其它被屏蔽的方法
+}
+</code></pre>
+<blockquote>
+<p><strong>设计意图</strong>：某些国产 ROM 或 X5 内核会错误处理 <code>setInitialScale</code>，导致页面排版错乱。通过继承 WebView 并覆写该方法为空，规避兼容性问题。这是典型的"踩坑后打的补丁"。</p>
+</blockquote>
+<h3 id="64-haodaren">6.4 Haodaren —— 埋下的"签名彩蛋"</h3>
+<pre><code class="language-java">public class Haodaren {
+    public static String bbc = &quot;bbc&quot;;
+    public void hello() { ... }
+    public String sayMyName() { ... }
+}
+</code></pre>
+<blockquote>
+<p>一个只有 12 行的空类，类名直译是「<strong>好大人</strong>」（开发者自嘲或致敬）。疑似开发者留的标记类，无功能作用。</p>
+</blockquote>
+<h3 id="65-deviceutils">6.5 DeviceUtils —— 设备指纹</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>实现</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getUniqueId()</code></td>
+<td><code>MD5(android_id + Build.SERIAL)</code></td>
+<td><strong>设备唯一标识</strong></td>
+</tr>
+<tr>
+<td><code>getPkName()</code></td>
+<td>返回包名</td>
+<td>上报</td>
+</tr>
+<tr>
+<td><code>vibrate()</code></td>
+<td><code>Vibrator.vibrate()</code></td>
+<td>JS 桥震动</td>
+</tr>
+<tr>
+<td><code>openPlayStoreForReview()</code></td>
+<td>跳转 Google Play 评价页</td>
+<td><strong>引导好评</strong></td>
+</tr>
+<tr>
+<td><code>getSystemMemory()</code></td>
+<td>读 <code>/proc/meminfo</code></td>
+<td>性能适配</td>
+</tr>
+<tr>
+<td><code>getAppMaxMemory()</code></td>
+<td><code>Runtime.maxMemory()</code></td>
+<td>内存上限</td>
+</tr>
+<tr>
+<td><code>getAppTotalMemory()</code></td>
+<td><code>Runtime.totalMemory()</code></td>
+<td>已分配内存</td>
+</tr>
+<tr>
+<td><code>getAppFreeMemory()</code></td>
+<td><code>Runtime.freeMemory()</code></td>
+<td>空闲内存</td>
+</tr>
+<tr>
+<td><code>getRandomInt(min, max)</code></td>
+<td>随机数</td>
+<td>生成 <code>cac</code> 参数（缓存击穿）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>设备指纹含义</strong>：
+- <code>android_id</code>：设备级唯一（应用签名相关，重置系统会变）
+- <code>Build.SERIAL</code>：硬件序列号（Android 10+ 需权限，通常返回 "unknown"）
+- 组合哈希后作为设备 ID，<strong>用于防止刷小号、封号追踪</strong></p>
+<hr />
+<h2 id="js">七、JS 桥接机制（核心）</h2>
+<p>这是整个应用<strong>最核心、最有价值的代码</strong>——它是原生能力与 H5 游戏之间的唯一通道。</p>
+<h3 id="71">7.1 通道总览</h3>
+<pre><code>         ┌──────────────────────────────────────┐
+         │            H5 游戏 (JS)               │
+         └──────────────────────────────────────┘
+              │                        ▲
+   ① JS 主动调用 │                        │ ② Android 主动回调
+              ▼                        │
+   ┌────────────────────┐    ┌──────────────────────┐
+   │  JsToAndroid        │    │  AndroidToJs          │
+   │  (JS → Native)      │    │  (Native → JS)        │
+   │  入口: callbackJs() │    │  evaluateJavascript() │
+   │  对象: jsbridge_android                     │
+   └────────────────────┘    └──────────────────────┘
+</code></pre>
+<h3 id="72-jstoandroid-js">7.2 JsToAndroid —— JS 调用原生（上行）</h3>
+<p><strong>入口方法</strong>：</p>
+<pre><code class="language-java">@JavascriptInterface
+public String callbackJs(String str)
+</code></pre>
+<p><strong>协议格式</strong>：使用 <code>&amp;</code> 分隔的 <code>key=value</code> 字符串，形如：</p>
+<pre><code>命令名&amp;参数1=值1&amp;参数2=值2&amp;...
+</code></pre>
+<p><strong>完整指令表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+<th>实现细节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>outlink</code></td>
+<td>在系统浏览器打开外链</td>
+<td><code>Intent.ACTION_VIEW</code></td>
+</tr>
+<tr>
+<td><code>googleplay</code></td>
+<td><strong>触发 Google Play 内购</strong></td>
+<td><code>billingManager.purchase(pid)</code></td>
+</tr>
+<tr>
+<td><code>googleplayReview</code></td>
+<td>跳转 Google Play 评价页</td>
+<td><code>openPlayStoreForReview()</code></td>
+</tr>
+<tr>
+<td><code>saveKY</code></td>
+<td>保存激活码/卡钥到本地</td>
+<td>SharedPreferences</td>
+</tr>
+<tr>
+<td><code>deleteKY</code></td>
+<td>删除卡钥</td>
+<td>SharedPreferences</td>
+</tr>
+<tr>
+<td><code>getKY</code></td>
+<td>读取卡钥</td>
+<td>SharedPreferences</td>
+</tr>
+<tr>
+<td><code>audiovibrate</code></td>
+<td><strong>震动反馈</strong></td>
+<td><code>DeviceUtils.vibrate()</code></td>
+</tr>
+<tr>
+<td><code>base_url</code></td>
+<td>获取后端根地址</td>
+<td>返回 <code>baseURL</code></td>
+</tr>
+<tr>
+<td><code>reset_label_text</code></td>
+<td>重置按钮文字</td>
+<td>UI 调整</td>
+</tr>
+<tr>
+<td><code>remove_splash</code></td>
+<td>移除启动闪屏</td>
+<td>UI 调整</td>
+</tr>
+<tr>
+<td><code>show_splash</code></td>
+<td>显示闪屏</td>
+<td>UI 调整</td>
+</tr>
+<tr>
+<td><code>remove_reloadbutton</code></td>
+<td>移除刷新按钮</td>
+<td>UI 调整</td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td>获取设备 UUID</td>
+<td><code>DeviceUtils.getUniqueId()</code></td>
+</tr>
+<tr>
+<td><code>getSystemMemory</code></td>
+<td>系统内存</td>
+<td>性能适配</td>
+</tr>
+<tr>
+<td><code>getAppMaxMemory</code></td>
+<td>应用最大内存</td>
+<td>性能适配</td>
+</tr>
+<tr>
+<td><code>getAppTotalMemory</code></td>
+<td>应用已分配内存</td>
+<td>性能适配</td>
+</tr>
+<tr>
+<td><code>getAppFreeMemory</code></td>
+<td>应用空闲内存</td>
+<td>性能适配</td>
+</tr>
+<tr>
+<td><code>checkRoot</code></td>
+<td><strong>Root 检测</strong></td>
+<td><code>RootCheck</code> / <code>RootCheckPlus</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>静态状态字段</strong>（原生 ↔ JS 共享）：</p>
+<pre><code class="language-java">public static String lastHunCoin  = &quot;0&quot;;   // 上一次魂币数量
+public static String lastPayMoney = &quot;0&quot;;   // 上一次支付金额
+public static String out_trade_no = &quot;&quot;;    // 订单号
+</code></pre>
+<blockquote>
+<p><strong><code>checkRoot</code> 的存在</strong>：说明游戏会<strong>检测设备是否 Root</strong>，可能用于反作弊（防止内存修改器刷魂币）或做风控标记。</p>
+</blockquote>
+<h3 id="73-androidtojs-js">7.3 AndroidToJs —— 原生回调 JS（下行）</h3>
+<p>原生层通过 <code>evaluateJavascript()</code> 主动调用 H5 中的回调函数：</p>
+<p><strong>调用方法（Java → 触发 JS）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>Java 方法</th>
+<th>触发场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>callAlert(msg)</code></td>
+<td>弹出提示</td>
+</tr>
+<tr>
+<td><code>callGooglePay(pid, ...)</code></td>
+<td>发起 Google 支付</td>
+</tr>
+<tr>
+<td><code>callWxPay(...)</code></td>
+<td>发起微信支付</td>
+</tr>
+<tr>
+<td><code>callAlipay(...)</code></td>
+<td>发起支付宝支付</td>
+</tr>
+<tr>
+<td><code>callShare_QQ_Result(...)</code></td>
+<td>QQ 分享结果</td>
+</tr>
+<tr>
+<td><code>openShowLoading()</code></td>
+<td>显示加载动画</td>
+</tr>
+<tr>
+<td><code>closeShowLoading()</code></td>
+<td>关闭加载动画</td>
+</tr>
+<tr>
+<td><code>openAccessibility()</code></td>
+<td><strong>跳转无障碍设置页</strong> ⚠️</td>
+</tr>
+</tbody>
+</table>
+<p><strong>JS 侧回调函数（H5 必须实现）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>JS 回调</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fromAndroid_GooglePlayResult(...)</code></td>
+<td>Google Play 支付结果</td>
+</tr>
+<tr>
+<td><code>fromAndroid_WxPayResult(...)</code></td>
+<td>微信支付结果</td>
+</tr>
+<tr>
+<td><code>fromAndroid_AlipayResult(...)</code></td>
+<td>支付宝支付结果</td>
+</tr>
+<tr>
+<td><code>fromAndroid_ShareQQResult(...)</code></td>
+<td>QQ 分享结果</td>
+</tr>
+<tr>
+<td><code>fromAppOpenShowLoading()</code></td>
+<td>打开 Loading</td>
+</tr>
+<tr>
+<td><code>fromAppCloseShowLoading()</code></td>
+<td>关闭 Loading</td>
+</tr>
+<tr>
+<td><code>fromAppOpenAccessibility()</code></td>
+<td>打开无障碍</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⚠️ <code>openAccessibility()</code> 值得警惕</strong>：引导用户开启"无障碍服务"是 Android 上权限最高、最危险的操作之一。虽然在当前 <code>jsbridge_android</code> 指令表与 manifest 中<strong>未发现直接实现</strong>（可能为预留接口或已废弃），但其存在说明<strong>代码库曾计划或部分具备该能力</strong>。若后续版本启用，将具备"模拟点击、读取屏幕内容"的能力。</p>
+</blockquote>
+<h3 id="74-billingmanager">7.4 BillingManager —— 内购实现</h3>
+<p><strong>依赖</strong>：Google Play Billing Library <strong>7.1.1</strong></p>
+<p><strong>接口</strong>：</p>
+<pre><code class="language-java">public interface BillingListener {
+    void onRewardGiven(String sku, ...);    // 发货成功
+    void onPurchaseCancelled();             // 用户取消
+    void onPurchaseFailed(String reason);   // 支付失败
+}
+</code></pre>
+<p><strong>流程</strong>：</p>
+<pre><code>purchase(sku)
+  └─► querySkuDetailsAsync()      // 查询商品详情
+        └─► launchBillingFlow()   // 拉起 Google Play 支付
+              └─► onPurchasesUpdated()
+                    ├─ onRewardGiven   → 调用 JS fromAndroid_GooglePlayResult 发货
+                    └─ consumeAsync()  → 消耗掉（允许重复购买）
+</code></pre>
+<blockquote>
+<p><strong><code>consumeAsync</code> 消耗型商品</strong>：说明魂币是<strong>可重复购买的消耗品</strong>（氪金核心）。</p>
+</blockquote>
+<p><strong>Billing 配置</strong>（<code>res/raw/</code> + <code>billing.properties</code>）：</p>
+<pre><code>version=7.1.1
+client=billing
+billing_client=7.1.1
+</code></pre>
+<h3 id="75">7.5 内购商品线索</h3>
+<p>从 <code>word_cn.js</code> 中的黑金兑换文案可反推商品 SKU 设计：</p>
+<pre><code>199WWW_HUNCOIN_WWW 换 19999黑金
+299WWW_HUNCOIN_WWW 换 29999黑金
+399WWW_HUNCOIN_WWW 换 39999黑金
+499WWW_HUNCOIN_WWW 换 49999黑金
+</code></pre>
+<blockquote>
+<p>暗示魂币商品档次约为 <strong>199 / 299 / 399 / 499 日元</strong>（日本区定价），对应 19999/29999/39999/49999 黑金。</p>
+</blockquote>
+<hr />
+<h2 id="h5">八、游戏内容层：H5 逆向</h2>
+<h3 id="81">8.1 内容获取方式</h3>
+<p>由于 APK 无内容，我从<strong>依然存活的 CDN</strong> 拉取了完整游戏逻辑：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>大小</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>word_cn.js</code></td>
+<td>262,599 B（原文件）/ 188KB（去重后）</td>
+<td><code>hun2-cn.oss-cn-hangzhou.aliyuncs.com/static/js/</code></td>
+</tr>
+<tr>
+<td><code>hun_min.js</code></td>
+<td>2,136,759 B（2.04 MB）</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><code>version.json</code></td>
+<td>1,421 B</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><code>hun_japan.html</code></td>
+<td>—</td>
+<td><code>h2jp.hun333.com/static/html/</code></td>
+</tr>
+<tr>
+<td><code>jump.html</code></td>
+<td>—</td>
+<td><code>h2jp.nbn369.com/jump/</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="82">8.2 加载链路</h3>
+<pre><code>APK 启动
+  └─► https://h2jp.nbn369.com/jump/jump.html?openid=...&amp;epv=jp&amp;cac=...
+        │
+        ├─ 判断平台/版本
+        ├─ 解析 openid（如无则从 localStorage 读，并支持 rew_openid=y 重写）
+        └─► https://h2jp.nbn369.com/hun2android/static/html/hun_japan_android.html
+              │
+              ├─ 读取 version.json 获取版本号
+              ├─ getResPath_CORS_Web() 确定资源服务器
+              └─► 动态加载：
+                    ├─ word_{lang}.js?v=39396      (文案)
+                    └─ hun_min.js?v=39396          (核心逻辑)
+</code></pre>
+<p><strong>资源服务器选择逻辑</strong>（<code>getResPath_CORS_Web()</code>）：</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>服务器</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>国内</td>
+<td><code>hun2-cn.oss-cn-hangzhou.aliyuncs.com</code></td>
+<td>阿里云杭州 OSS</td>
+</tr>
+<tr>
+<td>国际</td>
+<td><code>hun2-en.oss-accelerate.aliyuncs.com</code></td>
+<td>阿里云全球加速</td>
+</tr>
+<tr>
+<td>备用</td>
+<td><code>hun2cos-1300260944.file.myqcloud.com</code></td>
+<td>腾讯云 COS</td>
+</tr>
+<tr>
+<td>备用</td>
+<td><code>h2jpenoss.nbn369.com</code></td>
+<td>自建</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注释中明确写道：<code>&lt;!--【重要】腾讯云的CDN，由于不稳定，所以废弃 --&gt;</code> —— 开发者曾因腾讯云 CDN 不稳定而切换到阿里云。</p>
+</blockquote>
+<h3 id="83-word_cnjs">8.3 word_cn.js —— 文案数据库</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件大小</td>
+<td>262,599 B</td>
+</tr>
+<tr>
+<td>变量总数</td>
+<td>2,423</td>
+</tr>
+<tr>
+<td>数组数量</td>
+<td>802（<code>new Array()</code>）</td>
+</tr>
+<tr>
+<td>语言</td>
+<td>中文（简体）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>变量前缀分布</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>数量</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WORD_</code></td>
+<td>781</td>
+<td>单字/词组（核心名词库）</td>
+<td><code>WORD_CREDITOR = "债主"</code></td>
+</tr>
+<tr>
+<td><code>ARR_</code></td>
+<td>736</td>
+<td>随机文案数组（同一情境多套）</td>
+<td><code>ARR_MSG_BASE_DEAD</code></td>
+</tr>
+<tr>
+<td><code>TITLE_</code></td>
+<td>306</td>
+<td>界面标题/弹窗标题</td>
+<td><code>TITLE_GAME_INTRO = "猛龙过江　独闯龙潭"</code></td>
+</tr>
+<tr>
+<td><code>MSG_</code></td>
+<td>233</td>
+<td>系统消息/提示</td>
+<td><code>MSG_ALERT_INTRO = "该属性反映你在本城市被通缉的指数..."</code></td>
+</tr>
+<tr>
+<td><code>LABEL_</code></td>
+<td>93</td>
+<td>UI 标签/按钮文字</td>
+<td><code>LABEL_CLUB_NAME = "社团"</code></td>
+</tr>
+<tr>
+<td><code>BTN_</code></td>
+<td>63</td>
+<td>按钮</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>NAME_</code></td>
+<td>44</td>
+<td>地点/属性名称</td>
+<td><code>NAME_HS_CASINO = "娱乐城"</code></td>
+</tr>
+<tr>
+<td><code>CONTENT_</code></td>
+<td>17</td>
+<td>长文本说明</td>
+<td><code>CONTENT_GAME_INTOR1 = "你孤身一人跑到日本..."</code></td>
+</tr>
+<tr>
+<td><code>ACTOR_</code></td>
+<td>17</td>
+<td>部队/兵种相关</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>CAR_</code></td>
+<td>11</td>
+<td>车辆相关</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>FLOW_</code></td>
+<td>9</td>
+<td>流程相关</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>MISSION</code></td>
+<td>8×N</td>
+<td>任务 1~10 定义</td>
+<td><code>MISSION1_NAME</code> … <code>MISSION10_NAME</code></td>
+</tr>
+<tr>
+<td><code>SKILL_</code></td>
+<td>6</td>
+<td>技能</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>SCHOOL_</code></td>
+<td>6</td>
+<td>培训学校</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>ARR_</code> 的设计巧思</strong>：同一情境准备了 <strong>2~6 套随机文案</strong>，避免重复感。例如：</p>
+<pre><code class="language-javascript">ARR_MSG_BASE_DEAD = [
+  &quot;XXX_NAME_XXX[FF0000]挂了[-]&quot;,
+  &quot;XXX_NAME_XXX[FF0000]死了[-]&quot;,
+  &quot;XXX_NAME_XXX[FF0000]死掉了[-]&quot;
+];
+</code></pre>
+<blockquote>
+<p>这种"文案随机池"是提升文字游戏沉浸感的关键工程手段。</p>
+</blockquote>
+<p><strong>占位符系统</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>占位符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>XXX_NAME_XXX</code> / <code>XXX_ACTOR_XXX</code></td>
+<td>人名 / 单位名</td>
+</tr>
+<tr>
+<td><code>XXX_CITY_XXX</code> / <code>XXX_PLACE_XXX</code></td>
+<td>地点</td>
+</tr>
+<tr>
+<td><code>XXX_CAR_XXX</code></td>
+<td>车辆</td>
+</tr>
+<tr>
+<td><code>XXX_MONEY_XXX</code> / <code>XXX_CASH_XXX</code></td>
+<td>现金</td>
+</tr>
+<tr>
+<td><code>XXX_HUNCOIN_XXX</code> / <code>WWW_HUNCOIN_WWW</code></td>
+<td>魂币（内购货币）</td>
+</tr>
+<tr>
+<td><code>XXX_BG_XXX</code></td>
+<td>黑金（社团货币）</td>
+</tr>
+<tr>
+<td><code>XXX_NUM_XXX</code> / <code>XXX_VALUE_XXX</code></td>
+<td>数值</td>
+</tr>
+<tr>
+<td><code>$NEW_LINE$</code></td>
+<td>换行</td>
+</tr>
+<tr>
+<td><code>[RRGGBB]...[-]</code></td>
+<td>彩色文字标记</td>
+</tr>
+</tbody>
+</table>
+<h3 id="84-hun_minjs">8.4 hun_min.js —— 游戏核心逻辑</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件大小</td>
+<td>2,136,759 B（2.04 MB）</td>
+</tr>
+<tr>
+<td>函数数量</td>
+<td>6,241 个</td>
+</tr>
+<tr>
+<td>构造函数/类</td>
+<td>2,349 个（<code>X = function(){}</code> 形式）</td>
+</tr>
+<tr>
+<td>唯一域名</td>
+<td>27 个</td>
+</tr>
+<tr>
+<td>唯一 URL</td>
+<td>198 个</td>
+</tr>
+<tr>
+<td>代码风格</td>
+<td><strong>Google Closure Compiler 深度压缩混淆</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心技术检测结果</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>检测项</th>
+<th>结果</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LayaAir</td>
+<td>0</td>
+<td>❌ 非 LayaAir</td>
+</tr>
+<tr>
+<td>Cocos / CocosCreator</td>
+<td>0</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Egret</td>
+<td>0</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>CreateJS</td>
+<td>0</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>PIXI / Phaser / Three</td>
+<td>0</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><code>canvas</code></td>
+<td>115</td>
+<td>✅ Canvas 渲染</td>
+</tr>
+<tr>
+<td><code>drawImage</code></td>
+<td>33</td>
+<td>✅ 位图绘制</td>
+</tr>
+<tr>
+<td><code>createElement</code></td>
+<td>22</td>
+<td>✅ DOM 操作</td>
+</tr>
+<tr>
+<td><code>style.</code></td>
+<td>110</td>
+<td>✅ CSS 样式控制</td>
+</tr>
+<tr>
+<td><code>requestAnimationFrame</code></td>
+<td>0</td>
+<td>⚠️ 不使用 RAF</td>
+</tr>
+<tr>
+<td><code>webgl</code></td>
+<td>0</td>
+<td>❌ 无 WebGL</td>
+</tr>
+<tr>
+<td><strong>自研类</strong></td>
+<td>2349</td>
+<td>✅ <strong>完全自研框架</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>重要更正</strong>：早期分析曾误判为 LayaAir 引擎（因统计方式失误）。经 5 种引擎关键词精确比对，<strong>确认为自研 Canvas + DOM 混合渲染框架</strong>，无任何商业引擎痕迹。</p>
+<p>这也解释了为什么 <code>word_cn.js</code> 会和 <code>hun_min.js</code> 分离——作者自建了一套完整的「文案 / 逻辑分离」体系。</p>
+</blockquote>
+<p><strong>核心类命名（从混淆代码中提取）</strong>：</p>
+<pre><code>MainManager          主管理器
+GameManager          游戏管理器
+PlayerGroup (375)    玩家团队
+GameLevel (124)      游戏关卡
+GameBoard            游戏面板
+GameRoom             游戏房间
+GameType             游戏类型
+GameEmulator         模拟器
+GameEmulatorManager  模拟器管理器
+PlayerClub (28)      玩家社团
+PlayerHunCoinItem    魂币条目
+MainBGM              主背景音乐
+PlayerHead           玩家头像
+GameInfo / GameInfos 游戏信息
+GameOver             游戏结束
+GameTimes            游戏次数
+GameEnv              游戏环境
+GameData             游戏数据
+PlayerDead           玩家死亡
+</code></pre>
+<blockquote>
+<p>从类名密度看，<code>PlayerGroup</code>（375 次）是<strong>最核心的类</strong>——印证了"团队作战"是游戏主轴。</p>
+</blockquote>
+<hr />
+<h2 id="_7">九、玩法系统全解析</h2>
+<h3 id="91">9.1 世界观与主线</h3>
+<p><strong>开篇剧情</strong>（<code>CONTENT_GAME_INTOR1</code>）：</p>
+<blockquote>
+<p>「你孤身一人跑到日本，赎回了被黑帮控制的留学女友。
+　条件是在约定期限内还清一切债务，否则等待你的只有暴尸街头。」</p>
+</blockquote>
+<p><strong>第二章</strong>（<code>CONTENT_GAME_INTOR2</code>）：</p>
+<blockquote>
+<p>「给女友买完回国飞机票后，你兜里没剩几个钢镚。
+　护照被债主扣押你无法找到工作。
+　为了还债你只能干一些不上道的勾当。
+　选个落脚地开始还债吧！」</p>
+</blockquote>
+<p><strong>主标题</strong>：<code>猛龙过江　独闯龙潭</code></p>
+<p><strong>核心循环</strong>：</p>
+<pre><code>借钱（被债主控制）
+   ↓
+找落脚城市
+   ↓
+拉人手 → 做任务（犯罪）→ 赚钱
+   ↑                          ↓
+   └──────── 还债 ←────────────┘
+              ↓
+       债务清偿 → 夺回护照 → 结局
+</code></pre>
+<p><strong>通关条件</strong>：还清债务 + 拿回护照。若逾期未还，则"暴尸街头"（Game Over）。</p>
+<h3 id="92">9.2 核心属性系统</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>领导力 (Leadership)</strong></td>
+<td>决定可招募手下上限；影响任务额外行动值</td>
+<td>≤50 点靠实战获得；&gt;50 点每日 -1，需去歌舞伎町提升</td>
+</tr>
+<tr>
+<td><strong>通缉指数 (Alert)</strong></td>
+<td>被警方围捕概率</td>
+<td>越高越危险，可在"天平"热点贿赂警察降低</td>
+</tr>
+<tr>
+<td><strong>道值 (DAO)</strong></td>
+<td><strong>排行榜排名依据</strong></td>
+<td>资产型数值，用于全服排行</td>
+</tr>
+<tr>
+<td><strong>生命值 (HP)</strong></td>
+<td>单位存活</td>
+<td>诊所可恢复</td>
+</tr>
+<tr>
+<td><strong>现金 (Cash)</strong></td>
+<td>游戏内通用货币</td>
+<td>买装备、情报、贿赂</td>
+</tr>
+<tr>
+<td><strong>魂币 (HunCoin)</strong></td>
+<td><strong>内购货币</strong></td>
+<td>现实货币兑换</td>
+</tr>
+<tr>
+<td><strong>黑金 (BG)</strong></td>
+<td>社团货币</td>
+<td>抢地盘、打探情报</td>
+</tr>
+</tbody>
+</table>
+<h3 id="93">9.3 八大技能系统</h3>
+<table>
+<thead>
+<tr>
+<th>技能</th>
+<th>影响的任务</th>
+<th>训练地点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>开锁</strong></td>
+<td>入室、盗车、终极任务</td>
+<td>开锁技巧</td>
+</tr>
+<tr>
+<td><strong>电器</strong></td>
+<td>盗车、终极任务</td>
+<td>电工技校</td>
+</tr>
+<tr>
+<td><strong>射击</strong></td>
+<td>打劫、劫持、打斗、劫狱、终极任务</td>
+<td>射击特训</td>
+</tr>
+<tr>
+<td><strong>演技</strong></td>
+<td>行窃、打劫、劫持、终极任务</td>
+<td>表演专业</td>
+</tr>
+<tr>
+<td><strong>车技</strong></td>
+<td>飙车、逃逸</td>
+<td>汽修厂练习</td>
+</tr>
+<tr>
+<td><strong>隐匿</strong></td>
+<td>行窃、入室、盗车、终极任务</td>
+<td>间谍速成</td>
+</tr>
+<tr>
+<td><strong>领导力</strong></td>
+<td>招募人数、行动值</td>
+<td>歌舞伎町团建</td>
+</tr>
+<tr>
+<td><strong>生命</strong></td>
+<td>生存能力</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>技能上限</strong>：培训最多到 <strong>30 点</strong>；高技能是装备高级工具的前置条件。</p>
+<blockquote>
+<p><strong>重要惩罚机制</strong>：
+- 「任务中退出游戏，将会扣除团队成员各技能值 <strong>10~15 点</strong>」
+- 「未上传任务结果将视为强制退出，会扣除角色相应的技能值」</p>
+<p>这是<strong>防作弊</strong>设计——防止玩家看到任务失败就强退。</p>
+</blockquote>
+<h3 id="94">9.4 犯罪任务体系</h3>
+<p><strong>七类犯罪/任务类型</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>关键机制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>入室洗劫</strong></td>
+<td>打劫住宅/银行</td>
+<td>需要开锁工具、"划玻璃"工具</td>
+</tr>
+<tr>
+<td><strong>盗车</strong></td>
+<td>偷窃车辆</td>
+<td>需要破解防盗锁止系统、解除 GPS 追踪</td>
+</tr>
+<tr>
+<td><strong>打劫</strong></td>
+<td>抢劫银行/住宅（<code>打劫XXX_HOUSE_XXX</code>）</td>
+<td>银行"套个头套举把枪，进去容易出来难"</td>
+</tr>
+<tr>
+<td><strong>劫持</strong></td>
+<td>劫持车辆</td>
+<td><strong>高警戒值，易被警察围剿，风险高</strong></td>
+</tr>
+<tr>
+<td><strong>劫狱</strong></td>
+<td>营救被关押的同伴</td>
+<td>需击败警察或匪徒守卫</td>
+</tr>
+<tr>
+<td><strong>行窃</strong></td>
+<td>扒窃/偷窃物品</td>
+<td>依赖演技 + 隐匿</td>
+</tr>
+<tr>
+<td><strong>偷飞船</strong></td>
+<td><strong>终极任务</strong>（美国版）</td>
+<td>需购买情报 + 雇佣飞船驾驶员</td>
+</tr>
+</tbody>
+</table>
+<p><strong>终极任务（日本版）—— 炸毁宙斯盾</strong>：</p>
+<p>这是一个<strong>具有地缘政治色彩的终局任务</strong>：</p>
+<pre><code>任务链：
+  去军事基地
+    → 进入库房
+    → 地毯式搜寻宙斯盾系统（可能需要多次搜寻）
+    → 遇到库管（NPC 提示系统位置）
+    → 跳上宙斯盾控制平台
+    → 装备指定工具（不然提示&quot;别扯淡了！要装备XXX_TOOLS_XXX才能炸宙斯盾&quot;）
+    → 启动炸弹
+    → 出现核弹头警告：&quot;你在发现宙斯盾导弹上印着&quot;nuclear warhead&quot;，原来是核弹头。
+       架子上还有几十枚。启动炸弹意味着你也必死无疑&quot;
+    → 成功炸毁 → 结局
+</code></pre>
+<p>任务名称：<code>阻止日本部署路基宙斯盾</code> / <code>破坏宙斯盾？</code>
+地点提示：<code>去军事基地炸毁宙斯盾？\n这可是有去无回啊~~~</code></p>
+<blockquote>
+<p><strong>⚠️ 该内容具有明显的政治敏感性</strong>：以"阻止某国部署陆基宙斯盾系统"为核心终局目标，属于<strong>迎合特定民族主义情绪的游戏设计</strong>。在多数应用商店属高风险内容。</p>
+</blockquote>
+<p><strong>美国版终局——偷窃曲速飞船</strong>：</p>
+<pre><code>任务链：
+  支付现金购买情报 + 雇佣飞船驾驶员
+    → 冲入库房搜寻曲速飞船
+    → 找到紧闭大门（无钥匙孔）
+    → 等待驾驶员到位
+    → 冲上飞船
+    → 驾驶员输入目的地&quot;维纳斯城&quot;
+    → 飞船瞬间到达！
+</code></pre>
+<h3 id="95">9.5 战斗机制</h3>
+<p><strong>回合制战术战斗</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>机制</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>回合制</strong></td>
+<td>"回合执行中，暂时无法调整装备"</td>
+</tr>
+<tr>
+<td><strong>行动值</strong></td>
+<td>每回合可行动点数，受领导力加成</td>
+</tr>
+<tr>
+<td><strong>距离系统</strong></td>
+<td>近战/远程区分，用进度条表示</td>
+</tr>
+<tr>
+<td><strong>近战命中率</strong></td>
+<td>近战时有命中判定</td>
+</tr>
+<tr>
+<td><strong>射击限制</strong></td>
+<td>"距离太远，没有装备枪支，无法攻击"</td>
+</tr>
+<tr>
+<td><strong>投降机制</strong></td>
+<td>可选择"我投降"或"老子不降"</td>
+</tr>
+<tr>
+<td><strong>逃跑机制</strong></td>
+<td>可"逃离战场"（但会损失收益）</td>
+</tr>
+<tr>
+<td><strong>增援机制</strong></td>
+<td>警报响起后会有警察/保安增援</td>
+</tr>
+</tbody>
+</table>
+<p><strong>距离进度条</strong>：</p>
+<pre><code>[FF3F00]红色进度条[-] → 敌人与玩家的距离（普通任务）
+[00AAFF]蓝色进度条   → 敌人超出玩家的距离（赛车任务）
+[8A2BE2]紫色进度条   → 当前处于近战距离
+</code></pre>
+<p><strong>战斗中的敌人类型</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>敌人</th>
+<th>出现场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>保安 (Security)</td>
+<td>私人场所</td>
+</tr>
+<tr>
+<td>警官 (Police)</td>
+<td>通缉度高时</td>
+</tr>
+<tr>
+<td>保镖 (Bodyguard)</td>
+<td>大佬身边，"各个凶神恶煞"</td>
+</tr>
+<tr>
+<td>追债帮派</td>
+<td>债务逾期</td>
+</tr>
+<tr>
+<td>敌对方社团</td>
+<td>PvP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="96">9.6 飙车系统</h3>
+<table>
+<thead>
+<tr>
+<th>机制</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>赛车场</td>
+<td>地图热点「飙车场」</td>
+</tr>
+<tr>
+<td>车辆参数</td>
+<td>核载 / 级别 / 成色 / 安全 / 速度 / 货载</td>
+</tr>
+<tr>
+<td>竞速博彩</td>
+<td>「竞速博车」「竞速博钱」</td>
+</tr>
+<tr>
+<td>车技判定</td>
+<td>「当前车技失误概率: XXX%」</td>
+</tr>
+<tr>
+<td>高倍率加成</td>
+<td>「如脱缰的野马般极速飞车，速度增值 X 倍」</td>
+</tr>
+</tbody>
+</table>
+<p><strong>车辆参数详解</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>核载</strong></td>
+<td>载人数（用"人"作单位）</td>
+</tr>
+<tr>
+<td><strong>级别</strong></td>
+<td>车辆等级</td>
+</tr>
+<tr>
+<td><strong>成色</strong></td>
+<td>车况（汽修厂可恢复，满值可离厂）</td>
+</tr>
+<tr>
+<td><strong>安全</strong></td>
+<td>「车辆安全值越高，越能保护车内人员的安全」</td>
+</tr>
+<tr>
+<td><strong>速度</strong></td>
+<td>竞速 &amp; 逃逸能力</td>
+</tr>
+<tr>
+<td><strong>货载</strong></td>
+<td>「货载量越大，跑商就能拉更多的货物」</td>
+</tr>
+</tbody>
+</table>
+<p><strong>特殊车辆</strong>：超跑 + 货车（<code>CAR_AND_TRUCK</code>），支持跑商贸易。</p>
+<h3 id="97">9.7 社团（帮派）系统 —— 社交核心</h3>
+<p>这是游戏的<strong>中后期核心玩法</strong>与<strong>社交/微交易驱动</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>创建社团</strong></td>
+<td>免费，创建即奖励魂币（<code>创建社团领取魂币</code>）</td>
+</tr>
+<tr>
+<td><strong>社团势力</strong></td>
+<td>战力值</td>
+</tr>
+<tr>
+<td><strong>社团排行榜</strong></td>
+<td>全服竞争</td>
+</tr>
+<tr>
+<td><strong>地盘 (Land)</strong></td>
+<td>占有地盘，每 N 秒上缴黑金</td>
+</tr>
+<tr>
+<td><strong>黑金 (BG)</strong></td>
+<td>社团货币，用于打探、升级、抢地盘</td>
+</tr>
+<tr>
+<td><strong>打探</strong></td>
+<td>花黑金侦察敌方社团守军情况</td>
+</tr>
+<tr>
+<td><strong>抢夺地盘</strong></td>
+<td>战斗胜利可得对方一块地盘 + 黑金</td>
+</tr>
+<tr>
+<td><strong>抢夺游戏</strong></td>
+<td>战斗胜利可随机获得对方社团名下的一款游戏</td>
+</tr>
+<tr>
+<td><strong>抢夺艺伎</strong></td>
+<td>战斗胜利可随机获得对方旗下的一名艺伎</td>
+</tr>
+<tr>
+<td><strong>防守记录</strong></td>
+<td>「你的地盘被袭击了，具体列表如下」</td>
+</tr>
+<tr>
+<td><strong>兵力队列</strong></td>
+<td>攻击队列 / 防守队列（兵力会周期性损耗）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>每日魂币激励（强 PvP 引导）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>行为</th>
+<th>奖励</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每天第 1 次抢地盘成功</td>
+<td>魂币奖励</td>
+</tr>
+<tr>
+<td>每天第 2 次抢地盘成功</td>
+<td>魂币奖励</td>
+</tr>
+<tr>
+<td>每天第 3 次抢地盘成功</td>
+<td>魂币奖励</td>
+</tr>
+<tr>
+<td>每天前 N 次社团战斗获胜</td>
+<td>每次随机 1~5 魂币</td>
+</tr>
+<tr>
+<td>创建社团</td>
+<td>一次性魂币奖励</td>
+</tr>
+<tr>
+<td>社团打仗</td>
+<td>魂币奖励</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>设计逻辑</strong>：用<strong>真金白银的内购货币（魂币）</strong>作为 PvP 奖励，制造"打游戏就能免费赚氪金货币"的错觉，同时用"每天前 3 次"限制防止刷取——这是极其成熟的<strong>留存 + 转化</strong>设计。</p>
+</blockquote>
+<h3 id="98">9.8 经济活动体系</h3>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>跑商贸易</strong></td>
+<td>用货车拉货，跨城差价</td>
+</tr>
+<tr>
+<td><strong>打工</strong></td>
+<td>「打工换XXX」——用劳动换取装备</td>
+</tr>
+<tr>
+<td><strong>跑外卖</strong></td>
+<td>仅"混在美国"版本开放</td>
+</tr>
+<tr>
+<td><strong>抡大锤</strong></td>
+<td>计时小游戏，可"抡大锤所得"</td>
+</tr>
+<tr>
+<td><strong>抢地盘</strong></td>
+<td>社团 PvP</td>
+</tr>
+<tr>
+<td><strong>黑市拳</strong></td>
+<td>拳击小游戏</td>
+</tr>
+<tr>
+<td><strong>文化课代考</strong></td>
+<td>仅"混在美国"版本</td>
+</tr>
+</tbody>
+</table>
+<p><strong>打工换装备清单</strong>（完整武器/工具表）：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>装备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>手枪/冲锋枪</td>
+<td>AK47、MP5 冲锋枪</td>
+</tr>
+<tr>
+<td>卡宾枪</td>
+<td>M4 卡宾枪、艾奇逊 AA12 卡宾枪</td>
+</tr>
+<tr>
+<td>霰弹枪</td>
+<td>雷明顿 870、莫斯伯格 590</td>
+</tr>
+<tr>
+<td>狙击枪</td>
+<td>AWP 狙击步枪、AR-50 狙击步枪</td>
+</tr>
+<tr>
+<td>冷兵器</td>
+<td>武士刀、唐刀</td>
+</tr>
+<tr>
+<td>防护</td>
+<td>防弹厚马甲</td>
+</tr>
+<tr>
+<td>工具</td>
+<td>电工套装、簧片撬锁勾具、含氧汽油切割机</td>
+</tr>
+<tr>
+<td>通货</td>
+<td>金砖（可用于"上供金砖"）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>工具使用场景</strong>（从文案反推）：</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>撬锁工具</td>
+<td>撬车门、撬保险柜、撬钢锁</td>
+</tr>
+<tr>
+<td>暴力工具</td>
+<td>砸门（"暴力工具才能砸门"）</td>
+</tr>
+<tr>
+<td>电工套装</td>
+<td>拆警报器、短接点火开关、破坏点火开关保护系统</td>
+</tr>
+<tr>
+<td>划玻璃工具</td>
+<td>划玻璃、划开皮包</td>
+</tr>
+<tr>
+<td>含氧汽油切割机</td>
+<td>破拆保险柜、劈仪表盘</td>
+</tr>
+<tr>
+<td>枪支</td>
+<td>远程攻击、恐吓</td>
+</tr>
+<tr>
+<td>迷药</td>
+<td>"迷倒对方"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="99">9.9 任务章节</h3>
+<p>游戏有 <strong>10 章任务（MISSION1 ~ MISSION10）</strong>，从 <code>word_cn.js</code> 变量可见：</p>
+<pre><code>MISSION1_NAME / MISSION1_MEMO / MISSION1_ARR_MSG_EXE / MISSION1_ARR_MSG_EXIST
+MISSION2_NAME / MISSION2_TITLE_DOMISSION / MISSION2_CONTENT_DOMISSION / MISSION2_LABEL_ARRCHOICE
+...
+MISSION10_NAME / MISSION10_MEMO / ...
+</code></pre>
+<p><strong>任务解锁条件</strong>：前置任务完成</p>
+<blockquote>
+<p>「执行本任务需要先完成【任务一】」
+「执行本任务需要先完成【任务二】」
+「执行本任务需要先完成【任务三】」</p>
+</blockquote>
+<p><strong>特殊任务机制</strong>：
+- 「这个任务必须 XXX_NAME_XXX 亲自挂帅」（指定角色）
+- 「任务成功」/ 「任务失败」/ 「任务完成」
+- 版本校验：「当前版本过于陈旧无法做任务，请更新最新版本继续」</p>
+<blockquote>
+<p><code>word_cn.js</code> 中 <code>MISSION*</code> 定义为<strong>空字符串</strong>，说明任务的具体文案由服务端动态下发（或存于其它文件），客户端仅保留结构定义。</p>
+</blockquote>
+<h3 id="910">9.10 小游戏矩阵（氪金 + 留存）</h3>
+<p>游戏内置了 <strong>5+ 款小游戏</strong>，每款都有独立报名/倒计时，形成"每日必玩"习惯：</p>
+<table>
+<thead>
+<tr>
+<th>小游戏</th>
+<th>报名标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>黑市拳</strong></td>
+<td><code>黑市拳报名开始</code> / <code>下一场倒计时</code></td>
+<td>拳击对战，有 win/lose 图</td>
+</tr>
+<tr>
+<td><strong>考试/答题</strong></td>
+<td><code>考试开始</code> / <code>下一场倒计时</code></td>
+<td>文化课代考，有 pass/fail 图</td>
+</tr>
+<tr>
+<td><strong>抡大锤</strong></td>
+<td><code>可以抡大锤了</code> / <code>下个活儿倒计时</code></td>
+<td>力量小游戏</td>
+</tr>
+<tr>
+<td><strong>跑外卖</strong></td>
+<td><code>可以跑外卖了</code> / <code>下单倒计时</code></td>
+<td>限"混在美国"版</td>
+</tr>
+<tr>
+<td><strong>FC 红白机</strong></td>
+<td>—</td>
+<td>见下节</td>
+</tr>
+<tr>
+<td><strong>飙车</strong></td>
+<td>—</td>
+<td>竞速博彩</td>
+</tr>
+</tbody>
+</table>
+<p><strong>小游戏图片资源</strong>（从 URL 推断）：</p>
+<pre><code>hun2_ex_pages/boxing/pic/boxing_win.jpg
+hun2_ex_pages/boxing/pic/boxing_lose.jpg
+hun2_ex_pages/boxing/pic/black_boxing_1.jpg
+hun2_ex_pages/question_answer/pic/exam_pass.jpg
+hun2_ex_pages/question_answer/pic/exam_fail.jpg
+hun2_ex_pages/question_answer/pic/exam_mask.jpg
+</code></pre>
+<h3 id="911">9.11 艺伎系统（成人向社交）</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>艺伎馆</strong></td>
+<td>社团可拥有艺伎</td>
+</tr>
+<tr>
+<td><strong>解救艺伎</strong></td>
+<td>「去"解救"艺伎」——实为掳掠（"解救"加引号）</td>
+</tr>
+<tr>
+<td><strong>名媛统计</strong></td>
+<td>「相同名字的多个艺伎只算一个名媛」</td>
+</tr>
+<tr>
+<td><strong>抢夺艺伎</strong></td>
+<td>战斗胜利随机获得对方一名艺伎</td>
+</tr>
+<tr>
+<td><strong>被抢记录</strong></td>
+<td>「您的艺伎馆被袭击了」</td>
+</tr>
+<tr>
+<td><strong>歌舞伎町</strong></td>
+<td>东京新宿地标，用于提升领导力</td>
+</tr>
+</tbody>
+</table>
+<p><strong>原文描写</strong>：</p>
+<blockquote>
+<p>「歌舞伎町，领导团建好去处。歌舞伎町位于东京都繁华的新宿区中心地带。歌舞伎町区内聚集许多电影院、酒吧、风俗店、夜总会、情人旅馆等，被称作"不眠之街"」</p>
+<p>⚠️ <strong>该模块含明显成人/性交易影射</strong>，是游戏的一大风险点。</p>
+</blockquote>
+<h3 id="912">9.12 家庭任务线（情感支线）</h3>
+<p>从文案可见一条<strong>家庭责任支线</strong>：</p>
+<pre><code>任务一：报平安
+任务二：寄生活费
+任务三：寄礼品
+任务四：生日礼物
+任务五：结婚纪念日
+任务六：买别墅
+任务七：盖福利院
+</code></pre>
+<blockquote>
+<p>这条支线通过"从报平安到盖福利院"的递进，构建<strong>情感绑定</strong>，让玩家在犯罪主线之外获得道德慰藉——提升叙事层次。</p>
+</blockquote>
+<h3 id="913">9.13 多地图城市系统</h3>
+<p><strong>地图热点（18 个）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>热点</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>商圈 (<code>NAME_HS_TRADING_AREA</code>)</td>
+<td>跑商贸易</td>
+</tr>
+<tr>
+<td>银行 (<code>NAME_HS_BANK</code>)</td>
+<td>存钱/打劫目标</td>
+</tr>
+<tr>
+<td>小诊所 (<code>NAME_HS_BLACK_HOSPITAL</code>)</td>
+<td>恢复生命值</td>
+</tr>
+<tr>
+<td>培训班 (<code>NAME_HS_SCHOOL</code>)</td>
+<td>技能培训</td>
+</tr>
+<tr>
+<td>汽修厂 (<code>NAME_HS_CAR_SERVICE</code>)</td>
+<td>恢复车辆成色</td>
+</tr>
+<tr>
+<td>黑店 (<code>NAME_HS_BLACK_SHOP</code>)</td>
+<td>黑市交易</td>
+</tr>
+<tr>
+<td>居民区 (<code>NAME_HS_COMMUNITY</code>)</td>
+<td>入室目标</td>
+</tr>
+<tr>
+<td>贿赂 (<code>NAME_HS_CORRUPT_POLICE</code>)</td>
+<td><strong>贿赂警察降通缉</strong>（天平图标）</td>
+</tr>
+<tr>
+<td>黑帮 (<code>NAME_HS_GANGSTER</code>)</td>
+<td>黑帮据点</td>
+</tr>
+<tr>
+<td>飙车场 (<code>NAME_HS_RACING</code>)</td>
+<td>竞速博彩</td>
+</tr>
+<tr>
+<td>黑车市场 (<code>NAME_HS_BUY_CAR</code>)</td>
+<td>买车</td>
+</tr>
+<tr>
+<td>新干线 (<code>NAME_HS_RAILWAY</code>)</td>
+<td>跨城移动</td>
+</tr>
+<tr>
+<td>线人 (<code>NAME_HS_SOCIAL_MIX</code>)</td>
+<td>打探情报</td>
+</tr>
+<tr>
+<td>商超 (<code>NAME_HS_STORE</code>)</td>
+<td>购物</td>
+</tr>
+<tr>
+<td>街头 (<code>NAME_HS_STREET</code>)</td>
+<td>随机事件</td>
+</tr>
+<tr>
+<td>娱乐城 (<code>NAME_HS_CASINO</code>)</td>
+<td>赌博</td>
+</tr>
+<tr>
+<td>飞机场</td>
+<td>出国（回国）</td>
+</tr>
+<tr>
+<td>地下批发市场</td>
+<td>走私货源</td>
+</tr>
+</tbody>
+</table>
+<p><strong>城市间移动</strong>：</p>
+<ul>
+<li>出城需要过<strong>城界警察检查</strong>（有幸运逃脱文案）</li>
+<li>「城界警察看你不对，要求检查」</li>
+<li>幸运事件：「领头的警察突然尿急，放你过去了」「女警见你长得不错，放你通行」</li>
+<li>办案中无法出城：「出什么城？当前正在作案」</li>
+</ul>
+<h3 id="914">9.14 医院与培训系统</h3>
+<table>
+<thead>
+<tr>
+<th>设施</th>
+<th>机制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>小诊所</strong></td>
+<td>每床位收费 X/天，每天最多恢复 HP X 点；床位满则「床位已满」</td>
+</tr>
+<tr>
+<td><strong>培训班</strong></td>
+<td>每名额收费 X/天，每天技能最多增长 X 点，<strong>技能上限 30 点</strong>；名额满则「名额已满」</td>
+</tr>
+<tr>
+<td><strong>汽修厂</strong></td>
+<td>每工位收费 X/天，每天最多恢复成色 X 点</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>全部采用<strong>"床位/工位/名额"资源竞争模型</strong>——营造稀缺感，刺激玩家频繁上线抢位。</p>
+</blockquote>
+<hr />
+<h2 id="_8">十、元素数据库</h2>
+<h3 id="101">10.1 全部物品清单（从文案提取）</h3>
+<p><strong>武器类</strong>：
+<code>AK47</code>、<code>MP5冲锋枪</code>、<code>M4卡宾枪</code>、<code>艾奇逊AA12卡宾枪</code>、<code>雷明顿870</code>、<code>莫斯伯格590</code>、<code>AWP狙击步枪</code>、<code>AR-50狙击步枪</code>、<code>武士刀</code>、<code>唐刀</code></p>
+<p><strong>工具类</strong>：
+<code>电工套装</code>、<code>簧片撬锁勾具</code>、<code>含氧汽油切割机</code></p>
+<p><strong>防护/通货</strong>：
+<code>防弹厚马甲</code>、<code>金砖</code></p>
+<h3 id="102">10.2 资产类型</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>汽车 (<code>NAME_OBJECT_CAR</code>)</td>
+<td>可购买、出售、偷窃、修理</td>
+</tr>
+<tr>
+<td>房产/车库</td>
+<td>「车库购买成功」「房子购买成功」</td>
+</tr>
+<tr>
+<td>地盘 (<code>LABEL_CLUB_LAND</code>)</td>
+<td>社团资产</td>
+</tr>
+<tr>
+<td>艺伎/名媛</td>
+<td>社团资产</td>
+</tr>
+</tbody>
+</table>
+<h3 id="103">10.3 状态标记</h3>
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LABEL_BOUGHT = "已购买"</code></td>
+<td>已购</td>
+</tr>
+<tr>
+<td><code>LABEL_ONSALE = "在售中"</code></td>
+<td>待售</td>
+</tr>
+<tr>
+<td><code>CAR_DISABLE = "残"</code></td>
+<td>车辆损坏</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_9">十一、后端与网络架构</h2>
+<h3 id="111-27">11.1 域名资产清单（27 个唯一域名）</h3>
+<p><strong>核心业务域</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>域名</th>
+<th>用途</th>
+<th>存活状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h2jp.hun333.com</code></td>
+<td><strong>日本版主 API + 静态页</strong></td>
+<td>⚠️ 522（超时）</td>
+</tr>
+<tr>
+<td><code>h2jpen.hun333.com</code></td>
+<td>国际版/英文版 API</td>
+<td>未知</td>
+</tr>
+<tr>
+<td><code>h2jpenoss.nbn369.com</code></td>
+<td>国际版 OSS</td>
+<td>未知</td>
+</tr>
+<tr>
+<td><code>hun1.hun333.com</code></td>
+<td>统计埋点 / 老版本页</td>
+<td>未知</td>
+</tr>
+<tr>
+<td><code>hkh2jp.hun333.com</code></td>
+<td><strong>中国香港中转节点</strong>（路由页）</td>
+<td>未知</td>
+</tr>
+<tr>
+<td><code>route.hun333.com</code></td>
+<td>路由分发</td>
+<td>未知</td>
+</tr>
+<tr>
+<td><code>h2jp.nbn369.com</code></td>
+<td>跳转页 + Android 专用入口</td>
+<td>✅ 可用</td>
+</tr>
+<tr>
+<td><code>statichun.nbn369.com</code></td>
+<td>静态分享页</td>
+<td>✅ 可用</td>
+</tr>
+<tr>
+<td><code>allopen.hun333.com</code></td>
+<td>小程序跳转</td>
+<td>未知</td>
+</tr>
+<tr>
+<td><code>www.hun369.cn</code></td>
+<td><strong>支付网关</strong></td>
+<td>未知</td>
+</tr>
+<tr>
+<td><code>hun2web.hun369.cn</code></td>
+<td>APK 分发</td>
+<td>未知</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CDN / 存储域</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>域名</th>
+<th>服务商</th>
+<th>存活</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hun2-cn.oss-cn-hangzhou.aliyuncs.com</code></td>
+<td>阿里云 OSS（杭州）</td>
+<td>✅ 200</td>
+</tr>
+<tr>
+<td><code>hun2-en.oss-accelerate.aliyuncs.com</code></td>
+<td>阿里云全球加速</td>
+<td>✅ 200</td>
+</tr>
+<tr>
+<td><code>hun2cos-1300260944.file.myqcloud.com</code></td>
+<td>腾讯云 COS</td>
+<td>✅ 200</td>
+</tr>
+<tr>
+<td><code>hun2web-1300260944.file.myqcloud.com</code></td>
+<td>腾讯云 COS（web）</td>
+<td>✅ 200</td>
+</tr>
+<tr>
+<td><code>hun2web-1300260944.cos.na-siliconvalley.myqcloud.com</code></td>
+<td>腾讯云 COS（硅谷）</td>
+<td>✅ 200</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第三方服务</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>域名</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ipapi.co</code></td>
+<td>IP 地理位置查询</td>
+</tr>
+<tr>
+<td><code>discord.gg/5T6pQ3XgPG</code></td>
+<td>Discord 社区</td>
+</tr>
+<tr>
+<td><code>facebook.com/hun369</code></td>
+<td>Facebook 官方页</td>
+</tr>
+<tr>
+<td><code>facebook.com/japanronin</code></td>
+<td>Facebook（日本浪人）</td>
+</tr>
+<tr>
+<td><code>apps.apple.com/.../id925606960</code></td>
+<td>iOS 版 App Store 链接</td>
+</tr>
+<tr>
+<td><code>badguys.sinaapp.com</code></td>
+<td>早期新浪云服务（遗留）</td>
+</tr>
+<tr>
+<td><code>jingtaiweb.applinzi.com</code></td>
+<td>静态图床（新浪云）</td>
+</tr>
+<tr>
+<td><code>cdn.bootcss.com</code></td>
+<td>Bootstrap CDN（已注释废弃）</td>
+</tr>
+<tr>
+<td><code>vjs.zencdn.net</code></td>
+<td>Video.js CDN（已注释废弃）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112">11.2 核心接口清单</h3>
+<table>
+<thead>
+<tr>
+<th>接口</th>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>https://h2jp.hun333.com/h2/get_exparam_by_openid.do</code></td>
+<td>GET</td>
+<td><strong>按 openid 下发游戏初始参数</strong>（核心接口）</td>
+</tr>
+<tr>
+<td><code>https://h2jpen.hun333.com/h2/get_exparam_by_openid.do</code></td>
+<td>GET</td>
+<td>国际版同上</td>
+</tr>
+<tr>
+<td><code>https://hun1.hun333.com/stat/add_point.do?point_type=</code></td>
+<td>GET</td>
+<td><strong>埋点上报</strong></td>
+</tr>
+<tr>
+<td><code>https://www.hun369.cn/h2pay/pay.do</code></td>
+<td>POST</td>
+<td><strong>支付下单</strong></td>
+</tr>
+<tr>
+<td><code>https://www.hun369.cn/h2pay/pay_qq.do</code></td>
+<td>POST</td>
+<td>QQ 支付</td>
+</tr>
+<tr>
+<td><code>https://www.hun369.cn/h2pay/qq_user_comfirm.do</code></td>
+<td>POST</td>
+<td>QQ 支付确认</td>
+</tr>
+<tr>
+<td><code>https://www.hun369.cn/h2pay/wx_user_comfirm.do</code></td>
+<td>POST</td>
+<td>微信支付确认</td>
+</tr>
+<tr>
+<td><code>https://ipapi.co/json/</code></td>
+<td>GET</td>
+<td>IP 归属地（可能是用户地域风控）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="113">11.3 静态资源路径结构</h3>
+<pre><code>{CDN}/static/
+         ├─ js/
+         │   ├─ word_cn.js          ← 中文文案
+         │   ├─ word_zh_fan.js      ← 繁体（推断）
+         │   ├─ word_en.js          ← 英文（推断）
+         │   ├─ word_ja.js          ← 日文（推断）
+         │   ├─ hun_min.js          ← 核心逻辑
+         │   └─ lib/LAB.min.js      ← 资源加载器
+         ├─ json/
+         │   └─ version.json        ← 版本清单
+         ├─ html/
+         │   └─ hun_japan.html      ← 启动器页
+         └─ pic/                    ← 图片资源
+</code></pre>
+<p><strong>外挂页面（ex_pages）</strong>：</p>
+<pre><code>hun2_ex_pages/
+  ├─ tutorial/tutorial.html      ← 新手教程
+  ├─ tutorial/open_path.html     ← 路径引导
+  ├─ boxing/pic/*.jpg            ← 拳击小游戏
+  └─ question_answer/pic/*.jpg   ← 答题小游戏
+
+club/geisha/intro/geisha.html    ← 艺伎介绍页
+emulator/fc/emulator/index.html  ← FC 红白机模拟器
+emulator/fc/rom/{gid}.nes        ← NES ROM（按 gid 索引）
+pub/apk/hun1.apk                 ← 旧版分发
+pub/apk/hun2.apk                 ← 新版分发
+share_nes/index.html             ← 分享页
+</code></pre>
+<h3 id="114">11.4 数据安全分析</h3>
+<table>
+<thead>
+<tr>
+<th>风险项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>明文 HTTP</strong></td>
+<td><code>http://hkh2jp.hun333.com/...</code>、<code>usesCleartextTraffic=true</code></td>
+</tr>
+<tr>
+<td><strong>openid 明文</strong></td>
+<td>用户标识通过 URL 明文传递，可被窃取</td>
+</tr>
+<tr>
+<td><strong>无 API 签名</strong></td>
+<td><code>get_exparam_by_openid.do</code> 直接 GET，无签名/时间戳</td>
+</tr>
+<tr>
+<td><strong>支付跳转</strong></td>
+<td>支付经由 <code>www.hun369.cn/h2pay/</code> 自建网关（非直连渠道），存在<strong>资金安全风险</strong></td>
+</tr>
+<tr>
+<td><strong><code>.do</code> 后缀</strong></td>
+<td>暗示后端为 <strong>Java Servlet</strong> 技术栈（Struts2/SpringMVC 风格）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>后端技术栈推断</strong>：<code>.do</code> + <code>.html</code> 静态页 + <code>get_exparam_by_openid</code> 命名规范，高度符合 <strong>Java + Servlet/Struts + Tomcat</strong> 的传统架构。这也解释了为什么 CDN 上全是静态 JS——<strong>后端只负责数据，不负责渲染</strong>。</p>
+</blockquote>
+<hr />
+<h2 id="_10">十二、商业化与经济系统</h2>
+<h3 id="121">12.1 双货币体系</h3>
+<table>
+<thead>
+<tr>
+<th>货币</th>
+<th>获取方式</th>
+<th>用途</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>现金 (Cash)</strong></td>
+<td>游戏内赚取</td>
+<td>买装备、情报、贿赂、治疗</td>
+<td>游戏币</td>
+</tr>
+<tr>
+<td><strong>魂币 (HunCoin)</strong></td>
+<td><strong>真金白银购买</strong></td>
+<td>加速解锁、买兵种、买车辆、兑换黑金</td>
+<td><strong>氪金货币</strong></td>
+</tr>
+<tr>
+<td><strong>黑金 (BG)</strong></td>
+<td>魂币兑换 / 抢地盘</td>
+<td>社团运营</td>
+<td>次级氪金货币</td>
+</tr>
+</tbody>
+</table>
+<p><strong>兑换比例（文案泄露）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>魂币</th>
+<th>黑金</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>199</td>
+<td>19,999</td>
+</tr>
+<tr>
+<td>299</td>
+<td>29,999</td>
+</tr>
+<tr>
+<td>399</td>
+<td>39,999</td>
+</tr>
+<tr>
+<td>499</td>
+<td>49,999</td>
+</tr>
+</tbody>
+</table>
+<h3 id="122">12.2 魂币消费点（完整清单）</h3>
+<table>
+<thead>
+<tr>
+<th>消费场景</th>
+<th>文案</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>加速兵种训练</strong></td>
+<td>「立刻完成XXX个XXX」</td>
+<td>跳过等待</td>
+</tr>
+<tr>
+<td><strong>立即解锁兵种</strong></td>
+<td>「立刻解锁XXX_NAME_XXX 魂币:XXX 黑金:XXX 耗时:XXX」</td>
+<td>双币消耗</td>
+</tr>
+<tr>
+<td><strong>购买兵种</strong></td>
+<td>「购买XXX个XXX_ACTOR_XXX，花费XXX魂币?」</td>
+<td>兵力</td>
+</tr>
+<tr>
+<td><strong>购买车辆参赛</strong></td>
+<td>「你参赛的XXX为魂币购买车辆，如果比赛落败将<strong>无法回收</strong>车辆对应的魂币」</td>
+<td>高风险</td>
+</tr>
+<tr>
+<td><strong>购买装备</strong></td>
+<td>「购买装备的魂币本局结束后将返回您的账号，请放心购买」</td>
+<td>可退</td>
+</tr>
+<tr>
+<td><strong>购买房产/车库</strong></td>
+<td>「购买XXX_PROPERTY_XXX需要XXX现金」</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>重要保护机制</strong>：</p>
+<blockquote>
+<p>「提示:购买装备的魂币本局结束后将返回您的账号，请放心购买」
+「提示:购车魂币本局结束后将返回您的账号，请放心购买」</p>
+</blockquote>
+<p>这是<strong>降低氪金抵触感</strong>的心理学设计——"反正会还给你"，诱导玩家大胆消费。</p>
+<p><strong>但赛车有例外</strong>：</p>
+<blockquote>
+<p>「如果比赛落败将无法回收车辆对应的魂币」</p>
+</blockquote>
+<p>——<strong>赌博式消费</strong>，进一步刺激。</p>
+<h3 id="123">12.3 魂币回收规则（防止套利）</h3>
+<blockquote>
+<p>「当前账户魂币 XXX
+　本局内回收的 XXX 魂币，将在提交分数后返回到您的账户中
+　<strong>[FF0000]仅魂币购买且未卖出装备计算在内[-]</strong>」</p>
+</blockquote>
+<p>——严格限定回收范围，防止玩家通过"买装备→卖装备"套现。</p>
+<h3 id="124">12.4 每日魂币激励（免费获取渠道）</h3>
+<table>
+<thead>
+<tr>
+<th>行为</th>
+<th>每日奖励</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抢地盘成功（第 1/2/3 次）</td>
+<td>魂币</td>
+</tr>
+<tr>
+<td>社团战斗获胜（前 N 次）</td>
+<td>随机 1~5 魂币</td>
+</tr>
+<tr>
+<td>创建社团</td>
+<td>一次性</td>
+</tr>
+<tr>
+<td>社团打仗</td>
+<td>魂币</td>
+</tr>
+<tr>
+<td>打赢小游戏</td>
+<td>「今天再打赢一次可获得 XXX 魂币奖励」</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>设计精髓</strong>：让<strong>不氪金玩家也能获得氪金货币</strong>，但通过"每天前 N 次"严格限制总量。既保证免费玩家有盼头（留存），又保证氪金玩家的优势不被稀释（付费转化）。</p>
+</blockquote>
+<h3 id="125">12.5 支付渠道</h3>
+<table>
+<thead>
+<tr>
+<th>渠道</th>
+<th>接口</th>
+<th>市场</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Google Play Billing</strong></td>
+<td>原生 BillingManager</td>
+<td>Google Play（当前包）</td>
+</tr>
+<tr>
+<td>微信支付</td>
+<td><code>wx_user_comfirm.do</code></td>
+<td>中国大陆（H5）</td>
+</tr>
+<tr>
+<td>支付宝</td>
+<td>—</td>
+<td>中国大陆</td>
+</tr>
+<tr>
+<td>QQ 支付</td>
+<td><code>pay_qq.do</code> / <code>qq_user_comfirm.do</code></td>
+<td>中国大陆</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注意</strong>：当前 APK（<code>com.hao.hun.japan</code>）走 <strong>Google Play 官方内购</strong>；而 H5 版本内置了微信/支付宝/QQ 支付，用于<strong>绕过应用商店抽成</strong>。这是典型的"双轨支付"策略。</p>
+</blockquote>
+<hr />
+<h2 id="_11">十三、安全与风控机制</h2>
+<h3 id="131-root">13.1 Root 检测</h3>
+<p><strong>双实现</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>行数</th>
+<th>检测手段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RootCheck</code></td>
+<td>50 行</td>
+<td>基础检测</td>
+</tr>
+<tr>
+<td><code>RootCheckPlus</code></td>
+<td>217 行</td>
+<td>增强检测</td>
+</tr>
+</tbody>
+</table>
+<p><strong>检测项（推断）</strong>：</p>
+<ul>
+<li><code>Build.TAGS</code> 包含 <code>test-keys</code></li>
+<li><code>su</code> 二进制文件路径检查（<code>/system/bin/su</code>、<code>/system/xbin/su</code> 等）</li>
+<li><code>Runtime.exec("su")</code> 尝试执行</li>
+<li>busybox 检测</li>
+<li>常见 Root 管理 App 包名检测</li>
+<li>系统目录可写性检测</li>
+</ul>
+<p><strong>用途</strong>：
+1. <strong>反作弊</strong>——防止使用内存修改器（GameGuardian 等）刷魂币
+2. <strong>风控标记</strong>——Root 设备可能被限制活动或标记为高风险</p>
+<p><strong>调用方式</strong>：通过 JS 桥 <code>checkRoot</code> 指令，由 H5 主动查询。</p>
+<h3 id="132-google-play-pairip">13.2 Google Play PairIP 加固</h3>
+<p><strong>组件</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>com.pairip.licensecheck.LicenseActivity</code></td>
+<td>授权校验界面</td>
+</tr>
+<tr>
+<td><code>com.pairip.licensecheck.LicenseContentProvider</code></td>
+<td>授权状态提供器</td>
+</tr>
+<tr>
+<td><code>com.pairip.licensecheck.LicenseClient</code></td>
+<td>校验客户端</td>
+</tr>
+<tr>
+<td><code>com.pairip.licensecheck.ResponseValidator</code></td>
+<td>响应验证器</td>
+</tr>
+<tr>
+<td><code>com.pairip.licensecheck.ILicenseV2ResultListener</code></td>
+<td>结果监听</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PairIP 是什么</strong>：</p>
+<p>Google 官方推出的<strong>应用完整性保护方案</strong>（Play Integrity Protection），提供：
+- <strong>运行时完整性校验</strong>——检测 APK 是否被篡改/重打包
+- <strong>签名验证</strong>——确保运行的是原始签名版本
+- <strong>反调试</strong>——阻止动态分析
+- <strong>License 校验</strong>——确认来自 Google Play</p>
+<p><strong>影响</strong>：
+- ✅ <strong>正面</strong>：说明该游戏确实从 Google Play 发布，开发者使用了官方保护
+- ⚠️ <strong>负面</strong>：<strong>二次打包/修改版将无法运行</strong>（启动即校验失败）</p>
+<blockquote>
+<p>这也解释了为什么网上流传的"混二破解版"往往需要额外处理——PairIP 会拦截。</p>
+</blockquote>
+<h3 id="133">13.3 存档与状态存储</h3>
+<p><strong>客户端存储</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>存储</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>localStorage</code></td>
+<td><code>openid</code>、<code>game_language</code>、其它本地状态</td>
+</tr>
+<tr>
+<td>SharedPreferences</td>
+<td>卡钥（KY）、设备信息</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键设计</strong>：<code>openid</code> 持久化</p>
+<pre><code class="language-javascript">// 拿到新 openid
+var openid = getPageParamValue(&quot;openid&quot;);
+// 若支持重写（rew_openid=y）则覆盖本地
+if (rew_openid=='y' &amp;&amp; openid!=null)
+    localStorage.setItem(&quot;openid&quot;, openid);
+// 优先使用本地已有 openid
+var localOpenId = localStorage.getItem(&quot;openid&quot;);
+if (localOpenId) openid = localOpenId;
+else localStorage.setItem(&quot;openid&quot;, openid);
+</code></pre>
+<p><strong>目的</strong>：<strong>重装系统/App 时不丢存档</strong>（注释原文：「为防止App的openid发生改变如重装系统」）。</p>
+<p><strong>反强退机制</strong>：</p>
+<blockquote>
+<p>「任务中退出游戏，将会扣除团队成员各技能值 10~15 点」
+「未上传任务结果将视为强制退出，会扣除角色相应的技能值」</p>
+</blockquote>
+<p>——<strong>服务端权威</strong>：任务结果必须上传，否则视为放弃并受罚。防止玩家"看到失败就杀进程"。</p>
+<hr />
+<h2 id="_12">十四、特殊功能模块</h2>
+<h3 id="141-fc">14.1 FC 红白机模拟器（最有趣的功能）</h3>
+<p>游戏内置了一个<strong>完整的 NES/FC 模拟器</strong>，用于播放怀旧小游戏作为"社团资产"。</p>
+<p><strong>技术实现</strong>：<strong>jsnes</strong>（纯 JavaScript NES 模拟器）</p>
+<p><strong>加载的模块</strong>：</p>
+<pre><code>emulator/fc/emulator/
+  ├─ index.html
+  ├─ index.css
+  ├─ lib/jquery-1.4.2.min.js       ← jQuery 1.4.2（很老）
+  ├─ lib/dynamicaudio-min.js       ← 音频合成
+  └─ source/
+      ├─ nes.js                    ← 主控
+      ├─ cpu.js                    ← 6502 CPU 模拟
+      ├─ ppu.js                    ← 图像处理单元
+      ├─ papu.js                   ← 音频处理单元
+      ├─ mappers.js                ← 卡带映射器
+      ├─ rom.js                    ← ROM 加载
+      ├─ keyboard.js               ← 键盘输入
+      ├─ ui.js                     ← 界面
+      └─ jsnes-ie-hacks.vbscript   ← IE 兼容（VBScript）
+</code></pre>
+<p><strong>ROM 加载方式</strong>：</p>
+<pre><code class="language-javascript">var nesRomURL = '../rom/' + getPageParamValue(&quot;gid&quot;) + '.nes';
+nes.ui.loadROM(nesRomURL);
+</code></pre>
+<p><strong>页面标题</strong>：<code>【混】游戏模拟器</code></p>
+<p><strong>游戏列表（从分享页可见）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>游戏</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>我愛棒球（日本）</strong></td>
+<td>日版棒球游戏</td>
+</tr>
+<tr>
+<td><strong>混沌世界（日版）</strong></td>
+<td>经典游戏</td>
+</tr>
+</tbody>
+</table>
+<p><strong>功能定位</strong>：
+- 社团资产——「您的社团所拥有的游戏种类数量」
+- 可被其他社团<strong>抢夺</strong>：「抢夺XXX社团的游戏」「战斗胜利后你将随机得到该社团名下的一款游戏」
+- 非社团成员只能「短暂查看」（试用），想无限玩需创建社团</p>
+<blockquote>
+<p><strong>这是极其聪明的设计</strong>：把"怀旧 FC 游戏"包装成<strong>可争夺的社交资产</strong>，既唤起 80/90 后的情怀，又把它变成 PvP 的战利品和氪金诱导（「想无限制畅玩？创建社团」）。</p>
+</blockquote>
+<h3 id="142">14.2 分享系统</h3>
+<table>
+<thead>
+<tr>
+<th>分享页</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主分享页</td>
+<td><code>statichun.nbn369.com/hun2web/share_nes/index.html</code></td>
+</tr>
+<tr>
+<td>分享宣传语</td>
+<td>「只能在日本玩的游戏」/「去日本混出个人样」</td>
+</tr>
+</tbody>
+</table>
+<p><strong>分享奖励</strong>：</p>
+<blockquote>
+<p>「分享成功$NEW_LINE$快请好友点击XXX_NAME_XXX」
+「'帮忙'页面链接已复制到剪贴板$NEW_LINE$可发送给好友帮忙助威」</p>
+</blockquote>
+<p>——典型的<strong>裂变拉新</strong>设计。</p>
+<h3 id="143">14.3 小程序版本</h3>
+<p><code>version.json</code> 中定义了小程序入口：</p>
+<pre><code class="language-json">&quot;MINI_APP&quot;: {
+  &quot;fake_version&quot;: 2,
+  &quot;fake_url&quot;: &quot;https://allopen.hun333.com/hun2/tour/index.html&quot;,
+  &quot;gameURL&quot;: &quot;https://h2jp.hun333.com/static/html/hun_japan.html&quot;,
+  &quot;refresh_page_time&quot;: 1800000
+}
+</code></pre>
+<p><strong>关键</strong>：<code>fake_url</code> 指向 <code>tour/index.html</code>（旅游页）——<strong>这是应对微信小程序审核的"马甲页"</strong>。审核时展示旅游内容，过审后跳转真实游戏。</p>
+<blockquote>
+<p>⚠️ <strong>属于典型的"审核规避"手法</strong>，违反各大平台开发者协议。</p>
+</blockquote>
+<h3 id="144">14.4 多语言系统</h3>
+<p><strong>支持语言</strong>（从配置常量）：</p>
+<table>
+<thead>
+<tr>
+<th>常量</th>
+<th>值</th>
+<th>语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LANGUAGE_ZH</code></td>
+<td>0</td>
+<td>简体中文</td>
+</tr>
+<tr>
+<td><code>LANGUAGE_ZH_FAN</code></td>
+<td>1</td>
+<td>繁体中文</td>
+</tr>
+<tr>
+<td><code>LANGUAGE_EN</code></td>
+<td>2</td>
+<td>英语</td>
+</tr>
+<tr>
+<td><code>LANGUAGE_JA</code></td>
+<td>3</td>
+<td>日语</td>
+</tr>
+</tbody>
+</table>
+<p><strong>缓存键</strong>：<code>game_language</code></p>
+<p><strong>加载方式</strong>：<code>getLanguageJS(LANGUAGE_CHOICE) + jsVersion</code> → 加载对应 <code>word_{lang}.js</code></p>
+<p><strong>参数传递</strong>：URL 中传递 <code>app_lg</code>（language）、<code>lg_sc</code>（script）、<code>lg_cr</code>（country），实现<strong>系统语言自动匹配</strong>。</p>
+<h3 id="145">14.5 渠道系统</h3>
+<p>从 <code>version.json</code> 的 <code>MK_REVIEW_VERSION</code> 可见，游戏在 <strong>15 个渠道</strong>分发：</p>
+<table>
+<thead>
+<tr>
+<th>渠道代码</th>
+<th>平台</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>amazon</code></td>
+<td>亚马逊应用商店</td>
+</tr>
+<tr>
+<td><code>hykb</code></td>
+<td>好游快爆</td>
+</tr>
+<tr>
+<td><code>4399</code></td>
+<td>4399</td>
+</tr>
+<tr>
+<td><code>gplay</code></td>
+<td>Google Play</td>
+</tr>
+<tr>
+<td><code>anzhi</code></td>
+<td>安智</td>
+</tr>
+<tr>
+<td><code>sh</code></td>
+<td>应用汇</td>
+</tr>
+<tr>
+<td><code>tap</code></td>
+<td>TapTap</td>
+</tr>
+<tr>
+<td><code>tx</code></td>
+<td>腾讯</td>
+</tr>
+<tr>
+<td><code>360</code></td>
+<td>360 手机助手</td>
+</tr>
+<tr>
+<td><code>al</code></td>
+<td>阿里/豌豆荚</td>
+</tr>
+<tr>
+<td><code>hw</code></td>
+<td>华为</td>
+</tr>
+<tr>
+<td><code>bd</code></td>
+<td>百度</td>
+</tr>
+<tr>
+<td><code>xm</code></td>
+<td>小米</td>
+</tr>
+<tr>
+<td><code>ka</code></td>
+<td>快看</td>
+</tr>
+</tbody>
+</table>
+<p><strong>每个渠道有独立的审核版本号</strong>（如 <code>gplay: 6</code>），用于<strong>分渠道送审</strong>。</p>
+<p><strong>当前包渠道</strong>：<code>market_channel = "google_play"</code>，<code>mk=gplay</code>。</p>
+<h3 id="146">14.6 双地区内容（日本版 / 美国版）</h3>
+<p>代码内置两套内容，通过 <code>EXPENSION_PACK_VERSION</code> 切换：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>日本版 (jp)</th>
+<th>美国版 (usa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>包名常量</td>
+<td>—</td>
+<td><code>com.hao.hun</code></td>
+</tr>
+<tr>
+<td>起始剧情</td>
+<td>解救女友、欠债还钱</td>
+<td>非法移民、住豪宅开豪车</td>
+</tr>
+<tr>
+<td>终局任务</td>
+<td><strong>炸毁宙斯盾</strong></td>
+<td><strong>偷窃曲速飞船</strong></td>
+</tr>
+<tr>
+<td>特色小游戏</td>
+<td>抡大锤</td>
+<td><strong>跑外卖、黑市拳、文化课代考</strong></td>
+</tr>
+<tr>
+<td>团建地点</td>
+<td>东京歌舞伎町</td>
+<td>拉斯维加斯不夜城</td>
+</tr>
+<tr>
+<td>货币显示</td>
+<td>魂币</td>
+<td><strong>比特币</strong>（<code>LABEL_HUN_COIN_EPV_USA="比特币"</code>）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>美国版开篇文案</strong>：</p>
+<blockquote>
+<p>「你是一名非法移民，你的目标是住豪宅、开豪车、步入上流社会。为此你不惜一切代价!」
+「在你清偿掉债务并搞定那些非法勾当后，你即可踏入上流社会，当然前提条件是在此之前不被黑白两道干掉」</p>
+<p><strong>注</strong>：当前 APK 为<strong>日本版</strong>（<code>epv=jp</code>）。</p>
+</blockquote>
+<hr />
+<h2 id="_13">十五、版本迭代与运营体系</h2>
+<h3 id="151-versionjson">15.1 版本清单（<code>version.json</code>）</h3>
+<pre><code class="language-json">{
+  &quot;FRONT_VERSION&quot;: &quot;39396&quot;,       // 前端版本（JS 文件版本号）
+  &quot;DAILY_NEWS_VERSON&quot;: &quot;1&quot;,       // 每日公告版本
+  &quot;IMG_VERSION&quot;: &quot;219&quot;,           // 图片资源版本
+  &quot;FC_VERSION&quot;: 24,               // FC 模拟器版本
+  &quot;PK_NAME&quot;: &quot;com.hao.hun2&quot;,      // 正式包名（第三方渠道 / 新版）
+  &quot;REVIEW_VERSION_IOS&quot;: 10        // iOS 审核版本
+}
+</code></pre>
+<p><strong>关键发现</strong>：<code>PK_NAME = "com.hao.hun2"</code>，而当前 APK 包名为 <code>com.hao.hun.japan</code>。</p>
+<table>
+<thead>
+<tr>
+<th>包名</th>
+<th>版本</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>com.hao.hun.japan</code></td>
+<td>4.0</td>
+<td><strong>当前 APK</strong>，Google Play 日本版</td>
+</tr>
+<tr>
+<td><code>com.hao.hun2</code></td>
+<td>?</td>
+<td>version.json 中标记的"正式"包名</td>
+</tr>
+<tr>
+<td><code>com.hao.hun</code></td>
+<td>2.39</td>
+<td>第三方「混二」版本（27.8 MB，非本包）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong><code>FRONT_VERSION = 39396</code></strong> 是一个非常大的数字，说明前端已经迭代了近 4 万次（或使用时间戳式版本号）。每次 <code>hun_min.js</code> 更新都会改变这个版本号，实现<strong>强制刷新缓存</strong>。</p>
+</blockquote>
+<h3 id="152">15.2 热更新机制</h3>
+<pre><code>用户启动
+  └─► 拉取 version.json（CDN 缓存 或 强制刷新）
+        └─► 得到 FRONT_VERSION = 39396
+              └─► 加载 hun_min.js?v=39396
+                    └─► 若版本变化，浏览器/WebView 缓存失效，重新下载
+</code></pre>
+<p><strong>优势</strong>：
+- 修改服务端 JS → 全网实时生效，<strong>无需发版</strong>
+- 可快速修复 Bug、上活动、调数值
+- 绕过应用商店审核周期</p>
+<p><strong>风险</strong>：
+- 服务端一旦被墙/宕机，<strong>所有用户游戏立即不可用</strong>
+- 当前 <code>h2jp.hun333.com</code> 已返回 522，说明<strong>主服务可能已不可用</strong></p>
+<h3 id="153">15.3 埋点系统</h3>
+<p><strong>接口</strong>：<code>https://hun1.hun333.com/stat/add_point.do?point_type=</code></p>
+<p><strong><code>point_type</code></strong> 说明这是一个<strong>多类型埋点系统</strong>，可能采集：
+- 登录、启动、时长
+- 关卡进入/完成/失败
+- 付费转化漏斗
+- 小游戏参与率
+- 流失点</p>
+<p><strong>其它风控/环境探测</strong>：
+- <code>https://ipapi.co/json/</code> —— IP 归属地（可能用于地域限制或风控）
+- <code>cac=</code> 随机数 —— 缓存击穿（每次启动强制回源）</p>
+<h3 id="154">15.4 社交矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discord</td>
+<td><code>https://discord.gg/5T6pQ3XgPG</code></td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><code>https://www.facebook.com/hun369/</code></td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><code>https://www.facebook.com/japanronin</code></td>
+</tr>
+<tr>
+<td>QQ 群</td>
+<td>文案中多处引导「官方QQ群联系群主解决问题」</td>
+</tr>
+<tr>
+<td>贴吧</td>
+<td><code>q_tieba.html</code>（QQ 贴吧页）</td>
+</tr>
+<tr>
+<td>iOS</td>
+<td><code>https://apps.apple.com/us/app/beast-out-text-gta/id925606960</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>iOS 版名称</strong>：<strong>Beast Out - Text GTA</strong>（<code>id925606960</code>）</p>
+<blockquote>
+<p>这个英文名称非常直白地说明了游戏的类型定位——<strong>文字版 GTA</strong>。</p>
+</blockquote>
+<hr />
+<h2 id="_14">十六、风险与合规评估</h2>
+<h3 id="161">16.1 内容风险</h3>
+<table>
+<thead>
+<tr>
+<th>风险项</th>
+<th>具体表现</th>
+<th>严重度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>政治敏感</strong></td>
+<td>终局任务为"阻止日本部署路基宙斯盾"、"炸毁宙斯盾"、"轰炸东京"</td>
+<td>🔴 高</td>
+</tr>
+<tr>
+<td><strong>成人内容</strong></td>
+<td>艺伎/名媛系统、"解救"艺伎、歌舞伎町风俗店描写</td>
+<td>🔴 高</td>
+</tr>
+<tr>
+<td><strong>犯罪教唆</strong></td>
+<td>详细教授入室、盗车、劫狱、撬锁、拆警报器等方法</td>
+<td>🟠 中高</td>
+</tr>
+<tr>
+<td><strong>暴力</strong></td>
+<td>打斗、枪战、致人死亡文案（"挂了""死了"）</td>
+<td>🟠 中</td>
+</tr>
+<tr>
+<td><strong>赌博</strong></td>
+<td>娱乐城、竞速博彩（"竞速博车/博钱"）</td>
+<td>🟠 中</td>
+</tr>
+<tr>
+<td><strong>赌博式内购</strong></td>
+<td>赛车失败"无法回收魂币"</td>
+<td>🟠 中</td>
+</tr>
+<tr>
+<td><strong>审核规避</strong></td>
+<td>小程序 <code>fake_url</code> 马甲页</td>
+<td>🟠 中</td>
+</tr>
+</tbody>
+</table>
+<h3 id="162">16.2 技术风险</h3>
+<table>
+<thead>
+<tr>
+<th>风险项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>明文传输</strong></td>
+<td><code>usesCleartextTraffic=true</code> + HTTP 地址，存在 MITM 风险</td>
+</tr>
+<tr>
+<td><strong>用户标识泄露</strong></td>
+<td><code>openid</code> 通过 URL 明文传递</td>
+</tr>
+<tr>
+<td><strong>自建支付网关</strong></td>
+<td>支付经 <code>www.hun369.cn/h2pay/</code>，非直连官方渠道，<strong>资金安全存疑</strong></td>
+</tr>
+<tr>
+<td><strong>无障碍接口预留</strong></td>
+<td><code>openAccessibility()</code> 存在，若启用则权限极高</td>
+</tr>
+<tr>
+<td><strong>Root 检测</strong></td>
+<td>可能用于差异化处理或风控标记</td>
+</tr>
+<tr>
+<td><strong>依赖单一服务端</strong></td>
+<td>主域名已 522，游戏已不可用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="163">16.3 合规建议（如涉及评估）</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>上架中国大陆应用商店</strong></td>
+<td>❌ 几乎不可能通过（政治敏感 + 成人内容 + 犯罪题材）</td>
+</tr>
+<tr>
+<td><strong>上架 Google Play</strong></td>
+<td>⚠️ 已上架但存在下架风险（成人/暴力/赌博元素）</td>
+</tr>
+<tr>
+<td><strong>企业内部分析</strong></td>
+<td>✅ 可作为"空壳 WebView 架构"研究样本</td>
+</tr>
+<tr>
+<td><strong>安全研究</strong></td>
+<td>✅ 建议隔离环境运行，注意明文流量与支付风险</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_15">十七、技术结论</h2>
+<h3 id="171">17.1 架构亮点（值得学习）</h3>
+<ol>
+<li><strong>极致的"轻客户端"设计</strong></li>
+<li>App 本体仅 10 MB，99% 是第三方库</li>
+<li>自研代码 &lt; 1100 行，却支撑了一个完整游戏</li>
+<li>
+<p>内容全云端，实现真正的"随时热更新"</p>
+</li>
+<li>
+<p><strong>成熟的双向 JS 桥设计</strong></p>
+</li>
+<li><code>jsbridge_android</code> 单一入口 + <code>&amp;</code> 分隔协议</li>
+<li>覆盖支付、震动、内存、Root 检测、UI 控制</li>
+<li>
+<p>静态字段共享状态（<code>lastHunCoin</code>、<code>out_trade_no</code>）</p>
+</li>
+<li>
+<p><strong>精妙的文案工程</strong></p>
+</li>
+<li>2423 条文案独立成库，与逻辑分离</li>
+<li>802 个随机文案池（<code>ARR_</code>），极大提升重复可玩性</li>
+<li>
+<p>占位符 + 彩色标记的轻量模板引擎</p>
+</li>
+<li>
+<p><strong>高度成熟的商业化设计</strong></p>
+</li>
+<li>双货币 + 双轨支付</li>
+<li>"氪金货币可通过 PvP 免费获得"的留存钩子</li>
+<li>"购买装备会返还"的降低抵触设计</li>
+<li>
+<p>每日限次的免费氪金货币（防刷 + 促活）</p>
+</li>
+<li>
+<p><strong>社交资产化创新</strong></p>
+</li>
+<li>FC 模拟器游戏 = 可争夺的社团资产</li>
+<li>艺伎 = 可掳掠的社交资本</li>
+<li>地盘 = 可持续产出黑金的资产</li>
+</ol>
+<h3 id="172">17.2 技术缺陷</h3>
+<table>
+<thead>
+<tr>
+<th>缺陷</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>无任何离线能力</strong></td>
+<td>断网/服务端宕机 = 完全不可用</td>
+</tr>
+<tr>
+<td><strong>明文流量</strong></td>
+<td>安全合规硬伤</td>
+</tr>
+<tr>
+<td><strong>单点依赖</strong></td>
+<td>服务端一挂全挂（当前已 522）</td>
+</tr>
+<tr>
+<td><strong>无原生库</strong></td>
+<td>无法使用高性能图形（也说明游戏本身运算量低）</td>
+</tr>
+<tr>
+<td><strong>PairIP 加固</strong></td>
+<td>双刃剑——安全但增加维护成本</td>
+</tr>
+<tr>
+<td><strong>jQuery 1.4.2</strong></td>
+<td>FC 模拟器用的 jQuery 是 2011 年的版本，存在已知漏洞</td>
+</tr>
+</tbody>
+</table>
+<h3 id="173">17.3 一句话总结</h3>
+<blockquote>
+<p>这是一款<strong>技术上极度克制、内容上极度激进</strong>的游戏：
+用不到 1100 行原生代码 + 一个 WebView，承载了一个包含犯罪、赌博、成人、政治敏感元素的庞大文字策略游戏；
+它的"本体"其实不是这个 APK，而是云端的 2.04 MB <code>hun_min.js</code> 和 2423 条文案；
+<strong>APK 只是钥匙，游戏在云端。</strong></p>
+</blockquote>
+<hr />
+<h2 id="_16">十八、附录</h2>
+<h3 id="aapk">附录 A：APK 关键文件清单</h3>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>大小</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AndroidManifest.xml</code></td>
+<td>9,044 B</td>
+<td>二进制清单</td>
+</tr>
+<tr>
+<td><code>classes.dex</code></td>
+<td>7,563,816 B</td>
+<td>唯一 dex</td>
+</tr>
+<tr>
+<td><code>resources.arsc</code></td>
+<td>398,304 B</td>
+<td>资源表</td>
+</tr>
+<tr>
+<td><code>res/mipmap-xxxhdpi-v4/ic_launcher.webp</code></td>
+<td>4,362 B</td>
+<td>应用图标</td>
+</tr>
+<tr>
+<td><code>res/xml/network_security_config.xml</code></td>
+<td>264 B</td>
+<td>网络配置</td>
+</tr>
+<tr>
+<td><code>res/xml/splits0.xml</code></td>
+<td>8,404 B</td>
+<td>Split 配置</td>
+</tr>
+<tr>
+<td><code>res/raw/com_android_billingclient_heterodyne_info</code></td>
+<td>46 B</td>
+<td>Billing</td>
+</tr>
+<tr>
+<td><code>billing.properties</code></td>
+<td>50 B</td>
+<td>Billing 版本</td>
+</tr>
+<tr>
+<td><code>stamp-cert-sha256</code></td>
+<td>32 B</td>
+<td>Source Stamp 证书哈希</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b">附录 B：完整自研类源码行数</h3>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>行数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>com/haohun/japan/MainActivity.java</code></td>
+<td>255</td>
+</tr>
+<tr>
+<td><code>com/util/RootCheckPlus.java</code></td>
+<td>217</td>
+</tr>
+<tr>
+<td><code>com/hao/js/AndroidToJs.java</code></td>
+<td>173</td>
+</tr>
+<tr>
+<td><code>com/util/DeviceUtils.java</code></td>
+<td>138</td>
+</tr>
+<tr>
+<td><code>com/hao/hun/BillingManager.java</code></td>
+<td>127</td>
+</tr>
+<tr>
+<td><code>com/hao/js/JsToAndroid.java</code></td>
+<td>111</td>
+</tr>
+<tr>
+<td><code>com/util/RootCheck.java</code></td>
+<td>50</td>
+</tr>
+<tr>
+<td><code>com/hao/hun/japan/SafeWebView.java</code></td>
+<td>22</td>
+</tr>
+<tr>
+<td><code>com/hao/stuff/Haodaren.java</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>合计（不含自动生成）</strong></td>
+<td><strong>≈ 1105 行</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="c">附录 C：后端接口速查表</h3>
+<pre><code>【游戏 API】
+GET  https://h2jp.hun333.com/h2/get_exparam_by_openid.do?openid=...
+GET  https://h2jpen.hun333.com/h2/get_exparam_by_openid.do?openid=...
+
+【埋点】
+GET  https://hun1.hun333.com/stat/add_point.do?point_type=...
+
+【支付】
+POST https://www.hun369.cn/h2pay/pay.do
+POST https://www.hun369.cn/h2pay/pay_qq.do
+POST https://www.hun369.cn/h2pay/qq_user_comfirm.do
+POST https://www.hun369.cn/h2pay/wx_user_comfirm.do
+
+【环境探测】
+GET  https://ipapi.co/json/
+
+【CDN】
+     https://hun2-cn.oss-cn-hangzhou.aliyuncs.com/static/
+     https://hun2-en.oss-accelerate.aliyuncs.com/static/
+     https://hun2cos-1300260944.file.myqcloud.com/static/
+
+【入口】
+     https://h2jp.nbn369.com/jump/jump.html
+     https://h2jp.hun333.com/static/html/hun_japan.html
+     http://hkh2jp.hun333.com/static/html/hun_japan.html
+     http://route.hun333.com/static/hun_main/iframe_container.html
+</code></pre>
+<h3 id="d">附录 D：调查工具与方法</h3>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>工具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>解包</td>
+<td><code>unzip</code></td>
+</tr>
+<tr>
+<td>Manifest 解析</td>
+<td><code>pyaxmlparser</code>（AXMLPrinter）</td>
+</tr>
+<tr>
+<td>Java 反编译</td>
+<td><code>jadx 1.5.0</code>（CLI headless 模式）</td>
+</tr>
+<tr>
+<td>签名解析</td>
+<td>自写 Python（struct 解析 APK Sig Block v2/v3）</td>
+</tr>
+<tr>
+<td>图标转换</td>
+<td><code>Pillow</code>（WebP → PNG）</td>
+</tr>
+<tr>
+<td>字符串提取</td>
+<td>Python <code>re</code> 批量正则</td>
+</tr>
+<tr>
+<td>线上资源</td>
+<td><code>curl</code> + <code>cors.isteed.cc</code> 代理</td>
+</tr>
+<tr>
+<td>哈希校验</td>
+<td><code>md5sum</code> / <code>sha256sum</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="e">附录 E：调查产出文件</h3>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APK 原件</td>
+<td><code>/workspace/hun.apk</code></td>
+<td>原始安装包</td>
+</tr>
+<tr>
+<td>本文档</td>
+<td><code>/workspace/调查报告/混在日本_HunJapan_APK深度调查文档.md</code></td>
+<td>本调查文档</td>
+</tr>
+<tr>
+<td>下载脚本</td>
+<td><code>/workspace/download_hun2.py</code></td>
+<td>一键下载脚本</td>
+</tr>
+<tr>
+<td>断点续传脚本</td>
+<td><code>/workspace/fetch_hun2.py</code></td>
+<td>分块下载</td>
+</tr>
+<tr>
+<td>健壮下载器</td>
+<td><code>/workspace/fetch_apk_robust.py</code></td>
+<td>严格状态码校验</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>调查报告完</strong></p>
+<blockquote>
+<p>本文档基于静态分析完成，未对目标进行任何入侵性测试。所有线上资源获取均通过公开 CDN 进行。
+文档中的域名、接口、文案等信息仅用于技术研究与安全评估，请勿用于任何违法用途。</p>
+</blockquote>
+</main>
+</div>
+<button class="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+</body>
+</html>

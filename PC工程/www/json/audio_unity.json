@@ -1,0 +1,2298 @@
+{
+  "effect": [
+	{
+	  "desc": "棍子挥舞的声音",
+	  "local": false,
+	  "ids": [
+		"swing_1"
+	  ]
+	},
+	{
+	  "desc": "子弹击中身体",
+	  "local": false,
+	  "ids": [
+		"bullet_hit_body_1",
+		"bullet_hit_body_2",
+		"bullet_hit_body_3",
+		"bullet_hit_body_4",
+		"bullet_hit_body_5"
+	  ]
+	},
+	{
+	  "desc": "飞机场声音",
+	  "local": false,
+	  "ids": [
+		"airport_1",
+		"airport_2"
+	  ]
+	},
+	{
+	  "desc": "飞机起飞声音",
+	  "local": false,
+	  "ids": [
+		"plane_fly_1",
+		"plane_fly_2",
+		"plane_fly_3"
+	  ]
+	},
+	{
+	  "desc": "艺伎被解救声音",
+	  "local": false,
+	  "ids": [
+		"robed_geicha_1",
+		"robed_geicha_2",
+		"robed_geicha_3",
+		"robed_geicha_4",
+		"robed_geicha_5",
+		"robed_geicha_6",
+		"robed_geicha_7",
+		"robed_geicha_8",
+		"robed_geicha_9",
+		"robed_geicha_10",
+		"robed_geicha_11"
+	  ]
+	},
+	{
+	  "desc": "sexy music",
+	  "local": false,
+	  "ids": [
+		"sexy_music_1",
+		"sexy_music_2",
+		"sexy_music_3"
+	  ]
+	},
+	{
+	  "desc": "atm",
+	  "local": false,
+	  "ids": [
+		"atm"
+	  ]
+	},
+	{
+	  "desc": "投掷物品",
+	  "ids": [
+		"bi_shou_3",
+		"bi_shou_1"
+	  ]
+	},
+	{
+	  "desc": "热点中的选择热点单元声音",
+	  "ids": [
+		"click_in_menu_1"
+	  ]
+	},
+	{
+	  "desc": "关闭点击",
+	  "ids": [
+		"click_close"
+	  ]
+	},
+	{
+	  "desc": "热点中执行任务声音",
+	  "ids": [
+		"exe_job_1"
+	  ]
+	},
+	{
+	  "desc": "热点中无法执行声音",
+	  "ids": [
+		"exe_unable_1",
+		"exe_unable_2",
+		"exe_unable_3",
+		"exe_unable_4",
+		"exe_unable_5"
+	  ]
+	},
+	{
+	  "desc": "热点中无法执行声音_轻量的",
+	  "ids": [
+		"exe_unable_4"
+	  ]
+	},
+	{
+	  "desc": "点击热点",
+	  "ids": [
+		"click_hotspot_1"
+	  ]
+	},
+	{
+	  "desc": "装备冷兵器",
+	  "ids": [
+		"equip_cool_weapon"
+	  ]
+	},
+	{
+	  "desc": "装备枪支",
+	  "ids": [
+		"equip_gun"
+	  ]
+	},
+	{
+	  "desc": "装备工具",
+	  "ids": [
+		"equip_tools"
+	  ]
+	},
+	{
+	  "desc": "装备防弹衣",
+	  "ids": [
+		"equip_cloth"
+	  ]
+	},
+	{
+	  "desc": "汽车装备加速器",
+	  "ids": [
+		"equip_n2o"
+	  ]
+	},
+	{
+	  "desc": "卸载冷兵器",
+	  "ids": [
+		"unequip"
+	  ]
+	},
+	{
+	  "desc": "匕首",
+	  "ids": [
+		"bi_shou_1",
+		"bi_shou_2",
+		"bi_shou_3",
+		"bi_shou_4",
+		"bi_shou_5"
+	  ]
+	},
+	{
+	  "desc": "球棒",
+	  "ids": [
+		"qiu_bang_1",
+		"qiu_bang_2",
+		"qiu_bang_3",
+		"qiu_bang_4",
+		"qiu_bang_5"
+	  ]
+	},
+	{
+	  "desc": "消防斧",
+	  "ids": [
+		"xiao_fang_fu_1",
+		"xiao_fang_fu_2",
+		"xiao_fang_fu_3",
+		"xiao_fang_fu_4"
+	  ]
+	},
+	{
+	  "desc": "武士剑",
+	  "ids": [
+		"wu_shi_dao_1",
+		"wu_shi_dao_2",
+		"wu_shi_dao_3"
+	  ]
+	},
+	{
+	  "desc": "拳头声音",
+	  "ids": [
+		"chu_quan_1",
+		"chu_quan_2",
+		"chu_quan_3",
+		"chu_quan_4",
+		"chu_quan_5",
+		"chu_quan_6"
+	  ]
+	},
+	{
+	  "desc": "单个拳头声音",
+	  "ids": [
+		"chu_quan_3",
+		"chu_quan_1",
+		"chu_quan_4",
+		"chu_quan_5"
+	  ]
+	},
+	{
+	  "desc": "警用电棒",
+	  "ids": [
+		"dian_bang_1",
+		"dian_bang_2",
+		"dian_bang_3",
+		"dian_bang_4",
+		"dian_bang_5"
+	  ]
+	},
+	{
+	  "desc": "南部M57",
+	  "ids": [
+		"shou_qiang_1",
+		"shou_qiang_2",
+		"shou_qiang_3",
+		"shou_qiang_4",
+		"shou_qiang_5",
+		"shou_qiang_6",
+		"shou_qiang_7",
+		"shou_qiang_8",
+		"shou_qiang_9",
+		"shou_qiang_10"
+	  ]
+	},
+	{
+	  "desc": "沙漠之鹰",
+	  "ids": [
+		"sha_mo_zhi_ying_1",
+		"sha_mo_zhi_ying_2"
+	  ]
+	},
+	{
+	  "desc": "乌兹冲锋枪",
+	  "ids": [
+		"wu_zi_1",
+		"wu_zi_2",
+		"wu_zi_3",
+		"wu_zi_4"
+	  ]
+	},
+	{
+	  "desc": "MP5冲锋枪",
+	  "ids": [
+		"mp5_1",
+		"mp5_2",
+		"mp5_3",
+		"mp5_4"
+	  ]
+	},
+	{
+	  "desc": "AK47突击步枪",
+	  "ids": [
+		"ak47_1",
+		"ak47_2",
+		"ak47_3"
+	  ]
+	},
+	{
+	  "desc": "M4卡宾枪",
+	  "ids": [
+		"m4_1",
+		"m4_2",
+		"m4_3",
+		"m4_4"
+	  ]
+	},
+	{
+	  "desc": "雷明顿870",
+	  "ids": [
+		"shotgun_1",
+		"shotgun_2"
+	  ]
+	},
+	{
+	  "desc": "艾奇逊AA12",
+	  "ids": [
+		"shotgun_mult_1",
+		"shotgun_mult_2"
+	  ]
+	},
+	{
+	  "desc": "AR-50狙击步枪",
+	  "ids": [
+		"ar50_1",
+		"ar50_2",
+		"ar50_3",
+		"ar50_4"
+	  ]
+	},
+	{
+	  "desc": "防弹马甲",
+	  "ids": [
+		"fang_dan_yi_1",
+		"fang_dan_yi_2",
+		"fang_dan_yi_3",
+		"fang_dan_yi_4"
+	  ]
+	},
+	{
+	  "desc": "氧化二氮加速瓶",
+	  "ids": [
+		"jia_su_1",
+		"jia_su_2",
+		"jia_su_3",
+		"jia_su_4"
+	  ]
+	},
+	{
+	  "desc": "超级氧化二氮加速瓶",
+	  "ids": [
+		"jia_su_1",
+		"jia_su_2",
+		"jia_su_3",
+		"jia_su_4"
+	  ]
+	},
+	{
+	  "desc": "夜视仪",
+	  "ids": [
+		"ye_shi_yi_1",
+		"ye_shi_yi_2"
+	  ]
+	},
+	{
+	  "desc": "开锁工具套件",
+	  "ids": [
+		"unlock1",
+		"unlock2",
+		"unlock3",
+		"unlock4",
+		"unlock5"
+	  ]
+	},
+	{
+	  "desc": "百合钥匙串",
+	  "ids": [
+		"yao_shi_chuan_1",
+		"yao_shi_chuan_2",
+		"yao_shi_chuan_3"
+	  ]
+	},
+	{
+	  "desc": "开锁枪",
+	  "ids": [
+		"kai_suo_qiang_1",
+		"kai_suo_qiang_2"
+	  ]
+	},
+	{
+	  "desc": "电子开锁器",
+	  "ids": [
+		"dian_zi_kai_suo_qi_1"
+	  ]
+	},
+	{
+	  "desc": "簧片撬锁勾具",
+	  "ids": [
+		"gou_huang_1",
+		"gou_huang_2"
+	  ]
+	},
+	{
+	  "desc": "充气门楔",
+	  "ids": [
+		"chong_qi_men_xie_1"
+	  ]
+	},
+	{
+	  "desc": "液氮喷射器",
+	  "ids": [
+		"ye_dan_1",
+		"ye_dan_2",
+		"ye_dan_3",
+		"ye_dan_4"
+	  ]
+	},
+	{
+	  "desc": "含氧汽油切割机",
+	  "ids": [
+		"huo_yan_pen_she_1",
+		"huo_yan_pen_she_2",
+		"huo_yan_pen_she_3",
+		"huo_yan_pen_she_4"
+	  ]
+	},
+	{
+	  "desc": "大力扳钳",
+	  "ids": [
+		"da_li_ban_qian_1"
+	  ]
+	},
+	{
+	  "desc": "环形玻璃切割器",
+	  "ids": [
+		"qie_bo_li_1",
+		"qie_bo_li_2"
+	  ]
+	},
+	{
+	  "desc": "剪线钳",
+	  "ids": [
+		"jian_xian_qian_1",
+		"jian_xian_qian_2",
+		"jian_xian_qian_3",
+		"jian_xian_qian_4"
+	  ]
+	},
+	{
+	  "desc": "GPS干扰器",
+	  "ids": [
+		"set_gps"
+	  ]
+	},
+	{
+	  "desc": "刀片",
+	  "ids": [
+		"dao_pian_1",
+		"dao_pian_2",
+		"dao_pian_3"
+	  ]
+	},
+	{
+	  "desc": "长镊子",
+	  "ids": [
+		"chuang_nie_zi_1",
+		"chuang_nie_zi_2",
+		"chuang_nie_zi_3"
+	  ]
+	},
+	{
+	  "desc": "棉被",
+	  "ids": [
+		"mian_bei_1",
+		"mian_bei_2"
+	  ]
+	},
+	{
+	  "desc": "乙醚",
+	  "ids": [
+		"yi_mi_1",
+		"yi_mi_2",
+		"yi_mi_3",
+		"yi_mi_4"
+	  ]
+	},
+	{
+	  "desc": "飞刀",
+	  "ids": [
+		"fei_dao_1",
+		"fei_dao_2"
+	  ]
+	},
+	{
+	  "desc": "炸弹",
+	  "ids": [
+		"she_zhi_zha_dan"
+	  ]
+	},
+	{
+	  "desc": "点击医院",
+	  "ids": [
+		"hospital_1",
+		"hospital_2",
+		"hospital_3"
+	  ]
+	},
+	{
+	  "desc": "点击医院——上病床",
+	  "ids": [
+		"on_off_bed_1"
+	  ]
+	},
+	{
+	  "desc": "点击汽修厂",
+	  "ids": [
+		"car_repair_shop_1",
+		"car_repair_shop_2",
+		"car_repair_shop_3"
+	  ]
+	},
+	{
+	  "desc": "点击汽修厂——开始修车",
+	  "ids": [
+		"fix_car_1",
+		"fix_car_2"
+	  ]
+	},
+	{
+	  "desc": "点击汽修厂——车辆回团队",
+	  "ids": [
+		"car_back_1"
+	  ]
+	},
+	{
+	  "desc": "点击街头",
+	  "ids": [
+		"street_1",
+		"street_2",
+		"street_3"
+	  ]
+	},
+	{
+	  "desc": "点击黑店",
+	  "ids": [
+		"black_shop_1"
+	  ]
+	},
+	{
+	  "desc": "点击商圈",
+	  "ids": [
+		"trade_area_1",
+		"trade_area_2",
+		"trade_area_3",
+		"trade_area_4",
+		"trade_area_5"
+	  ]
+	},
+	{
+	  "desc": "点击线人",
+	  "ids": [
+		"contacter_1"
+	  ]
+	},
+	{
+	  "desc": "点击新干线",
+	  "ids": [
+		"train_1",
+		"train_2"
+	  ]
+	},
+	{
+	  "desc": "点击新干线——启程去目的地",
+	  "ids": [
+		"train_move_1",
+		"train_move_2"
+	  ]
+	},
+	{
+	  "desc": "点击银行",
+	  "ids": [
+		"bank_1",
+		"bank_2"
+	  ]
+	},
+	{
+	  "desc": "点击居民区",
+	  "ids": [
+		"people_area_1",
+		"people_area_2",
+		"people_area_3"
+	  ]
+	},
+	{
+	  "desc": "点击黑帮",
+	  "ids": [
+		"heart_bit_1"
+	  ]
+	},
+	{
+	  "desc": "点击贿赂警察",
+	  "ids": [
+		"corruption_police_1",
+		"corruption_police_2"
+	  ]
+	},
+	{
+	  "desc": "点击学校",
+	  "ids": [
+		"school_1",
+		"school_2"
+	  ]
+	},
+	{
+	  "desc": "点击学校——上培训班",
+	  "ids": [
+		"sit_down_1"
+	  ]
+	},
+	{
+	  "desc": "点击飙车场",
+	  "ids": [
+		"race_place_1",
+		"race_place_2",
+		"race_place_3",
+		"race_place_4"
+	  ]
+	},
+	{
+	  "desc": "点击飙车场——赌车——竞速",
+	  "ids": [
+		"play_race_1"
+	  ]
+	},
+	{
+	  "desc": "被打叫声_男",
+	  "ids": [
+		"bei_da_nan_1",
+		"bei_da_nan_2",
+		"bei_da_nan_3",
+		"bei_da_nan_4",
+		"bei_da_nan_5",
+		"bei_da_nan_6",
+		"bei_da_nan_7",
+		"bei_da_nan_8",
+		"bei_da_nan_9",
+		"bei_da_nan_10",
+		"bei_da_nan_11",
+		"bei_da_nan_12",
+		"bei_da_nan_13",
+		"bei_da_nan_14",
+		"bei_da_nan_15",
+		"bei_da_nan_16",
+		"bei_da_nan_17",
+		"bei_da_nan_18",
+		"bei_da_nan_18",
+		"bei_da_nan_19"
+	  ]
+	},
+	{
+	  "desc": "被打叫声_女",
+	  "ids": [
+		"bei_da_nv_1",
+		"bei_da_nv_2",
+		"bei_da_nv_3",
+		"bei_da_nv_4",
+		"bei_da_nv_5",
+		"bei_da_nv_6",
+		"bei_da_nv_7",
+		"bei_da_nv_8",
+		"bei_da_nv_9",
+		"bei_da_nv_10",
+		"bei_da_nv_11",
+		"bei_da_nv_12"
+	  ]
+	},
+	{
+	  "desc": "枪支打空",
+	  "ids": [
+		"qiang_da_kong_1",
+		"qiang_da_kong_2",
+		"qiang_da_kong_3",
+		"qiang_da_kong_4",
+		"qiang_da_kong_5",
+		"qiang_da_kong_6",
+		"qiang_da_kong_7"
+	  ]
+	},
+	{
+	  "desc": "汽车警报",
+	  "ids": [
+		"qi_che_bao_jing_1",
+		"qi_che_bao_jing_2",
+		"qi_che_bao_jing_3",
+		"qi_che_bao_jing_4"
+	  ]
+	},
+	{
+	  "desc": "银行警报",
+	  "ids": [
+		"yin_hang_jing_bao_1",
+		"yin_hang_jing_bao_2"
+	  ]
+	},
+	{
+	  "desc": "便利店警报",
+	  "ids": [
+		"jing_ling_1",
+		"jing_ling_2",
+		"jing_ling_3"
+	  ]
+	},
+	{
+	  "desc": "警察出现",
+	  "ids": [
+		"jing_cha_cu_xian_1",
+		"jing_cha_cu_xian_2",
+		"jing_cha_cu_xian_3",
+		"jing_cha_cu_xian_4",
+		"jing_cha_cu_xian_5",
+		"jing_cha_cu_xian_6",
+		"jing_cha_cu_xian_7",
+		"jing_cha_cu_xian_8"
+	  ]
+	},
+	{
+	  "desc": "警察警告",
+	  "ids": [
+		"jing_cha_shao_zi_1",
+		"jing_cha_shao_zi_2",
+		"jing_cha_shao_zi_3",
+		"jing_cha_shao_zi_4",
+		"jing_cha_shao_zi_5"
+	  ]
+	},
+	{
+	  "desc": "快步走",
+	  "ids": [
+		"walking1",
+		"walking2",
+		"walking3",
+		"walking4"
+	  ]
+	},
+	{
+	  "desc": "快步走_很短一秒多一点",
+	  "ids": [
+		"walking2",
+		"walking1"
+	  ]
+	},
+	{
+	  "desc": "亮出枪械",
+	  "ids": [
+		"qiang_shang_tang_1",
+		"qiang_shang_tang_2",
+		"qiang_shang_tang_3",
+		"qiang_shang_tang_4"
+	  ]
+	},
+	{
+	  "desc": "观察踩点",
+	  "ids": [
+		"dun_dian_1",
+		"dun_dian_2"
+	  ]
+	},
+	{
+	  "desc": "付钱",
+	  "ids": [
+		"pay_cash_1",
+		"pay_cash_2",
+		"pay_cash_3",
+		"pay_cash_4",
+		"pay_cash_5"
+	  ]
+	},
+	{
+	  "desc": "看房子",
+	  "ids": [
+		"buy_house_1",
+		"buy_house_2"
+	  ]
+	},
+	{
+	  "desc": "看车库",
+	  "ids": [
+		"buy_garage_1",
+		"buy_garage_2"
+	  ]
+	},
+	{
+	  "desc": "雇佣成功",
+	  "ids": [
+		"kou_shao_1",
+		"kou_shao_2",
+		"kou_shao_3",
+		"kou_shao_4"
+	  ]
+	},
+	{
+	  "desc": "即将解雇【男】",
+	  "ids": [
+		"cry_male_1",
+		"cry_male_2",
+		"cry_male_3",
+		"cry_male_4",
+		"cry_male_5"
+	  ]
+	},
+	{
+	  "desc": "即将解雇【女】",
+	  "ids": [
+		"cry_female_1",
+		"cry_female_2",
+		"cry_female_3",
+		"cry_female_4",
+		"cry_female_5"
+	  ]
+	},
+	{
+	  "desc": "解雇成功",
+	  "ids": [
+		"jie_gu_1"
+	  ]
+	},
+	{
+	  "desc": "打电话报平安",
+	  "ids": [
+		"mission_phone"
+	  ]
+	},
+	{
+	  "desc": "寄钱",
+	  "ids": [
+		"mission_give_money"
+	  ]
+	},
+	{
+	  "desc": "寄礼品",
+	  "ids": [
+		"mission_give_goods"
+	  ]
+	},
+	{
+	  "desc": "生日礼物",
+	  "ids": [
+		"mission_birthday"
+	  ]
+	},
+	{
+	  "desc": "结婚纪念日",
+	  "ids": [
+		"mission_marry"
+	  ]
+	},
+	{
+	  "desc": "买别墅",
+	  "ids": [
+		"mission_villa"
+	  ]
+	},
+	{
+	  "desc": "盖福利院",
+	  "ids": [
+		"mission_old_man_house"
+	  ]
+	},
+	{
+	  "desc": "捐希望小学",
+	  "ids": [
+		"mission_primary_school"
+	  ]
+	},
+	{
+	  "desc": "炸宙斯盾",
+	  "ids": [
+		"mission_zeus"
+	  ]
+	},
+	{
+	  "desc": "玻璃破碎",
+	  "ids": [
+		"break_glass_1",
+		"break_glass_2",
+		"break_glass_3",
+		"break_glass_4"
+	  ]
+	},
+	{
+	  "desc": "玻璃未破碎",
+	  "ids": [
+		"unbreak_glass_1",
+		"unbreak_glass_2"
+	  ]
+	},
+	{
+	  "desc": "汽车发动声",
+	  "ids": [
+		"start_on_car_1",
+		"start_on_car_2"
+	  ]
+	},
+	{
+	  "desc": "击中汽车",
+	  "ids": [
+		"hit_car_1",
+		"hit_car_2"
+	  ]
+	},
+	{
+	  "desc": "停车",
+	  "ids": [
+		"stop_car_1"
+	  ]
+	},
+	{
+	  "desc": "驾驶汽车",
+	  "ids": [
+		"driver_car_1",
+		"driver_car_2",
+		"driver_car_3",
+		"driver_car_4"
+	  ]
+	},
+	{
+	  "desc": "死亡_男",
+	  "ids": [
+		"dead_male_1",
+		"dead_male_2",
+		"dead_male_3",
+		"dead_male_4"
+	  ]
+	},
+	{
+	  "desc": "死亡_女",
+	  "ids": [
+		"dead_female_1",
+		"dead_female_2",
+		"dead_female_3",
+		"dead_female_4"
+	  ]
+	},
+	{
+	  "desc": "人物倒下",
+	  "ids": [
+		"person_down_1",
+		"person_down_2"
+	  ]
+	},
+	{
+	  "desc": "汽车爆炸",
+	  "ids": [
+		"car_explosion_1",
+		"car_explosion_2",
+		"car_explosion_3"
+	  ]
+	},
+	{
+	  "desc": "额外多一次机会",
+	  "ids": [
+		"get_move_chance_1",
+		"get_move_chance_2"
+	  ]
+	},
+	{
+	  "desc": "技能升级",
+	  "ids": [
+		"upgrade_skill_1",
+		"upgrade_skill_2",
+		"upgrade_skill_3"
+	  ]
+	},
+	{
+	  "desc": "物品扔掉",
+	  "ids": [
+		"throw_away_1"
+	  ]
+	},
+	{
+	  "desc": "正常提示债主催债",
+	  "ids": [
+		"notice_zheng_chang_1",
+		"notice_zheng_chang_2",
+		"notice_zheng_chang_3",
+		"notice_zheng_chang_4",
+		"notice_zheng_chang_5",
+		"notice_zheng_chang_6"
+	  ]
+	},
+	{
+	  "desc": "消极提示拖欠工资",
+	  "ids": [
+		"notice_xiao_ji_1",
+		"notice_xiao_ji_2",
+		"notice_xiao_ji_3",
+		"notice_xiao_ji_4",
+		"notice_xiao_ji_5"
+	  ]
+	},
+	{
+	  "desc": "帮攻击，警察攻击，债主攻击",
+	  "ids": [
+		"notice_wei_xian_1",
+		"notice_wei_xian_2",
+		"notice_wei_xian_3",
+		"notice_wei_xian_4",
+		"notice_wei_xian_5",
+		"notice_wei_xian_6",
+		"notice_wei_xian_7"
+	  ]
+	},
+	{
+	  "desc": "不屑一顾",
+	  "ids": [
+		"disdain_man_1",
+		"disdain_man_2",
+		"disdain_man_3",
+		"disdain_man_4",
+		"disdain_man_5"
+	  ]
+	},
+	{
+	  "desc": "生气",
+	  "ids": [
+		"angry_man_1",
+		"angry_man_2",
+		"angry_man_3",
+		"angry_man_4"
+	  ]
+	},
+	{
+	  "desc": "野兽咆哮生气",
+	  "ids": [
+		"angry_man_3",
+		"angry_man_4"
+	  ]
+	},
+	{
+	  "desc": "汽车失控",
+	  "ids": [
+		"car_lost_control_1",
+		"car_lost_control_2",
+		"car_lost_control_3"
+	  ]
+	},
+	{
+	  "desc": "气喘",
+	  "ids": [
+		"gasp_1",
+		"gasp_2",
+		"gasp_3"
+	  ]
+	},
+	{
+	  "desc": "搜刮物品",
+	  "ids": [
+		"find_goods_1",
+		"find_goods_2"
+	  ]
+	},
+	{
+	  "desc": "获得金钱",
+	  "ids": [
+		"get_money_1",
+		"get_money_2"
+	  ]
+	},
+	{
+	  "desc": "开车门",
+	  "ids": [
+		"open_car_door_1",
+		"open_car_door_2"
+	  ]
+	},
+	{
+	  "desc": "启动打火声",
+	  "ids": [
+		"start_on_car_try_1"
+	  ]
+	},
+	{
+	  "desc": "使用失败",
+	  "ids": [
+		"exe_unable_5",
+		"exe_unable_1",
+		"exe_unable_2",
+		"exe_unable_3",
+		"exe_unable_4"
+	  ]
+	},
+	{
+	  "desc": "叫唤提示男",
+	  "ids": [
+		"hei_male_1",
+		"hei_male_2",
+		"hei_male_3"
+	  ]
+	},
+	{
+	  "desc": "叫唤提示女",
+	  "ids": [
+		"hei_female_1",
+		"hei_female_2",
+		"hei_female_3"
+	  ]
+	},
+	{
+	  "desc": "系安全带",
+	  "ids": [
+		"seat_belt_1",
+		"seat_belt_2",
+		"seat_belt_3"
+	  ]
+	},
+	{
+	  "desc": "好消息提示",
+	  "ids": [
+		"notice_good_1",
+		"notice_good_2",
+		"notice_good_3",
+		"notice_good_4"
+	  ]
+	},
+	{
+	  "desc": "害怕男",
+	  "ids": [
+		"afraid_male_1",
+		"afraid_male_2",
+		"afraid_male_3"
+	  ]
+	},
+	{
+	  "desc": "害怕女",
+	  "ids": [
+		"afraid_female_1",
+		"afraid_female_2",
+		"afraid_female_3"
+	  ]
+	},
+	{
+	  "desc": "挣扎声",
+	  "ids": [
+		"struggle_1",
+		"struggle_2",
+		"struggle_3",
+		"struggle_4"
+	  ]
+	},
+	{
+	  "desc": "拉链",
+	  "ids": [
+		"open_zip_1",
+		"open_zip_2"
+	  ]
+	},
+	{
+	  "desc": "碰倒物品",
+	  "ids": [
+		"bump_into_goods_1",
+		"bump_into_goods_2"
+	  ]
+	},
+	{
+	  "desc": "碰倒物品",
+	  "ids": [
+		"open_door_1",
+		"open_door_2",
+		"open_door_3"
+	  ]
+	},
+	{
+	  "desc": "推",
+	  "ids": [
+		"push_1"
+	  ]
+	},
+	{
+	  "desc": "色诱女",
+	  "ids": [
+		"seduction_female_1",
+		"seduction_female_2"
+	  ]
+	},
+	{
+	  "desc": "很爽H女",
+	  "ids": [
+		"shuang_female_1",
+		"shuang_female_2"
+	  ]
+	},
+	{
+	  "desc": "比赛开始A",
+	  "ids": [
+		"race_start_a"
+	  ]
+	},
+	{
+	  "desc": "比赛开始B",
+	  "ids": [
+		"race_start_b"
+	  ]
+	},
+	{
+	  "desc": "惊讶男",
+	  "ids": [
+		"surprise_male_1",
+		"surprise_male_2",
+		"surprise_male_3"
+	  ]
+	},
+	{
+	  "desc": "惊讶女",
+	  "ids": [
+		"surprise_female_1",
+		"surprise_female_2",
+		"surprise_female_3"
+	  ]
+	},
+	{
+	  "desc": "坏消息",
+	  "ids": [
+		"bad_news_1",
+		"bad_news_3",
+		"bad_news_2"
+	  ]
+	},
+	{
+	  "desc": "狗叫",
+	  "ids": [
+		"dog_1"
+	  ]
+	},
+	{
+	  "desc": "意外事件",
+	  "ids": [
+		"surprising_1",
+		"surprising_2",
+		"surprising_3",
+		"surprising_4",
+		"surprising_5"
+	  ]
+	},
+	{
+	  "desc": "吐痰",
+	  "ids": [
+		"tu_tan"
+	  ]
+	},
+	{
+	  "desc": "疯笑男",
+	  "ids": [
+		"crazy_laugh_1",
+		"crazy_laugh_2",
+		"crazy_laugh_3"
+	  ]
+	},
+	{
+	  "desc": "奸笑男",
+	  "ids": [
+		"bad_smile_male_1",
+		"bad_smile_male_2",
+		"bad_smile_male_3"
+	  ]
+	},
+	{
+	  "desc": "奸笑女",
+	  "ids": [
+		"bad_smile_female_1"
+	  ]
+	},
+	{
+	  "desc": "车祸",
+	  "ids": [
+		"car_crash"
+	  ]
+	},
+	{
+	  "desc": "用力使劲男",
+	  "ids": [
+		"work_hard_male_1",
+		"work_hard_male_2"
+	  ]
+	},
+	{
+	  "desc": "用力使劲女",
+	  "ids": [
+		"work_hard_female_1"
+	  ]
+	},
+	{
+	  "desc": "地铁",
+	  "ids": [
+		"di_tie"
+	  ]
+	},
+	{
+	  "desc": "未知生物被杀",
+	  "ids": [
+		"unknow_kill_1",
+		"unknow_kill_2"
+	  ]
+	},
+	{
+	  "desc": "打雷",
+	  "ids": [
+		"da_lei"
+	  ]
+	},
+	{
+	  "desc": "假笑",
+	  "ids": [
+		"fake_laugh_1"
+	  ]
+	},
+	{
+	  "desc": "受到启发",
+	  "ids": [
+		"player_gets_key",
+		"monstar_gets_key",
+		"player_gets_exempt_key"
+	  ]
+	},
+	{
+	  "desc": "疾驰而过",
+	  "ids": [
+		"mighty_eagle_fly"
+	  ]
+	},
+	{
+	  "desc": "失败搞笑版",
+	  "ids": [
+		"shi_bai_funny_1"
+	  ]
+	},
+	{
+	  "desc": "惨叫搞笑版",
+	  "ids": [
+		"canjiao_funny_1"
+	  ]
+	},
+	{
+	  "desc": "孩子满月",
+	  "ids": [
+		"man_yue"
+	  ]
+	},
+	{
+	  "desc": "电话声",
+	  "ids": [
+		"phone"
+	  ]
+	},
+	{
+	  "desc": "兴奋傻叫",
+	  "ids": [
+		"fool_shout_1"
+	  ]
+	},
+	{
+	  "desc": "中奖声",
+	  "ids": [
+		"bonus_level_unlocked"
+	  ]
+	},
+	{
+	  "desc": "被打惨叫",
+	  "ids": [
+		"bei_da1",
+		"bei_da2",
+		"bei_da3",
+		"bei_da4",
+		"bei_da5",
+		"bei_da6",
+		"bei_da7"
+	  ]
+	},
+	{
+	  "desc": "吃东西",
+	  "ids": [
+		"chi_dong_xi",
+		"eating_1",
+		"eating_2",
+		"eating_3",
+		"eating_4"
+	  ]
+	},
+	{
+	  "desc": "饭店环境",
+	  "ids": [
+		"restaurant_1",
+		"restaurant_2",
+		"restaurant_3",
+		"restaurant_4"
+	  ]
+	},
+	{
+	  "desc": "饥饿声音",
+	  "ids": [
+		"hunger_1",
+		"hunger_2",
+		"hunger_3",
+		"hunger_4"
+	  ]
+	},
+	{
+	  "desc": "交好运",
+	  "ids": [
+		"jiao_hao_yun"
+	  ]
+	},
+	{
+	  "desc": "野兽",
+	  "ids": [
+		"yeshou"
+	  ]
+	},
+	{
+	  "desc": "结婚",
+	  "ids": [
+		"jie_hun"
+	  ]
+	},
+	{
+	  "desc": "逃跑",
+	  "ids": [
+		"tao_pao"
+	  ]
+	},
+	{
+	  "desc": "意外受伤",
+	  "ids": [
+		"yi_wai_shou_shang"
+	  ]
+	},
+	{
+	  "desc": "恶犬叫",
+	  "ids": [
+		"mad_dog_1"
+	  ]
+	},
+	{
+	  "desc": "浑水摸鱼",
+	  "ids": [
+		"object_exit_water_1",
+		"object_exit_water_2",
+		"object_exit_water_3",
+		"object_exit_water_4"
+	  ]
+	},
+	{
+	  "desc": "失败",
+	  "ids": [
+		"failure1",
+		"failure2",
+		"failure3",
+		"failure4"
+	  ]
+	},
+	{
+	  "desc": "心情舒畅",
+	  "ids": [
+		"xin_qing_shu_chang"
+	  ]
+	},
+	{
+	  "desc": "小胜利",
+	  "ids": [
+		"success_little"
+	  ]
+	},
+	{
+	  "desc": "逮捕",
+	  "ids": [
+		"arrest"
+	  ]
+	},
+	{
+	  "desc": "睡觉",
+	  "ids": [
+		"sleep"
+	  ]
+	},
+	{
+	  "desc": "给钱",
+	  "ids": [
+		"give_cash"
+	  ]
+	},
+	{
+	  "desc": "不同意男",
+	  "ids": [
+		"disagree_male_1",
+		"disagree_male_2",
+		"disagree_male_3",
+		"disagree_male_4"
+	  ]
+	},
+	{
+	  "desc": "不同意女",
+	  "ids": [
+		"disagree_female_1",
+		"disagree_female_2",
+		"disagree_female_3"
+	  ]
+	},
+	{
+	  "desc": "AWP狙击步枪",
+	  "ids": [
+		"awp_1",
+		"awp_2",
+		"awp_3",
+		"awp_4",
+		"awp_5"
+	  ]
+	},
+	{
+	  "desc": "GTA风格热点",
+	  "ids": [
+		"gta_sa_clip1",
+		"the_next_episode_clip1"
+	  ]
+	}
+  ],
+  "voice_jp": [
+	{
+	  "desc": "开场白_男",
+	  "local": false,
+	  "ids": [
+		"jp_male_prologue_1"
+	  ]
+	},
+	{
+	  "desc": "开场白_女",
+	  "local": false,
+	  "ids": [
+		"jp_female_prologue_1"
+	  ]
+	},
+	{
+	  "desc": "角色_100_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_100_undueremind_1",
+		"jp_100_undueremind_2",
+		"jp_100_undueremind_3",
+		"jp_100_undueremind_4",
+		"jp_100_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_100_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_100_kindurge_1",
+		"jp_100_kindurge_2",
+		"jp_100_kindurge_3",
+		"jp_100_kindurge_4",
+		"jp_100_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_100_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_100_delaypay_1",
+		"jp_100_delaypay_2",
+		"jp_100_delaypay_3",
+		"jp_100_delaypay_4",
+		"jp_100_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_100_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_100_househide_1",
+		"jp_100_househide_2",
+		"jp_100_househide_3",
+		"jp_100_househide_4",
+		"jp_100_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_100_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_100_harmurge_1",
+		"jp_100_harmurge_2",
+		"jp_100_harmurge_3",
+		"jp_100_harmurge_4",
+		"jp_100_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_100_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_100_attack_1",
+		"jp_100_attack_2",
+		"jp_100_attack_3",
+		"jp_100_attack_4",
+		"jp_100_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_100_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_100_payedcomm_1",
+		"jp_100_payedcomm_2",
+		"jp_100_payedcomm_3",
+		"jp_100_payedcomm_4",
+		"jp_100_payedcomm_5"
+	  ]
+	},
+	{
+	  "desc": "角色_101_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_101_undueremind_1",
+		"jp_101_undueremind_2",
+		"jp_101_undueremind_3",
+		"jp_101_undueremind_4",
+		"jp_101_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_101_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_101_kindurge_1",
+		"jp_101_kindurge_2",
+		"jp_101_kindurge_3",
+		"jp_101_kindurge_4",
+		"jp_101_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_101_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_101_delaypay_1",
+		"jp_101_delaypay_2",
+		"jp_101_delaypay_3",
+		"jp_101_delaypay_4",
+		"jp_101_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_101_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_101_househide_1",
+		"jp_101_househide_2",
+		"jp_101_househide_3",
+		"jp_101_househide_4",
+		"jp_101_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_101_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_101_harmurge_1",
+		"jp_101_harmurge_2",
+		"jp_101_harmurge_3",
+		"jp_101_harmurge_4",
+		"jp_101_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_101_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_101_attack_1",
+		"jp_101_attack_2",
+		"jp_101_attack_3",
+		"jp_101_attack_4",
+		"jp_101_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_101_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_101_payedcomm_1",
+		"jp_101_payedcomm_2",
+		"jp_101_payedcomm_3",
+		"jp_101_payedcomm_4",
+		"jp_101_payedcomm_5"
+	  ]
+	},
+	{
+	  "desc": "角色_102_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_102_undueremind_1",
+		"jp_102_undueremind_2",
+		"jp_102_undueremind_3",
+		"jp_102_undueremind_4",
+		"jp_102_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_102_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_102_kindurge_1",
+		"jp_102_kindurge_2",
+		"jp_102_kindurge_3",
+		"jp_102_kindurge_4",
+		"jp_102_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_102_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_102_delaypay_1",
+		"jp_102_delaypay_2",
+		"jp_102_delaypay_3",
+		"jp_102_delaypay_4",
+		"jp_102_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_102_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_102_househide_1",
+		"jp_102_househide_2",
+		"jp_102_househide_3",
+		"jp_102_househide_4",
+		"jp_102_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_102_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_102_harmurge_1",
+		"jp_102_harmurge_2",
+		"jp_102_harmurge_3",
+		"jp_102_harmurge_4",
+		"jp_102_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_102_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_102_attack_1",
+		"jp_102_attack_2",
+		"jp_102_attack_3",
+		"jp_102_attack_4",
+		"jp_102_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_102_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_102_payedcomm_1",
+		"jp_102_payedcomm_2",
+		"jp_102_payedcomm_3",
+		"jp_102_payedcomm_4",
+		"jp_102_payedcomm_5"
+	  ]
+	},
+	{
+	  "desc": "角色_103_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_103_undueremind_1",
+		"jp_103_undueremind_2",
+		"jp_103_undueremind_3",
+		"jp_103_undueremind_4",
+		"jp_103_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_103_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_103_kindurge_1",
+		"jp_103_kindurge_2",
+		"jp_103_kindurge_3",
+		"jp_103_kindurge_4",
+		"jp_103_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_103_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_103_delaypay_1",
+		"jp_103_delaypay_2",
+		"jp_103_delaypay_3",
+		"jp_103_delaypay_4",
+		"jp_103_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_103_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_103_househide_1",
+		"jp_103_househide_2",
+		"jp_103_househide_3",
+		"jp_103_househide_4",
+		"jp_103_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_103_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_103_harmurge_1",
+		"jp_103_harmurge_2",
+		"jp_103_harmurge_3",
+		"jp_103_harmurge_4",
+		"jp_103_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_103_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_103_attack_1",
+		"jp_103_attack_2",
+		"jp_103_attack_3",
+		"jp_103_attack_4",
+		"jp_103_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_103_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_103_payedcomm_1",
+		"jp_103_payedcomm_2",
+		"jp_103_payedcomm_3",
+		"jp_103_payedcomm_4",
+		"jp_103_payedcomm_5"
+	  ]
+	},
+	{
+	  "desc": "角色_104_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_104_undueremind_1",
+		"jp_104_undueremind_2",
+		"jp_104_undueremind_3",
+		"jp_104_undueremind_4",
+		"jp_104_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_104_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_104_kindurge_1",
+		"jp_104_kindurge_2",
+		"jp_104_kindurge_3",
+		"jp_104_kindurge_4",
+		"jp_104_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_104_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_104_delaypay_1",
+		"jp_104_delaypay_2",
+		"jp_104_delaypay_3",
+		"jp_104_delaypay_4",
+		"jp_104_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_104_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_104_househide_1",
+		"jp_104_househide_2",
+		"jp_104_househide_3",
+		"jp_104_househide_4",
+		"jp_104_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_104_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_104_harmurge_1",
+		"jp_104_harmurge_2",
+		"jp_104_harmurge_3",
+		"jp_104_harmurge_4",
+		"jp_104_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_104_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_104_attack_1",
+		"jp_104_attack_2",
+		"jp_104_attack_3",
+		"jp_104_attack_4",
+		"jp_104_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_104_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_104_payedcomm_1",
+		"jp_104_payedcomm_2",
+		"jp_104_payedcomm_3",
+		"jp_104_payedcomm_4",
+		"jp_104_payedcomm_5"
+	  ]
+	},
+	{
+	  "desc": "角色_105_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_105_undueremind_1",
+		"jp_105_undueremind_2",
+		"jp_105_undueremind_3",
+		"jp_105_undueremind_4",
+		"jp_105_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_105_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_105_kindurge_1",
+		"jp_105_kindurge_2",
+		"jp_105_kindurge_3",
+		"jp_105_kindurge_4",
+		"jp_105_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_105_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_105_delaypay_1",
+		"jp_105_delaypay_2",
+		"jp_105_delaypay_3",
+		"jp_105_delaypay_4",
+		"jp_105_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_105_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_105_househide_1",
+		"jp_105_househide_2",
+		"jp_105_househide_3",
+		"jp_105_househide_4",
+		"jp_105_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_105_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_105_harmurge_1",
+		"jp_105_harmurge_2",
+		"jp_105_harmurge_3",
+		"jp_105_harmurge_4",
+		"jp_105_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_105_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_105_attack_1",
+		"jp_105_attack_2",
+		"jp_105_attack_3",
+		"jp_105_attack_4",
+		"jp_105_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_105_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_105_payedcomm_1",
+		"jp_105_payedcomm_2",
+		"jp_105_payedcomm_3",
+		"jp_105_payedcomm_4",
+		"jp_105_payedcomm_5"
+	  ]
+	},
+	{
+	  "desc": "角色_106_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_106_undueremind_1",
+		"jp_106_undueremind_2",
+		"jp_106_undueremind_3",
+		"jp_106_undueremind_4",
+		"jp_106_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_106_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_106_kindurge_1",
+		"jp_106_kindurge_2",
+		"jp_106_kindurge_3",
+		"jp_106_kindurge_4",
+		"jp_106_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_106_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_106_delaypay_1",
+		"jp_106_delaypay_2",
+		"jp_106_delaypay_3",
+		"jp_106_delaypay_4",
+		"jp_106_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_106_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_106_househide_1",
+		"jp_106_househide_2",
+		"jp_106_househide_3",
+		"jp_106_househide_4",
+		"jp_106_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_106_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_106_harmurge_1",
+		"jp_106_harmurge_2",
+		"jp_106_harmurge_3",
+		"jp_106_harmurge_4",
+		"jp_106_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_106_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_106_attack_1",
+		"jp_106_attack_2",
+		"jp_106_attack_3",
+		"jp_106_attack_4",
+		"jp_106_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_106_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_106_payedcomm_1",
+		"jp_106_payedcomm_2",
+		"jp_106_payedcomm_3",
+		"jp_106_payedcomm_4",
+		"jp_106_payedcomm_5"
+	  ]
+	},
+	{
+	  "desc": "角色_107_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_107_undueremind_1",
+		"jp_107_undueremind_2",
+		"jp_107_undueremind_3",
+		"jp_107_undueremind_4",
+		"jp_107_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_107_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_107_kindurge_1",
+		"jp_107_kindurge_2",
+		"jp_107_kindurge_3",
+		"jp_107_kindurge_4",
+		"jp_107_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_107_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_107_delaypay_1",
+		"jp_107_delaypay_2",
+		"jp_107_delaypay_3",
+		"jp_107_delaypay_4",
+		"jp_107_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_107_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_107_househide_1",
+		"jp_107_househide_2",
+		"jp_107_househide_3",
+		"jp_107_househide_4",
+		"jp_107_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_107_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_107_harmurge_1",
+		"jp_107_harmurge_2",
+		"jp_107_harmurge_3",
+		"jp_107_harmurge_4",
+		"jp_107_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_107_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_107_attack_1",
+		"jp_107_attack_2",
+		"jp_107_attack_3",
+		"jp_107_attack_4",
+		"jp_107_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_107_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_107_payedcomm_1",
+		"jp_107_payedcomm_2",
+		"jp_107_payedcomm_3",
+		"jp_107_payedcomm_4",
+		"jp_107_payedcomm_5"
+	  ]
+	},
+	{
+	  "desc": "角色_108_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_108_undueremind_1",
+		"jp_108_undueremind_2",
+		"jp_108_undueremind_3",
+		"jp_108_undueremind_4",
+		"jp_108_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_108_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_108_kindurge_1",
+		"jp_108_kindurge_2",
+		"jp_108_kindurge_3",
+		"jp_108_kindurge_4",
+		"jp_108_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_108_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_108_delaypay_1",
+		"jp_108_delaypay_2",
+		"jp_108_delaypay_3",
+		"jp_108_delaypay_4",
+		"jp_108_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_108_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_108_househide_1",
+		"jp_108_househide_2",
+		"jp_108_househide_3",
+		"jp_108_househide_4",
+		"jp_108_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_108_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_108_harmurge_1",
+		"jp_108_harmurge_2",
+		"jp_108_harmurge_3",
+		"jp_108_harmurge_4",
+		"jp_108_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_108_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_108_attack_1",
+		"jp_108_attack_2",
+		"jp_108_attack_3",
+		"jp_108_attack_4",
+		"jp_108_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_108_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_108_payedcomm_1",
+		"jp_108_payedcomm_2",
+		"jp_108_payedcomm_3",
+		"jp_108_payedcomm_4",
+		"jp_108_payedcomm_5"
+	  ]
+	},
+	{
+	  "desc": "角色_109_未到期提醒",
+	  "local": false,
+	  "ids": [
+		"jp_109_undueremind_1",
+		"jp_109_undueremind_2",
+		"jp_109_undueremind_3",
+		"jp_109_undueremind_4",
+		"jp_109_undueremind_5"
+	  ]
+	},
+	{
+	  "desc": "角色_109_善意催债",
+	  "local": false,
+	  "ids": [
+		"jp_109_kindurge_1",
+		"jp_109_kindurge_2",
+		"jp_109_kindurge_3",
+		"jp_109_kindurge_4",
+		"jp_109_kindurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_109_暂缓还债",
+	  "local": false,
+	  "ids": [
+		"jp_109_delaypay_1",
+		"jp_109_delaypay_2",
+		"jp_109_delaypay_3",
+		"jp_109_delaypay_4",
+		"jp_109_delaypay_5"
+	  ]
+	},
+	{
+	  "desc": "角色_109_房屋躲债",
+	  "local": false,
+	  "ids": [
+		"jp_109_househide_1",
+		"jp_109_househide_2",
+		"jp_109_househide_3",
+		"jp_109_househide_4",
+		"jp_109_househide_5"
+	  ]
+	},
+	{
+	  "desc": "角色_109_恶意催债",
+	  "local": false,
+	  "ids": [
+		"jp_109_harmurge_1",
+		"jp_109_harmurge_2",
+		"jp_109_harmurge_3",
+		"jp_109_harmurge_4",
+		"jp_109_harmurge_5"
+	  ]
+	},
+	{
+	  "desc": "角色_109_武力攻击",
+	  "local": false,
+	  "ids": [
+		"jp_109_attack_1",
+		"jp_109_attack_2",
+		"jp_109_attack_3",
+		"jp_109_attack_4",
+		"jp_109_attack_5"
+	  ]
+	},
+	{
+	  "desc": "角色_109_还钱后寒暄",
+	  "local": false,
+	  "ids": [
+		"jp_109_payedcomm_1",
+		"jp_109_payedcomm_2",
+		"jp_109_payedcomm_3",
+		"jp_109_payedcomm_4",
+		"jp_109_payedcomm_5"
+	  ]
+	}
+  ],
+  "voice_usa": [
+	{
+	  "desc": "开场白_男",
+	  "local": false,
+	  "ids": [
+		"usa_male_prologue_1"
+	  ]
+	},
+	{
+	  "desc": "开场白_女",
+	  "local": false,
+	  "ids": [
+		"usa_female_prologue_1"
+	  ]
+	}
+  ]
+}
+

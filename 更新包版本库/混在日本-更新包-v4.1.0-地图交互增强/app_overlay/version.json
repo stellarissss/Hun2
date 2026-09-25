@@ -1,0 +1,3247 @@
+{
+  "name": "混在日本 · PC 单机版 更新包",
+  "version": "4.1.0",
+  "baseVersion": "any",
+  "builtAt": "2026-09-22T00:08:11+0800",
+  "fileCount": 647,
+  "totalBytes": 37130383,
+  "notesFile": "更新说明.md",
+  "applyHint": "将 app_overlay 文件夹复制到游戏安装目录（与 混在日本.exe 同级），或直接双击 apply-update.bat。存档不受影响。",
+  "files": [
+    {
+      "path": "www/index.html",
+      "size": 3042,
+      "sha256": "435336cfdca6ceed0f4434bea88c6be235d2103d4f463c0b8f6f56738f93c776"
+    },
+    {
+      "path": "www/game_main_offline.html",
+      "size": 43575,
+      "sha256": "3ddeabaa514d08c2666f7b8fda45086562cf5289f7c4ca251a5cc7c7fc9c94e3"
+    },
+    {
+      "path": "www/offline/shell.js",
+      "size": 2098,
+      "sha256": "50c66e963b7affb2658b6d9a2e3d7873bd744b190fabcc9add4ac35536b70da3"
+    },
+    {
+      "path": "www/offline/boot.js",
+      "size": 6254,
+      "sha256": "1c1aab6f8bad60b03bc293a9cb40d6c7f43bf24563907dc8a12bf5e1b67d3063"
+    },
+    {
+      "path": "www/offline/start.js",
+      "size": 21036,
+      "sha256": "a195321150a5fa5ce5ab0cde8192077f45f63b0cb19ddcc2feffa8c767ed0416"
+    },
+    {
+      "path": "www/offline/native-bridge.js",
+      "size": 5877,
+      "sha256": "2e36c77285b2e3c7421fbf4ceaf5d9ad24e5447acddfd20777247a877a8181a0"
+    },
+    {
+      "path": "www/offline/event-engine.js",
+      "size": 11917,
+      "sha256": "b7d9567e254e11d455ea174938c3df9f97c06e6de5b626562ecab334397bbcee"
+    },
+    {
+      "path": "www/offline/module-cutter.js",
+      "size": 13545,
+      "sha256": "f5d0fc2ad706046f568565818e09359cb3334340e3d071fc77e0a72db9b9d733"
+    },
+    {
+      "path": "www/offline/offline.js",
+      "size": 33444,
+      "sha256": "6d57f64b5f1228635e041fb9399f9972cc632aa83a66f9eed97686058945c8bb"
+    },
+    {
+      "path": "www/offline/load-order.js",
+      "size": 6235,
+      "sha256": "4cc4afb6c3f662ac651f8192d6acd33e91651fe594222af71a3486af68ab4478"
+    },
+    {
+      "path": "www/offline/pc-ux.js",
+      "size": 30182,
+      "sha256": "380be50fa77605902f050b2494b2a0aa3c0764ac4737c540f717a04601acba3e"
+    },
+    {
+      "path": "www/js/hun_min.js",
+      "size": 2136759,
+      "sha256": "a9f9ce9d48371807b49a2b6e2e672584ed75f7cf12bba7dc90f4de8974d83137"
+    },
+    {
+      "path": "www/js/hun_japan/word/cn.js",
+      "size": 262599,
+      "sha256": "831060984f0cfd9c641e685f2c7a511983f02c518337b0015f8461cf31801ab5"
+    },
+    {
+      "path": "www/js/lib/jquery.min.js",
+      "size": 84380,
+      "sha256": "22642f202577f0ba2f22cbe56b6cf291a09374487567cd3563e0d2a29f75c0c5"
+    },
+    {
+      "path": "www/js/lib/crypto-js.js",
+      "size": 191936,
+      "sha256": "c6826494432163d74fd27e78ad011a13d55e4670441cd49fc9f1e52a4afd28d9"
+    },
+    {
+      "path": "www/js/lib/LAB.min.js",
+      "size": 5490,
+      "sha256": "bf1fce150ff945b16370d23bed230287f97d36a1b0a13f62abeb89c2ca3f61e7"
+    },
+    {
+      "path": "www/js/lib/howler.core.min.js",
+      "size": 25388,
+      "sha256": "6e82fac3e6fe3d4a6a1ca85954bfa835f8d49f85a95cbd8c51d3a01537bcd9f8"
+    },
+    {
+      "path": "www/js/lib/pako.min.js",
+      "size": 46993,
+      "sha256": "6c760048068c9d8f372527a586af6cdc025df815a52cbb86f66f49e62753f83d"
+    },
+    {
+      "path": "www/js/lib/pathfinding/pathfinding-browser.min.js",
+      "size": 17977,
+      "sha256": "97ac28062f387cf4d7c561c97540ecc53dbe04a3010d08d56d8fc79822747294"
+    },
+    {
+      "path": "www/json/gamedata.json",
+      "size": 424243,
+      "sha256": "fb7ccc4ffb14da6b103807555efa155873f57cc6b578b7dff45da222b8799108"
+    },
+    {
+      "path": "www/json/version.json",
+      "size": 1421,
+      "sha256": "4bbbf6d6c3e7316efb83650c7e8d82883d043aaf9ca89b0d727c40190a073b49"
+    },
+    {
+      "path": "www/json/audio_effect_min.json",
+      "size": 15831,
+      "sha256": "5a0a99ac66cea24725484cbb9ecbccb0ef8ef3ad6c2ea80ddb9829ad56b1f297"
+    },
+    {
+      "path": "www/json/audio_unity.json",
+      "size": 33835,
+      "sha256": "27dc6894e149d712a65637d017e28a9e3f6cb7c27f68920384710c22f9f08826"
+    },
+    {
+      "path": "www/json/check_connect.json",
+      "size": 21,
+      "sha256": "be1604dc3ed5b911857fc3c5084432b1b65769369b7ceb687b8fb34035edc25e"
+    },
+    {
+      "path": "www/json/daily_news_epv_usa_app_china.json",
+      "size": 8680,
+      "sha256": "15b0413b2f857856c2ef415cbbef812490129029e2985a7375b3c4ab3d142567"
+    },
+    {
+      "path": "www/pics/back_to_home.jpg",
+      "size": 121635,
+      "sha256": "454dceea93b498fa212c4a71a935ef786e75673f66f736a0a883693e07a430d1"
+    },
+    {
+      "path": "www/pics/appstore.jpg",
+      "size": 15873,
+      "sha256": "d5e768087e0d0bf403ab4de5ca34bb59fc2ea97dfcd99e6fb3f01055cf31e34c"
+    },
+    {
+      "path": "www/pics/building.jpg",
+      "size": 286563,
+      "sha256": "c75ea120fca5e76cffc2aa39b36436d20b12cbd628bfb8ff2be0401897c1e784"
+    },
+    {
+      "path": "www/pics/fly_to_new_earth.jpg",
+      "size": 115458,
+      "sha256": "439e01f09b8202d0d135d6e77b26da7c8b6fa62aa9e0fda9e1eed3074bb662a7"
+    },
+    {
+      "path": "www/pics/crowdfunding.jpg",
+      "size": 393224,
+      "sha256": "c9c8e27ecb02255f8de7eb7c12b5967a9335d9a2d0c6aadef6cf7134492a9932"
+    },
+    {
+      "path": "www/pics/car.jpg",
+      "size": 1065454,
+      "sha256": "5b17831e346b8184c65af2b7421e15042a819d470da0ce957fbb324da8fc2215"
+    },
+    {
+      "path": "www/pics/car_HD.jpg",
+      "size": 1833137,
+      "sha256": "82ed9139892c97ecd1989dc96454abca2bf56c4f99bcce0d5f47550d311ceabd"
+    },
+    {
+      "path": "www/pics/head_in_job.jpg",
+      "size": 8488,
+      "sha256": "3d62c0c83f52f89b8c425a9cc2cc80938809da0616fecf2f399906890eb43f75"
+    },
+    {
+      "path": "www/pics/goods.jpg",
+      "size": 887770,
+      "sha256": "da36495bb2c35a456419f4c200e22e5ad6da371a2af9d7343d01307dc1074a80"
+    },
+    {
+      "path": "www/pics/head_in_city.jpg",
+      "size": 8488,
+      "sha256": "3d62c0c83f52f89b8c425a9cc2cc80938809da0616fecf2f399906890eb43f75"
+    },
+    {
+      "path": "www/pics/goods_HD.jpg",
+      "size": 1079541,
+      "sha256": "413fd974b0a5a8fa578c3888ed3451284577fb221e64e237491697c2446a8bb9"
+    },
+    {
+      "path": "www/pics/img_city_bg1.jpg",
+      "size": 409079,
+      "sha256": "518b41d974dcf2a8fec9629c593b0f09f53521b91e67567f515eaf76c67d49cc"
+    },
+    {
+      "path": "www/pics/japan_map.png",
+      "size": 223100,
+      "sha256": "74a5ae07194ceeefe528e04e3f40b570f021f6126a8fd4c88ccbb955e3a48b82"
+    },
+    {
+      "path": "www/pics/img_stuff.jpg",
+      "size": 138493,
+      "sha256": "047e471afa3c5c33be1329578ed12072a6f63547995ab0d0b996a7c38e0a42a6"
+    },
+    {
+      "path": "www/pics/nuclear.jpg",
+      "size": 93735,
+      "sha256": "d9eab8e53a60805ffa50afb1124ef057d7f0a810a34a3ac1e7a30dca5bb5076f"
+    },
+    {
+      "path": "www/pics/loading_hun_hd.png",
+      "size": 60601,
+      "sha256": "1336b93fe19c35313f52cc70f9287d07990401c28963c926da765ba5fed0ca65"
+    },
+    {
+      "path": "www/pics/out_imgHD.png",
+      "size": 288493,
+      "sha256": "490f899fe5c1a5f848cd4f6b134912997ad84c17415f44d9ccfe471e013f83fb"
+    },
+    {
+      "path": "www/pics/person.jpg",
+      "size": 1003080,
+      "sha256": "162b077391b72205759f8ff0457fddca29814db44915d7f51c6d9adf498cd4c0"
+    },
+    {
+      "path": "www/pics/portal_door.jpg",
+      "size": 72725,
+      "sha256": "b77fa5b5fc30d51a7f095233df89e672c17a456058f8c20f94098aa0bc1c5c68"
+    },
+    {
+      "path": "www/pics/person_HD.jpg",
+      "size": 1772375,
+      "sha256": "fb3f908c1ef8314f382a349d2e6255344eb794dc275b3e664d4c541f2bc11eff"
+    },
+    {
+      "path": "www/pics/swinghammer.jpg",
+      "size": 9775,
+      "sha256": "8cfbeaad17c72592f763dae78d20ab7f982f9e2fa5a4ae0233c039c131133282"
+    },
+    {
+      "path": "www/pics/takeaway.png",
+      "size": 13172,
+      "sha256": "98e8c1764dc9b86e04ef75d5254327f7c11ae30cb3fa86681ef18ce9b0bf7cd2"
+    },
+    {
+      "path": "www/pics/time.gif",
+      "size": 46803,
+      "sha256": "9beeb94b4a3efc836ed59526cedaadcf78f688bd1ef2a20fa5764310717f95ac"
+    },
+    {
+      "path": "www/pics/retire_oversea.jpg",
+      "size": 115458,
+      "sha256": "439e01f09b8202d0d135d6e77b26da7c8b6fa62aa9e0fda9e1eed3074bb662a7"
+    },
+    {
+      "path": "www/pics/imgHD.png",
+      "size": 515588,
+      "sha256": "27c3a34243644c2a3d5ba4b336aa838cf82f5e19d4c633a2ff0847e827b287e4"
+    },
+    {
+      "path": "www/pics/imgHD_HD.png",
+      "size": 980063,
+      "sha256": "5231de89d5e3b515db0f1f2c46108ee576cf15c412568e6a06cc1d7e99e30ba2"
+    },
+    {
+      "path": "www/pics/img_city_bg1_HD.jpg",
+      "size": 680143,
+      "sha256": "8ad065540092a1be1e15ac0fa41edbc1dbee3ce52c9622420051dae81693ac1b"
+    },
+    {
+      "path": "www/pics/japan_map_HD.png",
+      "size": 500464,
+      "sha256": "8226a0915d510340571e72f693304e0d3a1761163679fd595dd3928d3691b5d7"
+    },
+    {
+      "path": "www/pics/img_stuff_HD.jpg",
+      "size": 234057,
+      "sha256": "e457fc05074be0e004d4997f3fc9504d66952303e8b42b6a1e4feb7dfe136ce7"
+    },
+    {
+      "path": "www/pics/building_HD.jpg",
+      "size": 350193,
+      "sha256": "00749d5f09350e6188b6d0606a675fef12096a42898d904c767d03b65f18f8f6"
+    },
+    {
+      "path": "www/pics/person_usa.jpg",
+      "size": 1051657,
+      "sha256": "c633dbff64dbf468a53181bea6d27b167da5d42e4f3e05e4225d3c2e8660f0d4"
+    },
+    {
+      "path": "www/pics/person_usa_HD.jpg",
+      "size": 1917156,
+      "sha256": "28b767310f7a8ff2c711f8da125bc5514abccac6c93a59e9e1c6700508184c7f"
+    },
+    {
+      "path": "www/pics/building_usa.jpg",
+      "size": 302544,
+      "sha256": "498537de146e9422f2d25c40978fa0b66829e472c488e81dc4edfa1c4aeca42c"
+    },
+    {
+      "path": "www/pics/building_usa_HD.jpg",
+      "size": 377479,
+      "sha256": "22fb33c4f71afe05879b80b4eab18c43158e10f6d47622260d9b167af187713b"
+    },
+    {
+      "path": "www/pics/property/Kepler_452b.jpg",
+      "size": 69935,
+      "sha256": "4e30d718f2bee13bcfddde9481ded264867f5c846fe9d4044b3b2d1aa41bbe1a"
+    },
+    {
+      "path": "www/pics/property/containerhome.jpg",
+      "size": 68285,
+      "sha256": "46e6f7d2b293aa4d10a38b16171d38179bc6878e10431b99ebef14a1bfdad53d"
+    },
+    {
+      "path": "www/pics/property/cave.jpg",
+      "size": 73692,
+      "sha256": "926590cf400c5b38fce76d34c9d3bf70945edf5dee2b869333e4c066a99f4536"
+    },
+    {
+      "path": "www/pics/property/treehouse.jpg",
+      "size": 94030,
+      "sha256": "830c0c7c3a613b63cf6b5be5f418cc9d026cc104875419667ef9bbe301a4fb80"
+    },
+    {
+      "path": "www/pics/property/basement_suite.jpg",
+      "size": 60474,
+      "sha256": "d9e62d8b0e7be1d8f0d018798737c5699a650209a357edda2dbc9eefd7f9963d"
+    },
+    {
+      "path": "www/pics/property/venus_city.jpg",
+      "size": 60115,
+      "sha256": "05cb723db850a18c3677086f64c27d5c40e1721307f69490624948f54f714c24"
+    },
+    {
+      "path": "www/pics/property/warp_speed_ship.jpg",
+      "size": 73118,
+      "sha256": "5a2afbff558255c2236ba234090197150fbc095b77b769b5b4ebe5c2cce12cc5"
+    },
+    {
+      "path": "www/audio/main_bgm.mp3",
+      "size": 128567,
+      "sha256": "64af6b59b06a9694fe7afd1359db715e9d9fbc54d85c64cacfff2d1d36323084"
+    },
+    {
+      "path": "www/audio/main_bgm_usa.mp3",
+      "size": 373025,
+      "sha256": "974c7de069b73703caf6e4651a3ad035f73d46013057b13c067ebaef819e93ff"
+    },
+    {
+      "path": "www/audio/func_blank.mp3",
+      "size": 12897,
+      "sha256": "2e31e57a2b794b9d760aa750ab6fa380b126377a378bb58f9eb9bfb52ce24005"
+    },
+    {
+      "path": "www/audio/effect/afraid_female_2.mp3",
+      "size": 32856,
+      "sha256": "b299707b9abc096d372f19c9b44c7ee0b4245bfef09c0ad5f019953e2fcc2698"
+    },
+    {
+      "path": "www/audio/effect/afraid_male_1.mp3",
+      "size": 4211,
+      "sha256": "b400deb3c467a07f9855b31f42bfa3733a63f5561bf833be1380e86d7af95680"
+    },
+    {
+      "path": "www/audio/effect/afraid_female_1.mp3",
+      "size": 13350,
+      "sha256": "863cf1a96ef0f42a3d21c5edcd3e9e09bef16d57e283fdf87c5388bb52ea2716"
+    },
+    {
+      "path": "www/audio/effect/afraid_male_2.mp3",
+      "size": 4315,
+      "sha256": "2354df252d5cea19b51160006ec882608d4f66fed3e788cd3c43246cdce83dbb"
+    },
+    {
+      "path": "www/audio/effect/afraid_male_3.mp3",
+      "size": 3375,
+      "sha256": "5c1e60db2a4f10a580ae2ddf52711c5618355f9b08d95f8d1fb59779d5b1ca07"
+    },
+    {
+      "path": "www/audio/effect/afraid_female_3.mp3",
+      "size": 27196,
+      "sha256": "a4af89313217e42759fc550f364de8162729966eaca42526101be321db31930e"
+    },
+    {
+      "path": "www/audio/effect/airport_1.mp3",
+      "size": 32258,
+      "sha256": "9f72945ff4719b1554e360a28cdc932f930d4a01ac1620f7661b83651c324c7a"
+    },
+    {
+      "path": "www/audio/effect/airport_2.mp3",
+      "size": 37282,
+      "sha256": "65cb2d8521b8be6f75d5a4c11918731fe25ba7186883f59fb7db751a76c9b7c6"
+    },
+    {
+      "path": "www/audio/effect/ak47_2.mp3",
+      "size": 36988,
+      "sha256": "5b11c5f116a096f3799248a6f472fad680625f4900a47c2dea8603ec88ef5e31"
+    },
+    {
+      "path": "www/audio/effect/ak47_3.mp3",
+      "size": 42748,
+      "sha256": "c721a8b426e33c03f524b29173b9c001cebfe3dd273592aaf7d1e9a5387cf49b"
+    },
+    {
+      "path": "www/audio/effect/angry_man_1.mp3",
+      "size": 6748,
+      "sha256": "1d42412b979ee20eb8992fa01e7c746504f19e839097d192a43550a551ffb89f"
+    },
+    {
+      "path": "www/audio/effect/angry_man_3.mp3",
+      "size": 17349,
+      "sha256": "e15c96295a04b01f694a100e0280c80a9cc8cbf89fbe56eb62465973cafa8622"
+    },
+    {
+      "path": "www/audio/effect/ak47_1.mp3",
+      "size": 38716,
+      "sha256": "e2a886b5760e8b47130e94cdb9ca8ea95cf6a79c169e4384f75be84a3e6d02ba"
+    },
+    {
+      "path": "www/audio/effect/angry_man_4.mp3",
+      "size": 22364,
+      "sha256": "57d2157665b45d3aa657e0bf025388738687096e5a4b69a524ae169f85dd049b"
+    },
+    {
+      "path": "www/audio/effect/ar50_1.mp3",
+      "size": 79600,
+      "sha256": "46a077efe1589f2fe0d0057eb548175d3f490b726b10dd3f604dcbb291fe3e95"
+    },
+    {
+      "path": "www/audio/effect/atm.mp3",
+      "size": 16318,
+      "sha256": "28f48c7bad01ba427cd48468ff568de82ed77dbb2787d9ab25297dc56c178cc5"
+    },
+    {
+      "path": "www/audio/effect/ar50_2.mp3",
+      "size": 113596,
+      "sha256": "25465e188388e89e8621e493bc972ec12e43259376983bbc77f92c1c33272a80"
+    },
+    {
+      "path": "www/audio/effect/angry_man_2.mp3",
+      "size": 23618,
+      "sha256": "967bbc21ffb20d1f9460e0fadadfe8d34a25e29d172ad0e4e930e80b86544ef9"
+    },
+    {
+      "path": "www/audio/effect/arrest.mp3",
+      "size": 5556,
+      "sha256": "bf19bb67a96e46f628bdcf92b63ce5c82cdcd1800abea287c4dbea00c8871b16"
+    },
+    {
+      "path": "www/audio/effect/ar50_3.mp3",
+      "size": 123388,
+      "sha256": "e4e7459a9cf6f25c424510b20aeedd1a9792d819740e9d9226330d98c4040004"
+    },
+    {
+      "path": "www/audio/effect/ar50_4.mp3",
+      "size": 132028,
+      "sha256": "e541b45293bf5ff3595609a3ec01bfa34786dc09a1462cd73ce9f02eb71555b2"
+    },
+    {
+      "path": "www/audio/effect/awp_2.mp3",
+      "size": 24703,
+      "sha256": "85073ae10fd4f5ea16b95ceac2cb7af284bb8b4576dfd91199f59849075e6443"
+    },
+    {
+      "path": "www/audio/effect/awp_3.mp3",
+      "size": 13209,
+      "sha256": "054cd6bd9328ee7f9b38a12769f2f6b2bd89072f61aa8347034584935367dac3"
+    },
+    {
+      "path": "www/audio/effect/awp_5.mp3",
+      "size": 19688,
+      "sha256": "b4f07a3e6476773dc91f9075ba1129a14a3e189a922b11e73b80ce30fbffd58f"
+    },
+    {
+      "path": "www/audio/effect/awp_4.mp3",
+      "size": 26270,
+      "sha256": "46dfd186eaa2752c5294f78dd9d52da9c23e19a60cafd9e31f6216f1ebc84ed6"
+    },
+    {
+      "path": "www/audio/effect/awp_1.mp3",
+      "size": 7855,
+      "sha256": "5b4da1c9194ebd11f481a01e784318576712695e4e6744a936007e6e722ba8c7"
+    },
+    {
+      "path": "www/audio/effect/bad_news_1.mp3",
+      "size": 53542,
+      "sha256": "7b44e2e522da9c1d9f5b42912ec31df643103ee2e7676d101c13e1ca670cbd4a"
+    },
+    {
+      "path": "www/audio/effect/bad_smile_male_1.mp3",
+      "size": 9017,
+      "sha256": "00a95172883521fe2cd2da9229d69205398e81758c76812cb87be11afc71b87b"
+    },
+    {
+      "path": "www/audio/effect/bad_news_2.mp3",
+      "size": 74440,
+      "sha256": "532af9f28154eee448662e7867035418b4f2d7f69461a89f83027dc7c029bd07"
+    },
+    {
+      "path": "www/audio/effect/bad_smile_male_3.mp3",
+      "size": 14480,
+      "sha256": "2c6c9e76cdd014969b969d76d96e45c91dbcb4c483568d1712abecde207aac5a"
+    },
+    {
+      "path": "www/audio/effect/bank_1.mp3",
+      "size": 35557,
+      "sha256": "d40c549e243b496ffbd83b183bc6ffeae67e8d704c69f00c9f4df0ec80c1e731"
+    },
+    {
+      "path": "www/audio/effect/bad_news_3.mp3",
+      "size": 67335,
+      "sha256": "ba07fa3d986371a5ec5a193aa7558a1d9f460d7fe81a3f2dc7be8f1e92193724"
+    },
+    {
+      "path": "www/audio/effect/bad_smile_male_2.mp3",
+      "size": 23645,
+      "sha256": "951a67f1f6e2eaebb9c6e9ed34c9d3a6e2cec79a20173e4cd7a0bf28ed270229"
+    },
+    {
+      "path": "www/audio/effect/bad_smile_female_1.mp3",
+      "size": 23449,
+      "sha256": "c5b6ebd7a740401170b5d54b76a466cf92341cc16827781f6829c09000edf4d8"
+    },
+    {
+      "path": "www/audio/effect/bei_da2.mp3",
+      "size": 5667,
+      "sha256": "bfb2276a81cae38a706ea0d22ac3d8ecb7e323f2a2805cf0ed3f2f2d218638ae"
+    },
+    {
+      "path": "www/audio/effect/bei_da3.mp3",
+      "size": 7444,
+      "sha256": "d7c088b0a76aa01fb86df33f2303d3528b15fd9f51c23957b795cac01263988a"
+    },
+    {
+      "path": "www/audio/effect/bei_da5.mp3",
+      "size": 5981,
+      "sha256": "181255030cdb25920aac2e1af72d5b6e9fc453e490107aeb718db3cb5c6c47d5"
+    },
+    {
+      "path": "www/audio/effect/bank_2.mp3",
+      "size": 42453,
+      "sha256": "604924569c5a520e7c114995335708a987ac6207cc2cf7073fa980b4c711f8ca"
+    },
+    {
+      "path": "www/audio/effect/bei_da6.mp3",
+      "size": 6503,
+      "sha256": "4610add5beb5896b2412b50b4d6e4b06f396299a6ee64edd6e701af4998cd683"
+    },
+    {
+      "path": "www/audio/effect/bei_da1.mp3",
+      "size": 6190,
+      "sha256": "1c2e2f0a521001442abeaf16968b7a8009009b7d4f40cbb34534d58752e37c39"
+    },
+    {
+      "path": "www/audio/effect/bei_da7.mp3",
+      "size": 7235,
+      "sha256": "49413e0432fe752300b2daf75b37052ed88a669a070aa1be9d2287886fd98ff5"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_13.mp3",
+      "size": 2330,
+      "sha256": "43bda8b5c3dcedbe61a4c162e63dc579e03a66ce61c5e9a80e6a53bd3ad2d0e1"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_14.mp3",
+      "size": 2016,
+      "sha256": "f544b5a358b76c2d3c0f6fba94fc9d50fe78f136a33b5fdd220b9db64fb23e2f"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_12.mp3",
+      "size": 1494,
+      "sha256": "0101e8b16d6831195e7eafeea15ac4252442578335ee1a2f24b242e74854219a"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_1.mp3",
+      "size": 1807,
+      "sha256": "c86bc36bf9f57d0ac4a17475eab8ec57976d7a68f849f1f26fde265c9b1a8a22"
+    },
+    {
+      "path": "www/audio/effect/bei_da4.mp3",
+      "size": 6190,
+      "sha256": "a0f0411a28e0c4ae7c39f39f3f7ff96a4780c17533d9f6c76ee7f7e24e46fc03"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_11.mp3",
+      "size": 2330,
+      "sha256": "0f65c6a88e5a281bb8b25736288b81c467598dcdec7c1d91f8ed34dc036a36cd"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_17.mp3",
+      "size": 2539,
+      "sha256": "3c14a9fef3d6212959e43947e145ecba2353a02ad975515a0b99853f0c564c3e"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_10.mp3",
+      "size": 1598,
+      "sha256": "bf94d033334828c233fec0e23afa6519d024f5db246f11d6f332abb099e0bd95"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_16.mp3",
+      "size": 4838,
+      "sha256": "1b8b84c408569b88528b38bc75d3be1c3c01ddf36c411a6713d52146feca93e0"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_15.mp3",
+      "size": 3375,
+      "sha256": "b3454bd1ce1903e1c418d451d169aeafcd7728e0662afc20d5cf2e09dbe4ea20"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_2.mp3",
+      "size": 971,
+      "sha256": "cdd5f0569e0240f5d1efc8a6fab00cacc1d5d594139d88871d0305ad5bb17f5a"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_19.mp3",
+      "size": 3688,
+      "sha256": "c97c1a1eb67082003d603fc4bf54cf96d7083bbf43a59ca8d32f26aedfe01ac2"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_4.mp3",
+      "size": 1598,
+      "sha256": "3e4c016f367760ad838201c2f3e3b1426728f5a54665ebb8c52840c18259facd"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_3.mp3",
+      "size": 1285,
+      "sha256": "930518253f267192823c23f4e87ee52945970b914d9704b6dfca62d28ab70fc1"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_5.mp3",
+      "size": 4810,
+      "sha256": "63153a8fc16cb37213d9445458f8e249cd3a551cacf1d0c3bd4f2626d2280a62"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_18.mp3",
+      "size": 3479,
+      "sha256": "c4d0a9ad87fd1794e184e135a60e6f39845562751be18cf3cd81841f3815555b"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_7.mp3",
+      "size": 1285,
+      "sha256": "5a3f8a10d12ce7fddb424e24d77607ff8c9cdbdcf33f3d16b56cd8dc7767fc18"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_8.mp3",
+      "size": 2330,
+      "sha256": "243ca72048a8f662d4c14602d3baf0bbd02cb0747b2f16a852dfac31287d9416"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_1.mp3",
+      "size": 1389,
+      "sha256": "0b523dbbd8633a9cab0f6edff92f36ce5eb60ea7ec64fdfde0126d6005569c4a"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_11.mp3",
+      "size": 1285,
+      "sha256": "873b205f826818c5de18386e4e6834b8ab0f93f344df4423d93159be425a713f"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_10.mp3",
+      "size": 971,
+      "sha256": "38e01987856fbb636ac92a3fa80a7d30f0caf3ce5ec151dee569656f071c5689"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_2.mp3",
+      "size": 1494,
+      "sha256": "183e09146c983aaf071fb4636038e573db8c4e3bbdcdd988f371039984f43d95"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_12.mp3",
+      "size": 1598,
+      "sha256": "75dafc57fb5ef13ab9dc8beec673d95c3c84ec94e672c6a6a612c195a901bc1d"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_6.mp3",
+      "size": 1494,
+      "sha256": "87d8428942200adbb37dcf1246cb1bbb8398c8c05f178767232b97729be3ae9f"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_3.mp3",
+      "size": 2121,
+      "sha256": "5ae68f343d76ec8e42e1b0e54cc8f291c41d87af020f349e65292d2d75d9a2d7"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_8.mp3",
+      "size": 6823,
+      "sha256": "045ee7c120a175d0e6a678b3a06fa174bf18a8a11a23238a56bf7506a0079aee"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_7.mp3",
+      "size": 4524,
+      "sha256": "a8e0d9834c05649543502bbc80852ab288183fc09c8cbdd742f93ff982e74157"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_6.mp3",
+      "size": 5778,
+      "sha256": "7707b67152366db1fc41b92b7d570ac153483b10faf81a7ec052348bee4b5bed"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_4.mp3",
+      "size": 3270,
+      "sha256": "5668c5fb4334c3b2f9f6e477d8670754f8ebbb9283d71c470e3e86035637bd6f"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_9.mp3",
+      "size": 1180,
+      "sha256": "2be117610a0c9850e97b055953aa2072847f09e1ee635159f52e05403af0af0b"
+    },
+    {
+      "path": "www/audio/effect/bi_shou_5.mp3",
+      "size": 1703,
+      "sha256": "04322053b70100640664d6f78f617440e785ad80e7493b9cf0578453cefc6b94"
+    },
+    {
+      "path": "www/audio/effect/bi_shou_1.mp3",
+      "size": 12634,
+      "sha256": "0262b2fb460dbb8f799233c2b80ba566da0ba399d613db9ede49c8e7367b1458"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nan_9.mp3",
+      "size": 4420,
+      "sha256": "b1b96db6367c08b1718fe55a641a01c15d2473d3a72573d969559e17dca107f2"
+    },
+    {
+      "path": "www/audio/effect/bei_da_nv_5.mp3",
+      "size": 7358,
+      "sha256": "4adae62c35a7e3a38169a27a8d3745377bb9b25b62a772f21fb390ee2755c20f"
+    },
+    {
+      "path": "www/audio/effect/bi_shou_4.mp3",
+      "size": 20284,
+      "sha256": "954bf5bbc4f544940abae4d3a4cd3b287c736c2853eed5ef194fb3ab59c8f368"
+    },
+    {
+      "path": "www/audio/effect/black_shop_1.mp3",
+      "size": 20175,
+      "sha256": "b9c68abacda43d2e313452629f980ba3366d577d52400b6e8839426c97768df5"
+    },
+    {
+      "path": "www/audio/effect/bi_shou_2.mp3",
+      "size": 5529,
+      "sha256": "63edad36cacefacb8cc0c2eb87b24bf76dede2357bef6f36078e64f31d18aee9"
+    },
+    {
+      "path": "www/audio/effect/bi_shou_3.mp3",
+      "size": 2748,
+      "sha256": "37d3083cf73a692846414422dd0e2e362390c942120c8972bf9ff5e36cee8b23"
+    },
+    {
+      "path": "www/audio/effect/break_glass_1.mp3",
+      "size": 5151,
+      "sha256": "3cde8869490d99baf4c2bb2978bd6af2d03324eb966f8694be24c8d342f9d0d5"
+    },
+    {
+      "path": "www/audio/effect/bullet_hit_body_1.mp3",
+      "size": 8800,
+      "sha256": "19a072d2294a194788fd62e9778211b105193033e84a181bfd8aa89bda32b5d0"
+    },
+    {
+      "path": "www/audio/effect/break_glass_2.mp3",
+      "size": 9030,
+      "sha256": "34e699437028447859230765091c356b572bde44e0e132f0ec77b1ea4504f250"
+    },
+    {
+      "path": "www/audio/effect/break_glass_3.mp3",
+      "size": 3897,
+      "sha256": "0e5e0e1ba5b43f6a71b8014e5f1a1276393258967790fc3c0ae5c673cafc987e"
+    },
+    {
+      "path": "www/audio/effect/bullet_hit_body_5.mp3",
+      "size": 10048,
+      "sha256": "7e39ae4eb2b7fefabec01685cb6883d7bf204b9436452f1404342296f6ca5735"
+    },
+    {
+      "path": "www/audio/effect/break_glass_4.mp3",
+      "size": 8698,
+      "sha256": "0d779bd0fd8917cb61079f6934edb00d2ee375fa5a1f9b5b735bde79ee70ce35"
+    },
+    {
+      "path": "www/audio/effect/bump_into_goods_2.mp3",
+      "size": 21777,
+      "sha256": "840789e04ab9ae92af0b1c4c4f1aacf5e7c5f27a485c203cb42819b17df292bd"
+    },
+    {
+      "path": "www/audio/effect/bullet_hit_body_2.mp3",
+      "size": 10984,
+      "sha256": "cabb3177d6365d273af84ab3052f49035a57cb8428b3c738a85f189ec142113e"
+    },
+    {
+      "path": "www/audio/effect/bullet_hit_body_3.mp3",
+      "size": 9268,
+      "sha256": "48bf23f2d3a37552df3eba89c5a27854aa3a61daa6f8c1e07fe197bb5f0b732a"
+    },
+    {
+      "path": "www/audio/effect/buy_garage_1.mp3",
+      "size": 94588,
+      "sha256": "d0d744ec61ff609b97af9dc5f2743a17e0ef2e5f7fb91c4cf981dbab25f8ed1a"
+    },
+    {
+      "path": "www/audio/effect/bullet_hit_body_4.mp3",
+      "size": 10672,
+      "sha256": "32b5e5dcdde5e8a0a8502898176a5f63e55b9af2832e4d05d9e1a24d000d63b1"
+    },
+    {
+      "path": "www/audio/effect/buy_house_1.mp3",
+      "size": 107548,
+      "sha256": "432df4d7d0f1c96983072a3fc4c8046e5e385377134fb0dd707f4bc3c778c291"
+    },
+    {
+      "path": "www/audio/effect/buy_garage_2.mp3",
+      "size": 117916,
+      "sha256": "3763fa12daa26567a3bd205ecf8a00892bb91fcf723794ba874d315d0b0e96fd"
+    },
+    {
+      "path": "www/audio/effect/bump_into_goods_1.mp3",
+      "size": 21394,
+      "sha256": "e6594eb41cd82836766452d2e32e8955d1de38d3092c748f90a6366aff633f6e"
+    },
+    {
+      "path": "www/audio/effect/canjiao_funny_1.mp3",
+      "size": 21778,
+      "sha256": "e26d8510270983b60263d5802c62a5cdeccf4be06c291ccdaa469c4dc4cb1bec"
+    },
+    {
+      "path": "www/audio/effect/buy_house_2.mp3",
+      "size": 105820,
+      "sha256": "d9597c23ec0cb61460a5c899473b00abf1a1c0ce8ad06aefe2c7ca9f749a9d19"
+    },
+    {
+      "path": "www/audio/effect/car_lost_control_1.mp3",
+      "size": 28303,
+      "sha256": "e85a1eb33ca27dbdcb57cfb0c1c6b2d9428d77499c6271172722d1d1666dbd47"
+    },
+    {
+      "path": "www/audio/effect/bonus_level_unlocked.mp3",
+      "size": 40586,
+      "sha256": "2ca228f07610fa1eb022b8ffb3dbfb8718312a5079d928f0a117f3f9ba608d6c"
+    },
+    {
+      "path": "www/audio/effect/car_crash.mp3",
+      "size": 28666,
+      "sha256": "59286e76f27d1be3ef5a7d89f059b301e109acef2ade6e9a2c69affe744a75c7"
+    },
+    {
+      "path": "www/audio/effect/car_lost_control_2.mp3",
+      "size": 11119,
+      "sha256": "d215f33e2ef432e67ac2be36f6ac46fee34fdea48e5af7c7b1c10be98e9800db"
+    },
+    {
+      "path": "www/audio/effect/car_back_1.mp3",
+      "size": 17055,
+      "sha256": "b8657b32091dccc0e8847ad63dc9d0d9b8027badd35268e7e28893e5ff62fb75"
+    },
+    {
+      "path": "www/audio/effect/car_explosion_1.mp3",
+      "size": 11420,
+      "sha256": "d90d0f497415f99fb3f4fe71e6a91320d79724cd3ba2a3b987f2c8ee4d6f8a26"
+    },
+    {
+      "path": "www/audio/effect/car_explosion_3.mp3",
+      "size": 11420,
+      "sha256": "d90d0f497415f99fb3f4fe71e6a91320d79724cd3ba2a3b987f2c8ee4d6f8a26"
+    },
+    {
+      "path": "www/audio/effect/car_repair_shop_1.mp3",
+      "size": 13197,
+      "sha256": "5de25851f03b2c3a9dc69ad0f157a3494a3fc2f83e17b3ec34b5f8772348ef31"
+    },
+    {
+      "path": "www/audio/effect/chu_quan_1.mp3",
+      "size": 3897,
+      "sha256": "ff015b5429ccc696fa1684928c98887c273210a43a0e505d6a8379127b29feca"
+    },
+    {
+      "path": "www/audio/effect/car_lost_control_3.mp3",
+      "size": 27338,
+      "sha256": "124bfd04056e4f9ec0d0a5c1382835ac2fb607112591e6a46e869f69cea6e94e"
+    },
+    {
+      "path": "www/audio/effect/car_repair_shop_2.mp3",
+      "size": 138652,
+      "sha256": "1bcdb0c1386e68e368d1cd3629e9d289b5bc416421345508c5cd6fb2aaee5a7d"
+    },
+    {
+      "path": "www/audio/effect/chi_dong_xi.mp3",
+      "size": 11016,
+      "sha256": "0847226ba52500a1daca39dae18d5c0a20580e67e1bbcdd2eb7f163c30aa8aa5"
+    },
+    {
+      "path": "www/audio/effect/chong_qi_men_xie_1.mp3",
+      "size": 16223,
+      "sha256": "3f3fb1ff889ab35823b665ee23c0cdc42bce9010556e159beb4ffcc060c0c5f4"
+    },
+    {
+      "path": "www/audio/effect/car_explosion_2.mp3",
+      "size": 11316,
+      "sha256": "149baa1b2c0d510389d4d8eab5dd199cbcf42aa17fb0f4c246a80401fee9bc79"
+    },
+    {
+      "path": "www/audio/effect/car_repair_shop_3.mp3",
+      "size": 142108,
+      "sha256": "1eb9cc628d93cd82c058c925a87725e72339d1526637a03ed18900b436a705aa"
+    },
+    {
+      "path": "www/audio/effect/chu_quan_2.mp3",
+      "size": 3061,
+      "sha256": "000dce9c62be6a114735ae955d5ebcacd098ec00a6a605a580fb35a624c7f597"
+    },
+    {
+      "path": "www/audio/effect/chu_quan_4.mp3",
+      "size": 3897,
+      "sha256": "ff015b5429ccc696fa1684928c98887c273210a43a0e505d6a8379127b29feca"
+    },
+    {
+      "path": "www/audio/effect/chu_quan_6.mp3",
+      "size": 3061,
+      "sha256": "000dce9c62be6a114735ae955d5ebcacd098ec00a6a605a580fb35a624c7f597"
+    },
+    {
+      "path": "www/audio/effect/chu_quan_3.mp3",
+      "size": 4420,
+      "sha256": "c8fea5515f64192f99fc7a524463593fcb81a846795ea6296e4ca5e2f2539f60"
+    },
+    {
+      "path": "www/audio/effect/click_close.mp3",
+      "size": 2674,
+      "sha256": "4d369f32ea4af23549d5492e412bb10fd699485f2841d6be6ccbae9f965af4b1"
+    },
+    {
+      "path": "www/audio/effect/chuang_nie_zi_2.mp3",
+      "size": 3270,
+      "sha256": "03f1b334d727b75a525d3b493d15543a597f45409127e91207c33ca73708d91e"
+    },
+    {
+      "path": "www/audio/effect/chuang_nie_zi_3.mp3",
+      "size": 4315,
+      "sha256": "c6aa6c77cf80e875cbceac42f93e2dbb328a20dc9618c10a9f80bc480ec15586"
+    },
+    {
+      "path": "www/audio/effect/click_hotspot_1.mp3",
+      "size": 2329,
+      "sha256": "14d78141b1df87d15781165a8082aae2347e67e3f8bb5aa1062df48033a4ebc6"
+    },
+    {
+      "path": "www/audio/effect/chu_quan_5.mp3",
+      "size": 4420,
+      "sha256": "c8fea5515f64192f99fc7a524463593fcb81a846795ea6296e4ca5e2f2539f60"
+    },
+    {
+      "path": "www/audio/effect/contacter_1.mp3",
+      "size": 9422,
+      "sha256": "543f08a2d82a87213e53eed4a2fc5de195a2165fa073649033b132fcfa58235c"
+    },
+    {
+      "path": "www/audio/effect/click_in_menu_1.mp3",
+      "size": 1285,
+      "sha256": "9810d47f6b93c1e6d05df1a9fb30f32b28f28faa7193414a36ff236f1694dccf"
+    },
+    {
+      "path": "www/audio/effect/crazy_laugh_1.mp3",
+      "size": 27629,
+      "sha256": "d80a2ee1266c76d0fc405eec93bf2c523506fa7a8d9345ea8052d1e20e7f70b3"
+    },
+    {
+      "path": "www/audio/effect/chuang_nie_zi_1.mp3",
+      "size": 6927,
+      "sha256": "12779bc8833bb486d3cf89d9e48b5efc897cf603c460d51be0ffc7d863d8769e"
+    },
+    {
+      "path": "www/audio/effect/corruption_police_1.mp3",
+      "size": 15599,
+      "sha256": "bfebb5edadb920daee1e486c57ab91274d6ebcb44813b6db8e88547b9eefba37"
+    },
+    {
+      "path": "www/audio/effect/corruption_police_2.mp3",
+      "size": 34527,
+      "sha256": "25bda1b3a0935553cff6745e35b0c2294e47223d0730ce0056b0f1bb698fd6bf"
+    },
+    {
+      "path": "www/audio/effect/crazy_laugh_2.mp3",
+      "size": 22195,
+      "sha256": "c8380c94eab38f58ef91a895b16712c925ab4b26adb3b29e46f4831bd2484d64"
+    },
+    {
+      "path": "www/audio/effect/cry_female_3.mp3",
+      "size": 95452,
+      "sha256": "099148fdc802156a304d61d14dc9de5d84069113cd7f3521d1746d6431065852"
+    },
+    {
+      "path": "www/audio/effect/cry_female_1.mp3",
+      "size": 54844,
+      "sha256": "362e4b6d50acabbf25701716987d88591f624bd1b4d34bdb7334a63d921d68f2"
+    },
+    {
+      "path": "www/audio/effect/cry_female_2.mp3",
+      "size": 136060,
+      "sha256": "9e6b48f748784bf54cc91dbf12606f66063e4e9a8e5a48504f2ec78a4d99ece6"
+    },
+    {
+      "path": "www/audio/effect/crazy_laugh_3.mp3",
+      "size": 25957,
+      "sha256": "b013ef487b60ed5536cb4dc3dd2f63749baef7798efc5274f3599e7cb2fcf937"
+    },
+    {
+      "path": "www/audio/effect/cry_female_4.mp3",
+      "size": 92860,
+      "sha256": "af399f2d7bb2fbe9a63a619cd95d177e3a2461b6f8cfb7765225898b720792e9"
+    },
+    {
+      "path": "www/audio/effect/cry_male_2.mp3",
+      "size": 79036,
+      "sha256": "3869ff552b9690287a27ad6701d70c6c90af3d20e43ccee626150d40aa15e634"
+    },
+    {
+      "path": "www/audio/effect/cry_female_5.mp3",
+      "size": 45379,
+      "sha256": "cd6f508260aab0c98a3d1f4dcbf7e8913b9ff5a7302788ae79f00858cf039581"
+    },
+    {
+      "path": "www/audio/effect/cry_male_1.mp3",
+      "size": 59164,
+      "sha256": "e100b51de9c23511ea44e7357dd6ea775f21b435bcf425b99181e6ed9aabd64f"
+    },
+    {
+      "path": "www/audio/effect/cry_male_5.mp3",
+      "size": 74716,
+      "sha256": "850fa2fbba844089e8df66942705b4729014d2218c40892dc3328bed2eb22120"
+    },
+    {
+      "path": "www/audio/effect/dao_pian_2.mp3",
+      "size": 4272,
+      "sha256": "4759e75b820fc8aa4a7c1813cafd5be87116f20282001c586812e2b10dd3e56a"
+    },
+    {
+      "path": "www/audio/effect/da_li_ban_qian_1.mp3",
+      "size": 47932,
+      "sha256": "49385410def03e9d52730201ee6b0955d278113b106ed4760ac5be3ca50bbaed"
+    },
+    {
+      "path": "www/audio/effect/cry_male_4.mp3",
+      "size": 104092,
+      "sha256": "3a5a448ba14c0493592eaee424d710f91b1486eeb0e7560870b644fa081b452f"
+    },
+    {
+      "path": "www/audio/effect/cry_male_3.mp3",
+      "size": 76444,
+      "sha256": "49c98e7812242aee2e603597814c44ea4af623cdb449f142ee395839eab9f58d"
+    },
+    {
+      "path": "www/audio/effect/da_lei.mp3",
+      "size": 29675,
+      "sha256": "e420ebe5c534d532f10d0bbc69145de50e59420adc169bc7ec01fa8ad08b2062"
+    },
+    {
+      "path": "www/audio/effect/dao_pian_3.mp3",
+      "size": 1703,
+      "sha256": "04322053b70100640664d6f78f617440e785ad80e7493b9cf0578453cefc6b94"
+    },
+    {
+      "path": "www/audio/effect/dead_female_3.mp3",
+      "size": 10167,
+      "sha256": "4e909b9185fa1e32fc5f6ec828c5e82c8baf7459efa37a8a05cd6428030279de"
+    },
+    {
+      "path": "www/audio/effect/dead_female_2.mp3",
+      "size": 11525,
+      "sha256": "bf69a6b12e97fb827acc26f1fee98afe8383ef67ffb57c25f1f469378da1f07e"
+    },
+    {
+      "path": "www/audio/effect/dead_male_1.mp3",
+      "size": 8599,
+      "sha256": "be66315a56ea2c9d3a9282a499880441e3e51f8563480c4e1d30b73062aab9e8"
+    },
+    {
+      "path": "www/audio/effect/dead_male_3.mp3",
+      "size": 9644,
+      "sha256": "47c4b62880c6f649edb7dd730802518ac95018a7de7d4b7c1f11e74cc981d2b6"
+    },
+    {
+      "path": "www/audio/effect/dao_pian_1.mp3",
+      "size": 25777,
+      "sha256": "2ef5434378be2f63b3fd527e81fc0f6957198bb6715782523f13c53ec54db7ec"
+    },
+    {
+      "path": "www/audio/effect/dead_female_4.mp3",
+      "size": 9540,
+      "sha256": "8446f99c848ddf04ca8e0b6b65b5b438db099cef4d08b6e74ffbd8f0f76fdef0"
+    },
+    {
+      "path": "www/audio/effect/dead_male_4.mp3",
+      "size": 8704,
+      "sha256": "26d7f7f0930e02b2dd1217ea38b880d33149d2c3e2de7bbd696ba21c79bbf4e4"
+    },
+    {
+      "path": "www/audio/effect/dian_bang_2.mp3",
+      "size": 3374,
+      "sha256": "dd2cedb504e1423302eebf7f2f59b1416de17e83a44fbd01ae08d786510e5a28"
+    },
+    {
+      "path": "www/audio/effect/di_tie.mp3",
+      "size": 48926,
+      "sha256": "8d1957e90b804f906303cfbc108c7d7600fd184507b1bd7fabf9d4246149b182"
+    },
+    {
+      "path": "www/audio/effect/dead_male_2.mp3",
+      "size": 9226,
+      "sha256": "4b1a33bf95d48817346315119e9649e33d6a03922d432a9980d6a740efff64d5"
+    },
+    {
+      "path": "www/audio/effect/dian_bang_1.mp3",
+      "size": 9435,
+      "sha256": "fbdb06dc5419de0b3d07f3db8a8cad95841720ddcc8826eac4e25b23a03127e3"
+    },
+    {
+      "path": "www/audio/effect/dian_bang_4.mp3",
+      "size": 8864,
+      "sha256": "9378855d5123067efc39080184a142f4f8f07ada090c41916f6d274d27523d8e"
+    },
+    {
+      "path": "www/audio/effect/dian_bang_3.mp3",
+      "size": 12569,
+      "sha256": "3bd3d81f3957d844cb675db7518f38d62de000d7fb074133fc041453676a3ead"
+    },
+    {
+      "path": "www/audio/effect/dian_bang_5.mp3",
+      "size": 5102,
+      "sha256": "774adc7517f7c813d4ed4af0b545b8d25d18f682af69a621afda93f8fffe6cbb"
+    },
+    {
+      "path": "www/audio/effect/disagree_female_2.mp3",
+      "size": 22012,
+      "sha256": "658d71671f32525de839b52599484926a38df1efa29c8a4256689d601336d359"
+    },
+    {
+      "path": "www/audio/effect/dian_zi_kai_suo_qi_1.mp3",
+      "size": 19021,
+      "sha256": "7fc5c5e7ac7af292da9367494f91091502b3945131c744aa32437d886bcc32fe"
+    },
+    {
+      "path": "www/audio/effect/dead_female_1.mp3",
+      "size": 9122,
+      "sha256": "5d5fec76891537fa474d9f079e30e4f5cf487c32effeae99989ae050dffa34d7"
+    },
+    {
+      "path": "www/audio/effect/disagree_female_3.mp3",
+      "size": 23740,
+      "sha256": "991cac4517bb3c4b1a6a2b6d13ab26cb2347be0bd8ab5a94bdd4af2a48a22c2c"
+    },
+    {
+      "path": "www/audio/effect/disagree_male_2.mp3",
+      "size": 22012,
+      "sha256": "839988dccd83b87ac8bf6be8bc3fe2c00f5e7f1b3a019ae0175acaef603b98ce"
+    },
+    {
+      "path": "www/audio/effect/disagree_male_1.mp3",
+      "size": 2108,
+      "sha256": "8a91b088dbe7caa9e97af8131d02e57bda5bb0c9cad368ba3d40bfaf256555dc"
+    },
+    {
+      "path": "www/audio/effect/disdain_man_1.mp3",
+      "size": 2957,
+      "sha256": "175f9f966edef295c23e34af445bc18aa8f60e99e79ff840cc613aea6c920c56"
+    },
+    {
+      "path": "www/audio/effect/disagree_male_3.mp3",
+      "size": 23740,
+      "sha256": "19998205c99884dae4a79eb2f25563a682303706d0841173a15f7da63fb32cc9"
+    },
+    {
+      "path": "www/audio/effect/disagree_male_4.mp3",
+      "size": 25468,
+      "sha256": "7f666bde7fdf1cd99462365af96420733954d99c4505e30bcfc29598566de693"
+    },
+    {
+      "path": "www/audio/effect/disdain_man_3.mp3",
+      "size": 9199,
+      "sha256": "bf50a49d0dff1d9fb4039befe461e093740cd97100914f368b48b79be2620f2e"
+    },
+    {
+      "path": "www/audio/effect/disagree_female_1.mp3",
+      "size": 26320,
+      "sha256": "4180757c4007af4e51600f78e69487bfcc85d3e8584835289c3e8064fe4538ca"
+    },
+    {
+      "path": "www/audio/effect/disdain_man_5.mp3",
+      "size": 21648,
+      "sha256": "34cc2ca00a50687a2ac11005b3c839e8826c49e12a402f7d55396377d60b5319"
+    },
+    {
+      "path": "www/audio/effect/driver_car_1.mp3",
+      "size": 10258,
+      "sha256": "16afa3ee0eaafd1164360429aa5862f1fbcf60786107cbe438f1a5e9c09dec15"
+    },
+    {
+      "path": "www/audio/effect/driver_car_2.mp3",
+      "size": 13602,
+      "sha256": "d7a3c3562c290efe55e050db388ab3e5d7e893ffcfc64ce64eba4d7f91b45caf"
+    },
+    {
+      "path": "www/audio/effect/disdain_man_4.mp3",
+      "size": 11915,
+      "sha256": "09a0329de2c82c32d8ffc0ff1ecf9f9acc2f7a65ff3ea64949c43b5518d5df46"
+    },
+    {
+      "path": "www/audio/effect/driver_car_3.mp3",
+      "size": 11930,
+      "sha256": "adcdf1378717ab785ed137aa1225828210b1d05d912ae6535f42c21ebe706013"
+    },
+    {
+      "path": "www/audio/effect/dog_1.mp3",
+      "size": 21552,
+      "sha256": "e53606b3500b3f91e235147ca528fec6b3d4543b459f8c2d6784ee4952077a2c"
+    },
+    {
+      "path": "www/audio/effect/disdain_man_2.mp3",
+      "size": 10493,
+      "sha256": "ec7865cfcce66156c304c3922626d69973d272f55d1823c0ae83cddd28bc7675"
+    },
+    {
+      "path": "www/audio/effect/dun_dian_1.mp3",
+      "size": 4106,
+      "sha256": "f4b0055dd71444a7384c6a78834f83890950054010182e0b4b1e7f7dc0fd10bc"
+    },
+    {
+      "path": "www/audio/effect/driver_car_4.mp3",
+      "size": 11407,
+      "sha256": "1818e253c422db1407a3d408be6359fe5aab9b9832e04aab597cbe9d3eafaf10"
+    },
+    {
+      "path": "www/audio/effect/equip_cloth.mp3",
+      "size": 2539,
+      "sha256": "d476c338df44962644ec7d3003536fe393f85ef7467b8e5418f974d6b8c10923"
+    },
+    {
+      "path": "www/audio/effect/equip_cool_weapon.mp3",
+      "size": 6957,
+      "sha256": "150d0291727bcd66a646041fe1137b8f30fee37162b68d5daebfc5b4cc214fc8"
+    },
+    {
+      "path": "www/audio/effect/equip_gun.mp3",
+      "size": 7149,
+      "sha256": "9656b6f68a660a2cfb0fa40c4df0107914f565c38e91371b7627f76fa390ce18"
+    },
+    {
+      "path": "www/audio/effect/dun_dian_2.mp3",
+      "size": 4733,
+      "sha256": "a65fdb4b08d77aaa2d6749ca54dd6da4eb9c927a3563b6f775c5e23e52020c40"
+    },
+    {
+      "path": "www/audio/effect/equip_tools.mp3",
+      "size": 1912,
+      "sha256": "c80c00ab95004052a518e81ed80e1880e4228e7e15428e4877a4e1726b62896f"
+    },
+    {
+      "path": "www/audio/effect/exe_unable_1.mp3",
+      "size": 14927,
+      "sha256": "2f31debd4560a4ce96c56b8d8693fc086385bca12b6d155b9a458ef5fe34d10f"
+    },
+    {
+      "path": "www/audio/effect/equip_n2o.mp3",
+      "size": 2016,
+      "sha256": "de95298604dc9ffdcebeb184481c93fefbc5807491c8072c2ea42d4326c6d402"
+    },
+    {
+      "path": "www/audio/effect/exe_job_1.mp3",
+      "size": 11427,
+      "sha256": "9ca4f894466f36d960bb4d994e452c304e74e17a5e585778deaaaff7d40c20c8"
+    },
+    {
+      "path": "www/audio/effect/exe_unable_2.mp3",
+      "size": 3178,
+      "sha256": "798285709dc9a36b9600e530bb35ec0434025800a6cf1afc936621a0b034d2f7"
+    },
+    {
+      "path": "www/audio/effect/exe_unable_3.mp3",
+      "size": 1285,
+      "sha256": "cd5f78c8f66b22529295e3f312aa9a3951544fd3e32aabf85a241b6c8233c48d"
+    },
+    {
+      "path": "www/audio/effect/failure1.mp3",
+      "size": 4616,
+      "sha256": "5503928df0e91d34699a3d09604edcff09f5bff71a1ab3503cee2ce62cb2a4c7"
+    },
+    {
+      "path": "www/audio/effect/exe_unable_4.mp3",
+      "size": 1076,
+      "sha256": "317152ff23e32550d6b37cbbaaa37e8dda5644d4d6c86b683ed2f0e17f1e0894"
+    },
+    {
+      "path": "www/audio/effect/failure2.mp3",
+      "size": 8652,
+      "sha256": "3d5c26c8d6cc29b7c1a9dae8f41325504a71c4ae06f5e37c6d029f48dd348aff"
+    },
+    {
+      "path": "www/audio/effect/failure3.mp3",
+      "size": 10493,
+      "sha256": "31d91ea2ed4346c4e85c64048b8a9f44aa455255d0473f0da3d731003e4ea99e"
+    },
+    {
+      "path": "www/audio/effect/failure4.mp3",
+      "size": 13084,
+      "sha256": "83eddbdbf28134fa7fdd34a7e9539e928b8af7fb02c5c24a1b48fca3844dd79a"
+    },
+    {
+      "path": "www/audio/effect/fake_laugh_1.mp3",
+      "size": 21778,
+      "sha256": "281ba08347895e284f3631f924481a6a775d4ce320c1bbd727798d43ca104b85"
+    },
+    {
+      "path": "www/audio/effect/exe_unable_5.mp3",
+      "size": 4137,
+      "sha256": "fc9c04ed93d1fc5f8ad75ab86a0c5b11c4846eb259d9f75fed4974e52eed856e"
+    },
+    {
+      "path": "www/audio/effect/fang_dan_yi_1.mp3",
+      "size": 1794,
+      "sha256": "e56b6a10c3af732b14a9d8e988b84eb135c3efded1c79fcdbaba8b321b506455"
+    },
+    {
+      "path": "www/audio/effect/fei_dao_2.mp3",
+      "size": 23740,
+      "sha256": "3ee805b5e188ad1cdb233d3a01804418f58b6d781274d389c5ca2bcc14ffbaf4"
+    },
+    {
+      "path": "www/audio/effect/fang_dan_yi_3.mp3",
+      "size": 1272,
+      "sha256": "4a8e90e027616b50654e548a85a2a05e999deabbfc8ee2aeb16cff556269cb01"
+    },
+    {
+      "path": "www/audio/effect/fang_dan_yi_2.mp3",
+      "size": 1794,
+      "sha256": "3e034a95c120ed0f37c2ca94b672ccc9082cce1bf6dc8d36b404a608f45ee79d"
+    },
+    {
+      "path": "www/audio/effect/fang_dan_yi_4.mp3",
+      "size": 958,
+      "sha256": "e0f57a7ff5aefdf4d1b8c8470e1172a9ac4fc06f6473e7f9d76505feb5eb6d86"
+    },
+    {
+      "path": "www/audio/effect/fei_dao_1.mp3",
+      "size": 35836,
+      "sha256": "3c21ad99c47bbcd4052976cac083f6766b499e891d7089c49bda79de40c85de2"
+    },
+    {
+      "path": "www/audio/effect/fix_car_1.mp3",
+      "size": 3270,
+      "sha256": "f04d7688f01b4bf1bb579c3ca15135fe6794d7ffc1eec6fb9fe858de2578f56b"
+    },
+    {
+      "path": "www/audio/effect/fool_shout_1.mp3",
+      "size": 9239,
+      "sha256": "41bcbd5cb9c1fbc5de7904434f323db97e8f483ccdee10279ddd232e027cd377"
+    },
+    {
+      "path": "www/audio/effect/fix_car_2.mp3",
+      "size": 14088,
+      "sha256": "568f299c60476375c651876abdd4d7112ffe1fb60f832eb96f203023232e87c3"
+    },
+    {
+      "path": "www/audio/effect/gasp_2.mp3",
+      "size": 23150,
+      "sha256": "8245c9c54fda62e844e25ba1d8327e25249daa35057fb1a85c289da465378057"
+    },
+    {
+      "path": "www/audio/effect/find_goods_2.mp3",
+      "size": 64348,
+      "sha256": "c7b3d21bc550f0f4a88377a9ffc9c4d7b5a03edff03f2277b6567dfd9e146aad"
+    },
+    {
+      "path": "www/audio/effect/gasp_1.mp3",
+      "size": 22110,
+      "sha256": "3280ee7e6a83759270fb6df8050654d8789dbe61b5a4328f7ceda30dd98649aa"
+    },
+    {
+      "path": "www/audio/effect/gasp_3.mp3",
+      "size": 22734,
+      "sha256": "cf99cff0fde4dbb24a2c8f5828efd89226823522049c250f1fc8e0ea0da25199"
+    },
+    {
+      "path": "www/audio/effect/give_cash.mp3",
+      "size": 2526,
+      "sha256": "27e3d2d73568613c3897a48f17e21bc6be2de3a39d27de4fee5508c2ae26b756"
+    },
+    {
+      "path": "www/audio/effect/gou_huang_1.mp3",
+      "size": 41020,
+      "sha256": "0098af10e8eca81c88b3853c79215cf6a4b768b1b00f3a2f95d33f2c8a49d6dd"
+    },
+    {
+      "path": "www/audio/effect/find_goods_1.mp3",
+      "size": 55708,
+      "sha256": "8d90afba43688b848db7dbd83425b890e92cfed5434e57c005334e42ec5376ff"
+    },
+    {
+      "path": "www/audio/effect/get_money_1.mp3",
+      "size": 6104,
+      "sha256": "ecfa04ef6d2ded25e9ecb5a65978437f68e6e78337a754401803ef960da37626"
+    },
+    {
+      "path": "www/audio/effect/get_money_2.mp3",
+      "size": 9030,
+      "sha256": "2379420e3aef77d976250dc2cd0c97e10f829451810a1621d308d4acbcde16cb"
+    },
+    {
+      "path": "www/audio/effect/get_move_chance_2.mp3",
+      "size": 7985,
+      "sha256": "9d60d9ea9ef2108ca2fd962c70915fbbc120346ae72b163ffb4f2e6363b5ea35"
+    },
+    {
+      "path": "www/audio/effect/hei_female_1.mp3",
+      "size": 13519,
+      "sha256": "6e12d1e7357d535057e9067d467cd9af72a9db19fde19be7e8c9a086535b7608"
+    },
+    {
+      "path": "www/audio/effect/heart_bit_1.mp3",
+      "size": 86111,
+      "sha256": "ea37b7ad6b6c844f9c5a4e9e1c0e78381fff6bff113cdef0736fdbd911daa776"
+    },
+    {
+      "path": "www/audio/effect/hei_female_3.mp3",
+      "size": 11179,
+      "sha256": "ee4f1e3258c4d871865b5104ec166f0a00a2c0380d60061c91b361a1d1c4ae36"
+    },
+    {
+      "path": "www/audio/effect/hei_female_2.mp3",
+      "size": 11647,
+      "sha256": "d5e402d63b2ab1d1b6db390faee12fc046cb59a68756d5142921e0a05938a842"
+    },
+    {
+      "path": "www/audio/effect/hei_male_1.mp3",
+      "size": 7071,
+      "sha256": "8a58e242b10ff4e343d91e93a0ef48bd08a1dec576d5022218acd0e7b07d81e4"
+    },
+    {
+      "path": "www/audio/effect/hei_male_3.mp3",
+      "size": 8839,
+      "sha256": "ab7712ade987cfe5882c84d44efbc9de8345c5c0a9b363eae5b46a115120d182"
+    },
+    {
+      "path": "www/audio/effect/hei_male_2.mp3",
+      "size": 8371,
+      "sha256": "d38b2285bd0478462a1b619289c4d2fc4ac7c1fd782fac6eb723ed579b66ce11"
+    },
+    {
+      "path": "www/audio/effect/get_move_chance_1.mp3",
+      "size": 4432,
+      "sha256": "356385513b609708bc877033def134c12bac7ef2f9de21e9ae36d6cb99bdf49b"
+    },
+    {
+      "path": "www/audio/effect/hit_car_1.mp3",
+      "size": 2421,
+      "sha256": "541c930c31402f74203f929a5399d8adbd14db7a4ec6bc3cd266901fc3c7b638"
+    },
+    {
+      "path": "www/audio/effect/hit_car_2.mp3",
+      "size": 2526,
+      "sha256": "40170a18fe3ab43ae6eec800184bc5d33dbf3ad8114f992ac0a15be3310e085d"
+    },
+    {
+      "path": "www/audio/effect/hospital_2.mp3",
+      "size": 117052,
+      "sha256": "b9eab7cb2a1f1cb4e88844a106cf40a2f4fe5eaeac22f31bce1cbddd8b95a9df"
+    },
+    {
+      "path": "www/audio/effect/gou_huang_2.mp3",
+      "size": 41020,
+      "sha256": "b704e1431888f07dd256afceb956fd0a74f43d52c057e6ac55ac208902016a85"
+    },
+    {
+      "path": "www/audio/effect/hospital_1.mp3",
+      "size": 124828,
+      "sha256": "1a5bed4800af0a71087ac26edafb4e19e5c158a7caca8da32f999b98d0423a23"
+    },
+    {
+      "path": "www/audio/effect/huo_yan_pen_she_1.mp3",
+      "size": 63484,
+      "sha256": "e342fc53183b5ffc5821f4f4131348cf227c225fa1f255453cd0f80c6a16339c"
+    },
+    {
+      "path": "www/audio/effect/hospital_3.mp3",
+      "size": 8795,
+      "sha256": "b9c72a2c0d2ddf8e0ecef7405d19819f2038b4c9a1d7a8fce32b00116f0edcdb"
+    },
+    {
+      "path": "www/audio/effect/huo_yan_pen_she_2.mp3",
+      "size": 67804,
+      "sha256": "92839246ccd54d6127c421324e60501dd76284ae3372eff33704c98748cd94f1"
+    },
+    {
+      "path": "www/audio/effect/jia_su_1.mp3",
+      "size": 18208,
+      "sha256": "d9888ac05688a2ea822f071b9984644ad821805754d3d31d41bc4200cebe5568"
+    },
+    {
+      "path": "www/audio/effect/huo_yan_pen_she_4.mp3",
+      "size": 83356,
+      "sha256": "1949304ce5932d1898c9d94456018a7e04676b0abdb7b4033985eac494cb6587"
+    },
+    {
+      "path": "www/audio/effect/jia_su_2.mp3",
+      "size": 11942,
+      "sha256": "acac075d22b0cf74e47095a2686ab5e260ac5e1ade00da21594c5b85a1d4bd98"
+    },
+    {
+      "path": "www/audio/effect/jia_su_3.mp3",
+      "size": 9331,
+      "sha256": "9ed626373e32caa89bc359defbb566063c199442985f56755d0bf644d78ddb1f"
+    },
+    {
+      "path": "www/audio/effect/huo_yan_pen_she_3.mp3",
+      "size": 68668,
+      "sha256": "7a877417f1aa720f76c0bc456c6d5776092c2e0e88020cf7da52a946e1782371"
+    },
+    {
+      "path": "www/audio/effect/jia_su_4.mp3",
+      "size": 4420,
+      "sha256": "1651d2cc5c669c1facaa58cebf7c1816b37b030618aa70d5945e8962e9d52d30"
+    },
+    {
+      "path": "www/audio/effect/jian_xian_qian_2.mp3",
+      "size": 22876,
+      "sha256": "32c3a308d5a49f707a6532e379dab5a79824fe1653dddbee3e08e5312a07e218"
+    },
+    {
+      "path": "www/audio/effect/jian_xian_qian_1.mp3",
+      "size": 29788,
+      "sha256": "57ad611d5c956931bb35c6a5c02c864a5adab218f4d707e29e69dc56a4dbc6aa"
+    },
+    {
+      "path": "www/audio/effect/jian_xian_qian_3.mp3",
+      "size": 26332,
+      "sha256": "60cac97fad9d5b8932aa78d5a4162c18894fda5f1591681edc95066d8495049e"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_cu_xian_2.mp3",
+      "size": 24119,
+      "sha256": "163f4a138404ba84db3ddd3d1c843c854cb9b9def6612e0a9ca0c9c6e10ba7bf"
+    },
+    {
+      "path": "www/audio/effect/jie_gu_1.mp3",
+      "size": 50427,
+      "sha256": "7ef896b137d98965be9fc209198897baed5f08ce6e683779bf1ea9101303df47"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_cu_xian_1.mp3",
+      "size": 29282,
+      "sha256": "fa1be38313e34cb09759422f64aa6ddd22a89e2a86b8b4c4abee55c29090ad06"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_cu_xian_3.mp3",
+      "size": 16972,
+      "sha256": "8dfdf23ff2907e32f733524d49de8837cc6a4451bcdc345b1136b8144d013e94"
+    },
+    {
+      "path": "www/audio/effect/jian_xian_qian_4.mp3",
+      "size": 35836,
+      "sha256": "4def90c51716431bf2f1a95afde36a4f658e77c049e5f014e50ef7d2d8924b7f"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_cu_xian_8.mp3",
+      "size": 27002,
+      "sha256": "99d6828509a6d8ec16da8ae052182ff806df6098af3fd05330f9e5c9a54e3154"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_cu_xian_5.mp3",
+      "size": 28883,
+      "sha256": "9d347a6218fc06eaf3d9d8c792687541091a91b479e2eb40a049ffcff87eedbd"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_cu_xian_6.mp3",
+      "size": 24454,
+      "sha256": "fcd8364c90372a70df2e7127010b3b143ae91e3cb3d987e390493a72464c91f2"
+    },
+    {
+      "path": "www/audio/effect/jie_hun.mp3",
+      "size": 74656,
+      "sha256": "dadd9bfe45f6a72a3da3264a5fa5e7b2909cd520a5bd8ba543db181a624c7ceb"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_shao_zi_4.mp3",
+      "size": 1272,
+      "sha256": "a4c864d10f480d535e57d3867059dd6bdc15f73b0cccb4bf203b9f72ca9bf35c"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_cu_xian_4.mp3",
+      "size": 22613,
+      "sha256": "48383ddb4cf57870210c08e0d14e0a3047dca21407fdb4110bfa293e3ba21b5b"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_shao_zi_2.mp3",
+      "size": 7149,
+      "sha256": "c315024186b59c0c357ae0b7ab90313fbf0c938072ba4c81e2a916220319963c"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_cu_xian_7.mp3",
+      "size": 22043,
+      "sha256": "d5bd2c509ad10829d536fdf423bd1c8b4a9305ee58cb2c68683d3b09d57f3882"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_shao_zi_3.mp3",
+      "size": 9617,
+      "sha256": "452be3cbeee7eba19c1b0d2504e42cbdf477d1376e94cef61b8224631a8fbe08"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_shao_zi_5.mp3",
+      "size": 1272,
+      "sha256": "2259f54bcb09319485209961e6e8396baa9787db328f04c349accea768313259"
+    },
+    {
+      "path": "www/audio/effect/jing_cha_shao_zi_1.mp3",
+      "size": 5059,
+      "sha256": "a481dc8afe496327bbbbf5d3098cf6405e4015269a50463f90137b5bfbf79f60"
+    },
+    {
+      "path": "www/audio/effect/jing_ling_1.mp3",
+      "size": 27247,
+      "sha256": "1e1c2882de58621591970319a50ce2e262fa4c539f11de7b4b17185b97317e19"
+    },
+    {
+      "path": "www/audio/effect/jing_ling_3.mp3",
+      "size": 28323,
+      "sha256": "0b1252c7d48eaa3c24df6b38e20463da4d2779a6440a84b49bd295b93a229ffa"
+    },
+    {
+      "path": "www/audio/effect/kou_shao_3.mp3",
+      "size": 3598,
+      "sha256": "6e844c69e674f3d998df0951261e89e72cf5d04be457bdb16cc9eeca7278ecb9"
+    },
+    {
+      "path": "www/audio/effect/kai_suo_qiang_2.mp3",
+      "size": 79900,
+      "sha256": "e3d5124b90fa9500d2a53d438d9f56bcf19f7ae4a98af6480dfb6eb90dbe2f89"
+    },
+    {
+      "path": "www/audio/effect/kou_shao_1.mp3",
+      "size": 6315,
+      "sha256": "305f602bd0f4cd146be557b7fb14906e57fc17a3c038d0b52790d373ec2d98a4"
+    },
+    {
+      "path": "www/audio/effect/jing_ling_2.mp3",
+      "size": 27949,
+      "sha256": "6deb0c378605e683cfad83523e3d9c8238c7341984384d1ad245e4c4a9fed81a"
+    },
+    {
+      "path": "www/audio/effect/kou_shao_4.mp3",
+      "size": 4434,
+      "sha256": "22d4c65cb45e3ea8d1ca39d3fb2539426326122b8370b28526be5ff2a0631cf0"
+    },
+    {
+      "path": "www/audio/effect/kou_shao_2.mp3",
+      "size": 10287,
+      "sha256": "423ac18932cb81691410f773e35c267838c31b2d29e7a9eb28774379b8f22ca9"
+    },
+    {
+      "path": "www/audio/effect/m4_2.mp3",
+      "size": 50236,
+      "sha256": "897ca93a39b6d972d6f51e216b6698e8305a045907c314649aab6d5f4a712bac"
+    },
+    {
+      "path": "www/audio/effect/m4_4.mp3",
+      "size": 62332,
+      "sha256": "2b3c6e61ebee37ffd2de48dc1941ed516f094a25943db4e64056368b40d86e76"
+    },
+    {
+      "path": "www/audio/effect/m4_1.mp3",
+      "size": 46780,
+      "sha256": "66f8a219cc5c16385d8378fcaf497e249e6488dafcf0c028dd464ccf579b35db"
+    },
+    {
+      "path": "www/audio/effect/m4_3.mp3",
+      "size": 53692,
+      "sha256": "a73083cdcfe8d7b2735c7fe533daecde49e832afbd7c4549745ca8d0c7267583"
+    },
+    {
+      "path": "www/audio/effect/mian_bei_1.mp3",
+      "size": 31516,
+      "sha256": "482a4b2ace4123e02ff98b1bc50b1f2eefc7f2de913136b149ecd784437f3607"
+    },
+    {
+      "path": "www/audio/effect/man_yue.mp3",
+      "size": 74632,
+      "sha256": "9cb43aae5204e2417327259bb4383f8d4eda6ca5d6682f459e865bb66d79d4f5"
+    },
+    {
+      "path": "www/audio/effect/kai_suo_qiang_1.mp3",
+      "size": 82492,
+      "sha256": "1f03195a367306cc21af2c7861a8e6fc7082d2f77b79f4ecd792bbbeb5d1c936"
+    },
+    {
+      "path": "www/audio/effect/mad_dog_1.mp3",
+      "size": 31346,
+      "sha256": "1ab3d205cd67a7aa1a9c05fe08f5ce680e6a2d34f6608e0488b2a42123c454fb"
+    },
+    {
+      "path": "www/audio/effect/mission_give_goods.mp3",
+      "size": 61756,
+      "sha256": "3a24f928575724f2805e7e4ba5ac8f31a04cbf459050d604b0a6ad48a5d2a31a"
+    },
+    {
+      "path": "www/audio/effect/mian_bei_2.mp3",
+      "size": 41020,
+      "sha256": "b8defd8ef5444ba36d6efebc8fe6286281eda49b559981e05e296c4cc805b775"
+    },
+    {
+      "path": "www/audio/effect/mission_give_money.mp3",
+      "size": 60028,
+      "sha256": "27b6fec699522fe23fa4e64887fb0f88c47b8447ddc59c98d118567219694e53"
+    },
+    {
+      "path": "www/audio/effect/mighty_eagle_fly.mp3",
+      "size": 66917,
+      "sha256": "fd461f483b78e6d47094eedcc1e5fa7932223db17c40135c55cfb2d43558a92c"
+    },
+    {
+      "path": "www/audio/effect/mission_phone.mp3",
+      "size": 50524,
+      "sha256": "173e1cb637fceda01b87622e882e6539f2626474d847f30ff6a1787dbb288e49"
+    },
+    {
+      "path": "www/audio/effect/mission_marry.mp3",
+      "size": 31819,
+      "sha256": "215502b569eab28ff9b67f2cfb458bc1cbc4c5bb16d1d5ce540a28b6783ca420"
+    },
+    {
+      "path": "www/audio/effect/mission_villa.mp3",
+      "size": 53663,
+      "sha256": "ca25228b7373d0ce4268afc2010915aa26c959292b362c301491df31c6ae2371"
+    },
+    {
+      "path": "www/audio/effect/monstar_gets_key.mp3",
+      "size": 23532,
+      "sha256": "70bd30ebd13b5838891fbec3a26141c9c82993a4ebf76028ce74d27233e5ca55"
+    },
+    {
+      "path": "www/audio/effect/mission_old_man_house.mp3",
+      "size": 367049,
+      "sha256": "4c850ff1cdd9f0a7f3581cfbab45a74786df37e76cf4854512356d15daa98d86"
+    },
+    {
+      "path": "www/audio/effect/mission_birthday.mp3",
+      "size": 75915,
+      "sha256": "0e5b8d9cc64fa18f82a9d9af53305b12ff55be23e6c71a6b381b0d7c0bde89e2"
+    },
+    {
+      "path": "www/audio/effect/jiao_hao_yun.mp3",
+      "size": 73168,
+      "sha256": "ea895f66f2787d22fce50a00bd2e1402cac9c58829025f8f6f3d489508278648"
+    },
+    {
+      "path": "www/audio/effect/mission_primary_school.mp3",
+      "size": 223069,
+      "sha256": "88c2cce6dad0593c8b0e0fedb8bfe195dbc9cb3d3eb99bd56a499521c4377151"
+    },
+    {
+      "path": "www/audio/effect/mission_zeus.mp3",
+      "size": 20093,
+      "sha256": "d71b96350ca698a3e882bfb08c50207f56ab2883c7162f386f42e63150ff3d7b"
+    },
+    {
+      "path": "www/audio/effect/mp5_3.mp3",
+      "size": 42748,
+      "sha256": "9ffe498803db66632a140684ad306076acb359c2fafae989df3c60937e5dab04"
+    },
+    {
+      "path": "www/audio/effect/mp5_4.mp3",
+      "size": 43324,
+      "sha256": "3c4c0b07d354be41e1f5ba7d4fd628ead8dec94efd115f72a6aaaf61114dff86"
+    },
+    {
+      "path": "www/audio/effect/notice_good_1.mp3",
+      "size": 43093,
+      "sha256": "1090dfe87df6553a136de639088b3b4e04ed98e45c209a2e289e559301bb6291"
+    },
+    {
+      "path": "www/audio/effect/notice_good_2.mp3",
+      "size": 22012,
+      "sha256": "f01bb6f72cc433d0bf2f91132137185ff43b8ab0dfcb308edbfae5a0a8115b73"
+    },
+    {
+      "path": "www/audio/effect/mp5_2.mp3",
+      "size": 36412,
+      "sha256": "215381e1e1bac69d2d478d7bd73891718180e239193b5cc6cf7cdcbf3671255f"
+    },
+    {
+      "path": "www/audio/effect/mp5_1.mp3",
+      "size": 34108,
+      "sha256": "4036c83f22f9ad2513ce8967aa9c56f90454b710b6669242fbf8efe05f2a8394"
+    },
+    {
+      "path": "www/audio/effect/notice_wei_xian_1.mp3",
+      "size": 3178,
+      "sha256": "798285709dc9a36b9600e530bb35ec0434025800a6cf1afc936621a0b034d2f7"
+    },
+    {
+      "path": "www/audio/effect/notice_wei_xian_3.mp3",
+      "size": 4137,
+      "sha256": "fc9c04ed93d1fc5f8ad75ab86a0c5b11c4846eb259d9f75fed4974e52eed856e"
+    },
+    {
+      "path": "www/audio/effect/notice_wei_xian_2.mp3",
+      "size": 12496,
+      "sha256": "fe094381b472b30ad612f48e15cc2fd1f042dfca53bef6f29b64cd64e56fa26b"
+    },
+    {
+      "path": "www/audio/effect/notice_good_3.mp3",
+      "size": 23740,
+      "sha256": "768a709eb5d176e9a196602acd388d0332e973be1fc83b2e8d642f686925f4b1"
+    },
+    {
+      "path": "www/audio/effect/notice_wei_xian_4.mp3",
+      "size": 4211,
+      "sha256": "c6737978c1fcd213456ee20093ac143c56e307ec586783dc5b9940f1ddc3fefb"
+    },
+    {
+      "path": "www/audio/effect/notice_wei_xian_5.mp3",
+      "size": 23077,
+      "sha256": "e257e23fb9879aa452a6e6c4c36b03b68392466570aaab0ba01cbf903d2ad6aa"
+    },
+    {
+      "path": "www/audio/effect/notice_wei_xian_6.mp3",
+      "size": 27464,
+      "sha256": "b1eee8e1efb9ff058fa04aaf980ef1cc15526f5da68979ca7da86c62a43e15b0"
+    },
+    {
+      "path": "www/audio/effect/notice_good_4.mp3",
+      "size": 24604,
+      "sha256": "1b05fd790df59cbdfdc5a8572105771d567eeefaef00c6227142505e6f033870"
+    },
+    {
+      "path": "www/audio/effect/notice_xiao_ji_2.mp3",
+      "size": 61756,
+      "sha256": "1c7ba68caf27c3eecfa53cc7366783c96f6daaef45272897bbeacfb6a1db74a9"
+    },
+    {
+      "path": "www/audio/effect/notice_zheng_chang_1.mp3",
+      "size": 16395,
+      "sha256": "071c9bc5dbc5c56ae6356e71f65e060752d8e0f932dec58af4ccb8ec5bd2309b"
+    },
+    {
+      "path": "www/audio/effect/notice_zheng_chang_2.mp3",
+      "size": 14096,
+      "sha256": "65dc57d1773dabdd1418673b82d17efd8f80dbc45bbeea0ad52b08e388e00772"
+    },
+    {
+      "path": "www/audio/effect/notice_xiao_ji_3.mp3",
+      "size": 66940,
+      "sha256": "c21a54f698c422ad26223644c996fc136f9bd331f7d643cff7f518cc6e9d8b93"
+    },
+    {
+      "path": "www/audio/effect/notice_xiao_ji_5.mp3",
+      "size": 25121,
+      "sha256": "dbc6ab0f5393166f87b274b6fd1e6bb65cad0605b8dc0d6199e615c461389a76"
+    },
+    {
+      "path": "www/audio/effect/notice_wei_xian_7.mp3",
+      "size": 25374,
+      "sha256": "fb008d687049ae5b3480abe9d19469b08dae00dc914688dd1e4d7492be36ec14"
+    },
+    {
+      "path": "www/audio/effect/notice_xiao_ji_4.mp3",
+      "size": 72988,
+      "sha256": "eeb4d33baf93207ee6c683f868dc64cae6dd02ad9be5daafa8f265098603bb21"
+    },
+    {
+      "path": "www/audio/effect/notice_zheng_chang_5.mp3",
+      "size": 45601,
+      "sha256": "d984742e237118ab1220ecb6e27780d122e0b2f5d0767b7ffcc61225ac330e3d"
+    },
+    {
+      "path": "www/audio/effect/notice_zheng_chang_6.mp3",
+      "size": 5046,
+      "sha256": "b4294bf4d581622ebfaef71ea2ed37b49520ef7bd14cd3044695145cba0216fc"
+    },
+    {
+      "path": "www/audio/effect/notice_zheng_chang_3.mp3",
+      "size": 42257,
+      "sha256": "5b7e73a19cc0258121e57ad3a8cea9913907f812c36341f5bf41803e1dc617e9"
+    },
+    {
+      "path": "www/audio/effect/notice_xiao_ji_1.mp3",
+      "size": 19326,
+      "sha256": "a0e8740537f15f4737b80f12790764a46d8902ca63d235b97cebd9bfc21627e4"
+    },
+    {
+      "path": "www/audio/effect/object_exit_water_1.mp3",
+      "size": 12582,
+      "sha256": "fe4926d49e39a41f4d870d3db0fd849b0e57b8c0c8dd985b6c2fd6725456f70b"
+    },
+    {
+      "path": "www/audio/effect/object_exit_water_3.mp3",
+      "size": 9239,
+      "sha256": "126e5eadacaada037504120e9793030d0c42d19817aa2621d4a65482a7da49c4"
+    },
+    {
+      "path": "www/audio/effect/notice_zheng_chang_4.mp3",
+      "size": 45601,
+      "sha256": "7ecbd9574c3fc23b8ac1f73c419ab4560abaa6944e07a8593392ecd81d77a7a2"
+    },
+    {
+      "path": "www/audio/effect/object_exit_water_4.mp3",
+      "size": 9657,
+      "sha256": "a30c2e73a3b7928255efb26e7972aacc9bd777c807da410420f14c7dcabe6c86"
+    },
+    {
+      "path": "www/audio/effect/open_car_door_1.mp3",
+      "size": 5741,
+      "sha256": "03a414442fac4c4e3cb49113a837232a9155ef77c9dbc53c19429950a9988bed"
+    },
+    {
+      "path": "www/audio/effect/on_off_bed_1.mp3",
+      "size": 35836,
+      "sha256": "996b1dd9b852f3e1f12d6fb57527a32d28ecbd22d853359f6b93411eb6b026eb"
+    },
+    {
+      "path": "www/audio/effect/open_car_door_2.mp3",
+      "size": 9826,
+      "sha256": "8d451b66a950e834107b6e56e4e118c8068bf990ed3e9c878389d20d3fb8dbcc"
+    },
+    {
+      "path": "www/audio/effect/object_exit_water_2.mp3",
+      "size": 10911,
+      "sha256": "e4b37924ab8bbaf361df564d5d64c7fca2bf7fd2adead890a612aee6da9958a3"
+    },
+    {
+      "path": "www/audio/effect/open_door_2.mp3",
+      "size": 4733,
+      "sha256": "b2b027879dcdb769621f3f10da5ef3c8b525ab1031b9e05724f66598af30a642"
+    },
+    {
+      "path": "www/audio/effect/open_door_3.mp3",
+      "size": 5882,
+      "sha256": "2ccc891be4eba71d6ea63ee37e55cbc74b9481d0f46d14d49a98a503aa8c990c"
+    },
+    {
+      "path": "www/audio/effect/open_door_1.mp3",
+      "size": 19675,
+      "sha256": "2fcf486673f7b4dd5d60aa3e592c3664815fb1e1cf94416093b026afaf484275"
+    },
+    {
+      "path": "www/audio/effect/open_zip_2.mp3",
+      "size": 3642,
+      "sha256": "e8c47cb1fa6cd3f5750d09160f6138c5aa8bb1828aa97102f288369d307d5998"
+    },
+    {
+      "path": "www/audio/effect/pay_cash_2.mp3",
+      "size": 11133,
+      "sha256": "609b06a5dc983a7f5c7fefcb8e9b4e89fb7ae3dcf09d6371019262517b5a65f1"
+    },
+    {
+      "path": "www/audio/effect/pay_cash_1.mp3",
+      "size": 5060,
+      "sha256": "0c97230a9fd518fc652819b504e890a7e45a7ecb99b6ff067c437bce1d5992e3"
+    },
+    {
+      "path": "www/audio/effect/pay_cash_3.mp3",
+      "size": 8208,
+      "sha256": "9ac4b3bb981c4e57207a4c6c5ee4e0f1e72192670e813cefbff7638074089670"
+    },
+    {
+      "path": "www/audio/effect/open_zip_1.mp3",
+      "size": 5523,
+      "sha256": "d18fc777130fa01d7896761684e25e30c88cd1e656ee56f0dadb923a42a8c02f"
+    },
+    {
+      "path": "www/audio/effect/person_down_2.mp3",
+      "size": 9749,
+      "sha256": "bbeb920befa0c9f266261f241662d7ffc3c250e894b38cb06de5c677cca4c53d"
+    },
+    {
+      "path": "www/audio/effect/people_area_3.mp3",
+      "size": 74879,
+      "sha256": "cc94f9fecb2187c9f29f550907f129af63cdcf83f8f4517d5ea9eb35a838184b"
+    },
+    {
+      "path": "www/audio/effect/pay_cash_4.mp3",
+      "size": 9462,
+      "sha256": "0f2a5325c01f912316905a48dd9dae5f9f1349363c3f2f7258c3840ffd838dc9"
+    },
+    {
+      "path": "www/audio/effect/person_down_1.mp3",
+      "size": 16958,
+      "sha256": "dab7f3006e22898fce4ead10523b900eeffbd00299d3b6f662c917ca6c2783c7"
+    },
+    {
+      "path": "www/audio/effect/people_area_1.mp3",
+      "size": 35567,
+      "sha256": "5497ba7dabc2049d0493b2d762fa81cef52d2a1ff331572d37b7c168b624c329"
+    },
+    {
+      "path": "www/audio/effect/pay_cash_5.mp3",
+      "size": 6392,
+      "sha256": "94e4a0541fd2624802a422a2113202c7552a6ac59a11cec430babc130106f430"
+    },
+    {
+      "path": "www/audio/effect/people_area_2.mp3",
+      "size": 73631,
+      "sha256": "8006cdac9ce79041dc039d4c6f92c8c3648fe4af1a3ac820bf8e67cac180439a"
+    },
+    {
+      "path": "www/audio/effect/phone.mp3",
+      "size": 7123,
+      "sha256": "56a525f8094e4b3faa4bc001170417d15c47b8eeed3798bbe107f9e90e1e4a63"
+    },
+    {
+      "path": "www/audio/effect/plane_fly_2.mp3",
+      "size": 18809,
+      "sha256": "ce08da7db0d02f98651523909f3aec31f99eadeb1bf804273b295a68cef1b18c"
+    },
+    {
+      "path": "www/audio/effect/play_race_1.mp3",
+      "size": 11942,
+      "sha256": "69b5bb702bbe6d7359fa9c9fa95e3013e0b97e5a65a794380c741036eae5d82e"
+    },
+    {
+      "path": "www/audio/effect/player_gets_exempt_key.mp3",
+      "size": 18016,
+      "sha256": "71ac7c53d154811bf486b2d929cceaa55195b4a98cf725c692a9c82599e1fe52"
+    },
+    {
+      "path": "www/audio/effect/push_1.mp3",
+      "size": 8876,
+      "sha256": "fbb9891a1e9c0e18eef7c8d5fbecdc7b48b6a274068ffe1aa187d32aec0d8c38"
+    },
+    {
+      "path": "www/audio/effect/plane_fly_3.mp3",
+      "size": 29017,
+      "sha256": "6f7f78c5edc3204188a0a7370ecdd2e9519c58536639a78ae8e6e810d0648651"
+    },
+    {
+      "path": "www/audio/effect/player_gets_key.mp3",
+      "size": 23532,
+      "sha256": "822c5837cc65fe27868eed2f4607c6b47e9b37d4b2cf68bb7c4c93d10b493329"
+    },
+    {
+      "path": "www/audio/effect/plane_fly_1.mp3",
+      "size": 12034,
+      "sha256": "0e2a1bf7362eb4ddb9c98b72d7f8185a7b7ae47051c1a02185f8ad69f907fa62"
+    },
+    {
+      "path": "www/audio/effect/qi_che_bao_jing_1.mp3",
+      "size": 14446,
+      "sha256": "ae24224dfb95b3352299c6aeebbc393d2ab844e87b3dd73b8d5b1733e7017326"
+    },
+    {
+      "path": "www/audio/effect/qi_che_bao_jing_2.mp3",
+      "size": 15926,
+      "sha256": "fe779a4e27a829e458f74b2d9c9d07ccf9e762c11bffb53ec11f13eb7d9e0f33"
+    },
+    {
+      "path": "www/audio/effect/qiang_da_kong_1.mp3",
+      "size": 5881,
+      "sha256": "1c51b8ac4e1b22149b9f490b7f24de65f390aa9fb339eed7579b04e21f33671b"
+    },
+    {
+      "path": "www/audio/effect/qiang_da_kong_3.mp3",
+      "size": 6064,
+      "sha256": "618c7a1f743c2b3c01accf7aa7a35156236d0107c66757cba5bccb1aef10bd57"
+    },
+    {
+      "path": "www/audio/effect/qi_che_bao_jing_4.mp3",
+      "size": 21782,
+      "sha256": "eb5647cf83a6699da3a968b14a6778fed9697bdac43b394cdeb3dc9960faaf67"
+    },
+    {
+      "path": "www/audio/effect/qi_che_bao_jing_3.mp3",
+      "size": 60892,
+      "sha256": "73fe293d812eb6e1be1c33c827febacc256cd8959722b3dd98e52acb7732f9ef"
+    },
+    {
+      "path": "www/audio/effect/qiang_da_kong_4.mp3",
+      "size": 4810,
+      "sha256": "35ca2854e68d42cda67f0a12c2a0f4d493fe4b0f2ab1e8032c14d9bc8db2a694"
+    },
+    {
+      "path": "www/audio/effect/qiang_da_kong_5.mp3",
+      "size": 7318,
+      "sha256": "edfd6fb3e880ae1f3f14845756be1181ef2b42ba3d3673663385776d9c16f5c9"
+    },
+    {
+      "path": "www/audio/effect/qiang_da_kong_6.mp3",
+      "size": 2526,
+      "sha256": "5ba666e5c662a305714a7ad4526e46472183072f5a2564ea1c970ca4688f64d2"
+    },
+    {
+      "path": "www/audio/effect/qiang_da_kong_7.mp3",
+      "size": 1899,
+      "sha256": "5a9b59556777d5b7faf7f3109049da92b792cbcae758062adf7afa306a48160a"
+    },
+    {
+      "path": "www/audio/effect/qiang_shang_tang_4.mp3",
+      "size": 12960,
+      "sha256": "a8ac3b68f3995698583922b2b19e606782960a5a862f2685afa39f8a040a4e64"
+    },
+    {
+      "path": "www/audio/effect/qiang_shang_tang_3.mp3",
+      "size": 1912,
+      "sha256": "3acba679175ecee434364683e4f75f4523c0564e2e31404f03e4b22ffcf7dcf1"
+    },
+    {
+      "path": "www/audio/effect/qiang_shang_tang_1.mp3",
+      "size": 6482,
+      "sha256": "ba74c625873c880b70021be79ef0ef83db8812319f79bd7b8a6cf182c8670a0d"
+    },
+    {
+      "path": "www/audio/effect/qiang_shang_tang_2.mp3",
+      "size": 6505,
+      "sha256": "ed4f70eeb4a19153006c58a698c7f94d4e9c3c1a155c7eb269018c3ec8b967f7"
+    },
+    {
+      "path": "www/audio/effect/qiu_bang_1.mp3",
+      "size": 5059,
+      "sha256": "7ec9ff4a6e4e325dc2a98754f21dfd9b6f3c2719b2e6dccb69fa704af23fca8a"
+    },
+    {
+      "path": "www/audio/effect/qiu_bang_4.mp3",
+      "size": 1285,
+      "sha256": "e03695f3ecc8abb919aeb0bda58b58fc727cdedf9abbf12fecc6b621466a933c"
+    },
+    {
+      "path": "www/audio/effect/qie_bo_li_1.mp3",
+      "size": 17855,
+      "sha256": "fe6d903c788c2eb5173d95353619f327f2e4adf3b55f92329ecdacaf2a11329e"
+    },
+    {
+      "path": "www/audio/effect/qiu_bang_2.mp3",
+      "size": 2643,
+      "sha256": "67231e53f268a263b4ab84eb07d61a02e94f47a7e5680993e042cd4976b48ef6"
+    },
+    {
+      "path": "www/audio/effect/qiu_bang_5.mp3",
+      "size": 4837,
+      "sha256": "e4b77d7b2efb644301156a60e80797f8c10dbefa0b4dae1dd0874910c24414e8"
+    },
+    {
+      "path": "www/audio/effect/qie_bo_li_2.mp3",
+      "size": 17855,
+      "sha256": "5a3898b517f9480a5cf829a4f118f99fda1146ab6d3ffe39e5bdc186730e1b55"
+    },
+    {
+      "path": "www/audio/effect/qiu_bang_3.mp3",
+      "size": 1180,
+      "sha256": "3d08ba8d381b821b4657748e016351fedaa8a5584637067e09ef35e710f3aa9c"
+    },
+    {
+      "path": "www/audio/effect/race_place_4.mp3",
+      "size": 57513,
+      "sha256": "87854e518a2f248919df2170be9875d2d19c848305c85f602de6d101f75c5b51"
+    },
+    {
+      "path": "www/audio/effect/race_place_1.mp3",
+      "size": 34930,
+      "sha256": "f2720b6e8817ab6e58abb568b6cd813d4bc221f49b1e3633638dd55fa3ff05fe"
+    },
+    {
+      "path": "www/audio/effect/race_place_2.mp3",
+      "size": 44138,
+      "sha256": "e0668044929ba5042c057b7424e64d012d6467e3ca9df76d51f9c5ca3ea78600"
+    },
+    {
+      "path": "www/audio/effect/race_start_b.mp3",
+      "size": 2212,
+      "sha256": "1137c2c9390f8efd921d1a1a745c6db79cc1172422d85c5bfa7fa923a5ad1e11"
+    },
+    {
+      "path": "www/audio/effect/race_start_a.mp3",
+      "size": 854,
+      "sha256": "224ea7133f87246aefa2165148b67669369956374543663817f66a2746ddc846"
+    },
+    {
+      "path": "www/audio/effect/race_place_3.mp3",
+      "size": 57095,
+      "sha256": "9fc0f0597586071b2c5fe20c741533ed02d10cf8ea5e49933d65304dbb3c187b"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_1.mp3",
+      "size": 62275,
+      "sha256": "1b6c28c498e1542d1be39771ccd61c777c906773f491d74f7bdbdbb605a90001"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_11.mp3",
+      "size": 35526,
+      "sha256": "6cdffd6bd9bcccf440c3b90f83f76d0be77e01f60572db797398417e8fd1b57c"
+    },
+    {
+      "path": "www/audio/effect/qiang_da_kong_2.mp3",
+      "size": 6273,
+      "sha256": "8906bfb66f84b499b58d51778133f2379c2ec57cdd85a48a898acf04f6a732ff"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_10.mp3",
+      "size": 69799,
+      "sha256": "e60838b5da61bf0fb083b3df8c8f690f93e516dee761a5a677a2794a047b2caa"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_4.mp3",
+      "size": 67968,
+      "sha256": "acf784f6ecc15f1406502029ab5655973c929fff03a7b79c6f38b462d512bc59"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_2.mp3",
+      "size": 69799,
+      "sha256": "7e136078576335d98195dbd753214fe6b2be08c0529803205ca81ea95e2e8cf8"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_5.mp3",
+      "size": 55872,
+      "sha256": "2dcee917c61c875ee297af5011ea1c74d6c3beb2f8cfc96d4ef5ca09cbc798f2"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_3.mp3",
+      "size": 33408,
+      "sha256": "0652192751528bda0e53d32abe5fe8cd2c89ae0aca4609fa6bd86ff2d0be122f"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_7.mp3",
+      "size": 27585,
+      "sha256": "68ef83a0c07861c084bac286677bc6b62b59b5ddb81fe59dc2cf451dd43bcb6a"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_6.mp3",
+      "size": 28421,
+      "sha256": "40f2356beb85b467cfa9477dcb43fbb3671798c402df991e4b4dad9f7e3a8093"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_8.mp3",
+      "size": 28421,
+      "sha256": "1e1ff18599e1fc1318570251cdf30789759e49e8109a5e2c7b6078d42a02c848"
+    },
+    {
+      "path": "www/audio/effect/robed_geicha_9.mp3",
+      "size": 39706,
+      "sha256": "917f9a0cb553d8a4a4f87e2efcb779bb90df7f57a795708a24694a979d6efa88"
+    },
+    {
+      "path": "www/audio/effect/seat_belt_1.mp3",
+      "size": 3396,
+      "sha256": "7801b78a1a25af18b2a9b34d3db1337001f9d17833590a04b865ca882cbbc215"
+    },
+    {
+      "path": "www/audio/effect/school_2.mp3",
+      "size": 43947,
+      "sha256": "7efdafd3fcb0f01b2fb2a34e6478319bcc2a9a62250545ef5a64bb5314052fc3"
+    },
+    {
+      "path": "www/audio/effect/school_1.mp3",
+      "size": 72351,
+      "sha256": "fd673f398d1dcaa1905de48017a3fa133f33c5240c488967bb7be5807accbbdd"
+    },
+    {
+      "path": "www/audio/effect/seat_belt_2.mp3",
+      "size": 4269,
+      "sha256": "d09e4788d0beed41d430ba8f58260eb653de632bf5a8752c73301be2d3c1421e"
+    },
+    {
+      "path": "www/audio/effect/seduction_female_1.mp3",
+      "size": 11119,
+      "sha256": "2e821d96396e9fc6e0022c5074966397614b23b67f8d18635c398b387ff4b94c"
+    },
+    {
+      "path": "www/audio/effect/seduction_female_2.mp3",
+      "size": 10284,
+      "sha256": "2dc71b84b220d774aed34d0ac7c120a274328d276e9646c7fb50c3f210dfb1d1"
+    },
+    {
+      "path": "www/audio/effect/seat_belt_3.mp3",
+      "size": 5105,
+      "sha256": "b8f554a5f234cea42c51143acf4ce90d9789b80460675ed021e1d124849d98ea"
+    },
+    {
+      "path": "www/audio/effect/sexy_music_2.mp3",
+      "size": 40819,
+      "sha256": "e52c07aef5f01bc58fc7a21cb2af6551e60a6946a57878db641cc7868728985d"
+    },
+    {
+      "path": "www/audio/effect/sexy_music_3.mp3",
+      "size": 42262,
+      "sha256": "b08e8671293e962ef7740370597565891bd52608636b516738238eaf3c2e2a02"
+    },
+    {
+      "path": "www/audio/effect/set_gps.mp3",
+      "size": 7615,
+      "sha256": "5dbcfbf86e85e6e3968aa16caefa1655d4f2906ce8b5a354824291c58105ccf2"
+    },
+    {
+      "path": "www/audio/effect/sexy_music_1.mp3",
+      "size": 43292,
+      "sha256": "ca225509cfe404c3bec9fe0daba38ed18e442d981835337841b66dc67f532625"
+    },
+    {
+      "path": "www/audio/effect/she_zhi_zha_dan.mp3",
+      "size": 20799,
+      "sha256": "6c006e6c99cd74fabc4c1726887f88dac7f059eee337445e99ddbd2da7f13fb1"
+    },
+    {
+      "path": "www/audio/effect/sha_mo_zhi_ying_2.mp3",
+      "size": 7985,
+      "sha256": "f45472694e3afdabcda9ad29a98b762b524eed29aca6fd4265b6531cabbb7329"
+    },
+    {
+      "path": "www/audio/effect/shi_bai_funny_1.mp3",
+      "size": 58931,
+      "sha256": "f49c829f20912d636c9275a8bd5baaa6d5e98334d9572229af5b603521aacd53"
+    },
+    {
+      "path": "www/audio/effect/sha_mo_zhi_ying_1.mp3",
+      "size": 7985,
+      "sha256": "f45472694e3afdabcda9ad29a98b762b524eed29aca6fd4265b6531cabbb7329"
+    },
+    {
+      "path": "www/audio/effect/shotgun_1.mp3",
+      "size": 8005,
+      "sha256": "5ca81547c1283c0fcddd873cfcdb0ad90c9b0e755c53935f9d080f4a7abf3be0"
+    },
+    {
+      "path": "www/audio/effect/shotgun_2.mp3",
+      "size": 4407,
+      "sha256": "29388ad5733b62b46493cc3a2c7792305355ede1bc4ec522369d0308617f31ca"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_1.mp3",
+      "size": 6940,
+      "sha256": "8fec32c37b39ce8862cacdd0c2799d2464e9da227c22f40e0d566154533af397"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_3.mp3",
+      "size": 2330,
+      "sha256": "72316256f4b9284282d191e7b145ccb5a1722258388a9d7cca8c4a1958139530"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_2.mp3",
+      "size": 6940,
+      "sha256": "8fec32c37b39ce8862cacdd0c2799d2464e9da227c22f40e0d566154533af397"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_10.mp3",
+      "size": 4002,
+      "sha256": "9e14881acf2cadc2e84d3e58d90883b06914c8f80db39fc07495dbc554396422"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_4.mp3",
+      "size": 7318,
+      "sha256": "212619a67cf766ec3cb0f4410612614435ee6a498008faa8ddfb1136088b34f3"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_9.mp3",
+      "size": 2643,
+      "sha256": "4ef455bdf885f9adcd8ce3c29e0d76b78cc41e076a7e010a3c3a7be42d670d58"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_8.mp3",
+      "size": 5464,
+      "sha256": "f3df904aa7986e9507e8eb93fa97f8a1f5b438bc4bad6bba0d16fb5939220e0d"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_6.mp3",
+      "size": 5255,
+      "sha256": "284db82420e3c50065502f9add129db5d596413bfc2305c75ea374954428aee9"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_5.mp3",
+      "size": 2643,
+      "sha256": "bba86c3d209c7a9744c2f70ed39b7b6620e0a0f35d9c7954aca469d0706df8c6"
+    },
+    {
+      "path": "www/audio/effect/shuang_female_1.mp3",
+      "size": 67569,
+      "sha256": "3538b99672c9ea891a997a144f2100d9016a1a2339bbf5ff36931f7d91582ef3"
+    },
+    {
+      "path": "www/audio/effect/sit_down_1.mp3",
+      "size": 4014,
+      "sha256": "1af5ae85ff6d859c3bbdf15c69c099ee16a48a1c5f71fb8144263567f35dd43d"
+    },
+    {
+      "path": "www/audio/effect/shou_qiang_7.mp3",
+      "size": 7136,
+      "sha256": "09c5c9c0738d5348eeddfb24cf4e827d6eee1141728d939edd9f4e9158fabff4"
+    },
+    {
+      "path": "www/audio/effect/shuang_female_2.mp3",
+      "size": 26163,
+      "sha256": "46d88ee21584a50511fd5264104872633427c05905fc4ae8343b5eb101973038"
+    },
+    {
+      "path": "www/audio/effect/start_on_car_1.mp3",
+      "size": 10467,
+      "sha256": "97a74af65f4b198cedd8a35b7e223a8efeb7e3a493cb2e844ca64f1f90ab2e3c"
+    },
+    {
+      "path": "www/audio/effect/sleep.mp3",
+      "size": 59519,
+      "sha256": "9927cd54a862096ab0b09a0f6b18487f477954ae9c3119aa455429198f9f3ce3"
+    },
+    {
+      "path": "www/audio/effect/start_on_car_try_1.mp3",
+      "size": 15259,
+      "sha256": "93042993f333ad36fc7d7e69158d2665b0c2901f26fcd83899d4c356d7562ebb"
+    },
+    {
+      "path": "www/audio/effect/start_on_car_2.mp3",
+      "size": 13497,
+      "sha256": "bd69c637259fe2daa9f513fb9ddc71f56a9f84e2e30ffb2311c067b7183e945f"
+    },
+    {
+      "path": "www/audio/effect/stop_car_1.mp3",
+      "size": 1376,
+      "sha256": "7f2d25426cf92ef23a7fa577ea7875eeea911bd82fb4407a1c6583162d96a1aa"
+    },
+    {
+      "path": "www/audio/effect/street_2.mp3",
+      "size": 58859,
+      "sha256": "dd513980cbf8f40bbebac8e8654c868a6dc2821c80fdd252607204d384c4b2f9"
+    },
+    {
+      "path": "www/audio/effect/street_1.mp3",
+      "size": 43883,
+      "sha256": "9a312cd025389a07bb149ef5d68cd6a0f187e24679d3c7f7c322453e31471e95"
+    },
+    {
+      "path": "www/audio/effect/struggle_1.mp3",
+      "size": 19021,
+      "sha256": "65db29dd800fa3c6a44ffae903099402668e79015197ff8e5126ac1ef42f95cf"
+    },
+    {
+      "path": "www/audio/effect/struggle_3.mp3",
+      "size": 9408,
+      "sha256": "b33e599fc1c67a6f2d6edbd7414dd94e6ddfe1988d6b15a0ea51e8ac9fe2bb07"
+    },
+    {
+      "path": "www/audio/effect/street_3.mp3",
+      "size": 50335,
+      "sha256": "e71e15c70b1779885f4347695f300fe58e7a3309936be0b5d6977b409481edaa"
+    },
+    {
+      "path": "www/audio/effect/success_little.mp3",
+      "size": 2839,
+      "sha256": "70c5482a27a2def25bc3cccf41b94a6079c66464f6f53f30ae5f8f3d1dd01b57"
+    },
+    {
+      "path": "www/audio/effect/struggle_2.mp3",
+      "size": 11698,
+      "sha256": "1aeae12f5294a13598ff6637ef5a6089a09b2151adb6cdda18ac64c9fe1ea202"
+    },
+    {
+      "path": "www/audio/effect/struggle_4.mp3",
+      "size": 9826,
+      "sha256": "40e01afb1a9f735d1020224e49517db6cce8ca40744fde4b13c44ceb4c302844"
+    },
+    {
+      "path": "www/audio/effect/surprise_female_1.mp3",
+      "size": 7375,
+      "sha256": "f217461071154051d4bc4528ab6f9b098300e0873a5622c6a462ac1021d763f8"
+    },
+    {
+      "path": "www/audio/effect/surprise_male_2.mp3",
+      "size": 7149,
+      "sha256": "fee598a1a0d273f3a7806dd006cb5b23debee850b6ffe228fc7b4fe2fb88a2a6"
+    },
+    {
+      "path": "www/audio/effect/surprising_3.mp3",
+      "size": 16795,
+      "sha256": "40fd7f17f0fbde0011152ba252befdc6d78abc06b01ee2ab2c81694c95d65129"
+    },
+    {
+      "path": "www/audio/effect/surprise_female_3.mp3",
+      "size": 8990,
+      "sha256": "b1914d9aa2afd3447989a5d451a9ba2e901f29edbba0ef2b4602e3ef1ffa97e1"
+    },
+    {
+      "path": "www/audio/effect/surprise_male_1.mp3",
+      "size": 6052,
+      "sha256": "f0d6d4e8e3aa99abf5cc03e68c980196040e8ea353c72787dce79a1e566d1a8e"
+    },
+    {
+      "path": "www/audio/effect/surprising_2.mp3",
+      "size": 8018,
+      "sha256": "8c6a39920d5fa8a2e82c353a8fb2d1b8636e3d2fa0ab23ffa4923275ad44cdd2"
+    },
+    {
+      "path": "www/audio/effect/surprise_male_3.mp3",
+      "size": 7109,
+      "sha256": "4f930f00be33ace6c30b37dab340e8f7d42943be07817bede166eb9e40240ce6"
+    },
+    {
+      "path": "www/audio/effect/surprising_4.mp3",
+      "size": 6555,
+      "sha256": "2a6e172e29906cba5f5eb5c857e63a9080f866feafa10e3b75dd9820d93678bd"
+    },
+    {
+      "path": "www/audio/effect/surprise_female_2.mp3",
+      "size": 2016,
+      "sha256": "1e8095afda5dfbcca32290aa4fc958b517dee0af41b6e323dc089d25928d059f"
+    },
+    {
+      "path": "www/audio/effect/swing_1.mp3",
+      "size": 65132,
+      "sha256": "e0186940db3173ac77a171e5ff861451b7690beb8f0e56b244b00e3ee0281f79"
+    },
+    {
+      "path": "www/audio/effect/surprising_5.mp3",
+      "size": 23031,
+      "sha256": "f92b419b04e2fc147e6da9471598ab90908b5b4130ef120aedf977b70971e0e0"
+    },
+    {
+      "path": "www/audio/effect/surprising_1.mp3",
+      "size": 23450,
+      "sha256": "e3f24a7ce660bf191a9116359eaa51b5712a6093a802c31129eda647a675d8bb"
+    },
+    {
+      "path": "www/audio/effect/tao_pao.mp3",
+      "size": 19485,
+      "sha256": "0f4b7cb1497574ed338a728133bacf743b37da58f2e14c8541876eeca02327f1"
+    },
+    {
+      "path": "www/audio/effect/throw_away_1.mp3",
+      "size": 6986,
+      "sha256": "e60b3d1ea59f29ce9ba51b5648605ee7a28c70fc0ee5f6cec5ff48bfb921c688"
+    },
+    {
+      "path": "www/audio/effect/trade_area_4.mp3",
+      "size": 60731,
+      "sha256": "b91ad35e54bdc1782595b1943e7180b65d4ae0f716df76bd00dd729f3eac5602"
+    },
+    {
+      "path": "www/audio/effect/trade_area_2.mp3",
+      "size": 62399,
+      "sha256": "ba9d61422aa9036dc9abf940816e3c9e420af4e9c7a75c31f8682b029eaa0923"
+    },
+    {
+      "path": "www/audio/effect/trade_area_1.mp3",
+      "size": 64475,
+      "sha256": "edce1728611377fbf6fc71d8cc4e95d6e2e836a88b8872d7892cf92f7cea5308"
+    },
+    {
+      "path": "www/audio/effect/trade_area_3.mp3",
+      "size": 46498,
+      "sha256": "2d7f65707765de8dd4560ee6632822d18ca546c3f7d5f4a28e37ee84d7187348"
+    },
+    {
+      "path": "www/audio/effect/train_move_1.mp3",
+      "size": 28766,
+      "sha256": "a1efeea943335c8d37b21532dd2f597b768f66a81a6f0c454059e3a88a46e405"
+    },
+    {
+      "path": "www/audio/effect/tu_tan.mp3",
+      "size": 24704,
+      "sha256": "864e9013648d548d5a10c52faf18a5920319d34cb19657c519248994f4ac3787"
+    },
+    {
+      "path": "www/audio/effect/train_move_2.mp3",
+      "size": 31470,
+      "sha256": "be57a0be664afe42c75eced9c5d6e5c2ca6912b5a9973c5d53d658560ec9af93"
+    },
+    {
+      "path": "www/audio/effect/trade_area_5.mp3",
+      "size": 67735,
+      "sha256": "6e228b4b1462c8df8521aa821f146a31e5004b3baff3743ad0252946d759d7cb"
+    },
+    {
+      "path": "www/audio/effect/train_2.mp3",
+      "size": 22463,
+      "sha256": "8fc22a9548a7e702d2b30e9c6f5f515ca3e511e92ec0b56ae63a8a8f76faec7c"
+    },
+    {
+      "path": "www/audio/effect/unbreak_glass_1.mp3",
+      "size": 2748,
+      "sha256": "311015c2b198857038e8682675cc4770b21006d545c18d49fd572961a09b3f96"
+    },
+    {
+      "path": "www/audio/effect/train_1.mp3",
+      "size": 33973,
+      "sha256": "a394732a418da6e1a86ab4cfc5d6188b1f1942e3b907027adbf2fc894e311f52"
+    },
+    {
+      "path": "www/audio/effect/unequip.mp3",
+      "size": 3793,
+      "sha256": "11def65b0849ca52a19ec46c3590f8e9693fdbefd2acd2519ec58876c0e171d8"
+    },
+    {
+      "path": "www/audio/effect/unknow_kill_2.mp3",
+      "size": 10075,
+      "sha256": "103db4d80ad3a5a00f1785bc3e83ef6e0e360cf39f6b666e47a9392c808acc57"
+    },
+    {
+      "path": "www/audio/effect/unbreak_glass_2.mp3",
+      "size": 3166,
+      "sha256": "93606bfe835ad931c568b60f08b0164da01c60f9c362e0ae09ee048aaa7cbe31"
+    },
+    {
+      "path": "www/audio/effect/unlock3.mp3",
+      "size": 4825,
+      "sha256": "0db9cbd7f59a88f0a69f4a32e3a6bec57be3de2a976cf4e0afe0a5ddfb25add0"
+    },
+    {
+      "path": "www/audio/effect/unlock2.mp3",
+      "size": 1272,
+      "sha256": "77e26e89cd349cee4a2cac75aeb7c37c7469ce2daf2c3c56e38f22dbb926d297"
+    },
+    {
+      "path": "www/audio/effect/unlock1.mp3",
+      "size": 2839,
+      "sha256": "ace0f59c409bdf16708c97af44e42b66e911b9e02cc797dbe104bbcea7bbd379"
+    },
+    {
+      "path": "www/audio/effect/unknow_kill_1.mp3",
+      "size": 9239,
+      "sha256": "2ba76d8bc61f586d73dcc67a709c47c4f30ea95ebd582cec64d2edaece1d5732"
+    },
+    {
+      "path": "www/audio/effect/unlock4.mp3",
+      "size": 2630,
+      "sha256": "7f332285b901101d8e6a7ea1adfd705273f800e189f6945c89e8e5e3f0627221"
+    },
+    {
+      "path": "www/audio/effect/upgrade_skill_1.mp3",
+      "size": 3688,
+      "sha256": "830b377f796e52bd4c36a4fe1e75733768619aed6f872622a6705066f1141971"
+    },
+    {
+      "path": "www/audio/effect/walking1.mp3",
+      "size": 5138,
+      "sha256": "b8b57c89e9359a410fa09eab6eb5ddeac48903c75fcb23ef51c7aaa432cac191"
+    },
+    {
+      "path": "www/audio/effect/upgrade_skill_2.mp3",
+      "size": 11420,
+      "sha256": "abd5ff145d6b0f495dfae47583c16380042eb29da2af7d05420601e2080d5ea5"
+    },
+    {
+      "path": "www/audio/effect/walking2.mp3",
+      "size": 4929,
+      "sha256": "a588315b758a44d9f873362e04332e6576b2973aa852f8193fb7ecbc362c25c0"
+    },
+    {
+      "path": "www/audio/effect/unlock5.mp3",
+      "size": 8900,
+      "sha256": "0810e32193c97ead2de249e3ee51b9fe3296c600414e477320b569df024eaeb7"
+    },
+    {
+      "path": "www/audio/effect/upgrade_skill_3.mp3",
+      "size": 6300,
+      "sha256": "70277850d7592662ed0b73a6f4013b78021b3b86b87c7b11e0430fad444c53c9"
+    },
+    {
+      "path": "www/audio/effect/walking3.mp3",
+      "size": 7332,
+      "sha256": "56388540eaae96cde36da7d6a287760f8068c690908b5fd498758baf65d7d38e"
+    },
+    {
+      "path": "www/audio/effect/work_hard_female_1.mp3",
+      "size": 5019,
+      "sha256": "725ef03f881bfbb62b63688ca0f5d1c48285d30570387680d04bbea766c7d5ab"
+    },
+    {
+      "path": "www/audio/effect/work_hard_male_1.mp3",
+      "size": 2735,
+      "sha256": "af5030d637f476702d79f16ece700a3a9a018c70e39bb03f8e54535c27a0cdf6"
+    },
+    {
+      "path": "www/audio/effect/work_hard_male_2.mp3",
+      "size": 4810,
+      "sha256": "63153a8fc16cb37213d9445458f8e249cd3a551cacf1d0c3bd4f2626d2280a62"
+    },
+    {
+      "path": "www/audio/effect/wu_shi_dao_3.mp3",
+      "size": 19708,
+      "sha256": "88744d9acafd80b021b2cebd82ac2c5f07b4105786465af487a736542c4b916c"
+    },
+    {
+      "path": "www/audio/effect/wu_shi_dao_2.mp3",
+      "size": 14524,
+      "sha256": "4b3766961b3916b6a3fa9c863bd2d9f8b9f6e9e5d1da10f3cbfcd3b451bb0ed8"
+    },
+    {
+      "path": "www/audio/effect/wu_shi_dao_1.mp3",
+      "size": 17980,
+      "sha256": "687ca2b9e71b2d7fc254e3e75919bc7f43d80a0ab79e0208491c2110a6ef0485"
+    },
+    {
+      "path": "www/audio/effect/walking4.mp3",
+      "size": 5660,
+      "sha256": "2ac98abedc80c72da645607455772fa1df0efbe3a1582a04ddf1019a78fb6599"
+    },
+    {
+      "path": "www/audio/effect/xiao_fang_fu_2.mp3",
+      "size": 2434,
+      "sha256": "a3bb8d873128a6f505f364784d68b309c7585389c1688caa53ef5cfa64863154"
+    },
+    {
+      "path": "www/audio/effect/xiao_fang_fu_3.mp3",
+      "size": 3061,
+      "sha256": "33fd727cdc472e09441ddcfbcc29295433c8c0a6551074da2d0eb9284ab322da"
+    },
+    {
+      "path": "www/audio/effect/xiao_fang_fu_4.mp3",
+      "size": 2957,
+      "sha256": "1b5252d3da48d5a21a03648c6d8e8b0093b1657bd958efdf2e045a7e8dcd1935"
+    },
+    {
+      "path": "www/audio/effect/wu_zi_2.mp3",
+      "size": 55996,
+      "sha256": "cd062adda7478a4d01518e53ecf7f0f7a65fc95d083b4195ccd3029df55fbfad"
+    },
+    {
+      "path": "www/audio/effect/xiao_fang_fu_1.mp3",
+      "size": 2225,
+      "sha256": "67451b1168a8fa4ba2458bb2b1607ce314c63662f303ae13414f58144a2a7b06"
+    },
+    {
+      "path": "www/audio/effect/wu_zi_1.mp3",
+      "size": 38716,
+      "sha256": "e081cb2e2c564fe115b34733be1262ae47054fe9c3bc46a89f3108e6297fba8a"
+    },
+    {
+      "path": "www/audio/effect/xin_qing_shu_chang.mp3",
+      "size": 30555,
+      "sha256": "107d254aa145f9c6d3e0322a1f78378607f9adaa1cf217fcff03262162f955bc"
+    },
+    {
+      "path": "www/audio/effect/wu_zi_3.mp3",
+      "size": 57148,
+      "sha256": "3f601c8fa175cfdcab871db1ef3401c7564ccdba76e324bae0bb743642d61250"
+    },
+    {
+      "path": "www/audio/effect/wu_zi_4.mp3",
+      "size": 66364,
+      "sha256": "993af40fa26777d54119c6798a80bb805b479c3f97d97b6f3b915fddcd7097a2"
+    },
+    {
+      "path": "www/audio/effect/yao_shi_chuan_2.mp3",
+      "size": 72988,
+      "sha256": "ad484f08ab6fc1a30f98b97ed9b5117774e4647b46c196d31394d38eca9af505"
+    },
+    {
+      "path": "www/audio/effect/ye_dan_1.mp3",
+      "size": 22868,
+      "sha256": "7ae40b0089415ef06327d75d3ed044483dc98a0472406f2824fa377c369f9873"
+    },
+    {
+      "path": "www/audio/effect/yao_shi_chuan_1.mp3",
+      "size": 65212,
+      "sha256": "74d350d2bfe06524c17820c9a6f9a545061673bc4d5a4136fd560f839bc0c468"
+    },
+    {
+      "path": "www/audio/effect/ye_shi_yi_1.mp3",
+      "size": 15975,
+      "sha256": "089aadb3848067b78d94d06fa2249720b243bf9ed9180686601450fa651ba653"
+    },
+    {
+      "path": "www/audio/effect/ye_dan_2.mp3",
+      "size": 21614,
+      "sha256": "a6c8e6628b9e1c7b0f4bed42fefb780a712e1fb001ff464ab3fa3d3ae6c7de51"
+    },
+    {
+      "path": "www/audio/effect/yao_shi_chuan_3.mp3",
+      "size": 46204,
+      "sha256": "705d895da1214099580ec2937e71f838b8a864401c3d7fc3bfd40ac130c36794"
+    },
+    {
+      "path": "www/audio/effect/ye_dan_4.mp3",
+      "size": 24958,
+      "sha256": "672594ba9d28e42c7f1c22c48517377929d1508221379a6ff1ac2f597b0dc49e"
+    },
+    {
+      "path": "www/audio/effect/yi_mi_1.mp3",
+      "size": 7527,
+      "sha256": "3ac557866b92bf9037e973e0c1c62795c236d6e062517ac1f8cf2061b037c4bb"
+    },
+    {
+      "path": "www/audio/effect/ye_shi_yi_2.mp3",
+      "size": 23289,
+      "sha256": "a21e8a3301166deac50fcecb8511c39d926bb01ad7d64b146bd6d47fb1b293c3"
+    },
+    {
+      "path": "www/audio/effect/yeshou.mp3",
+      "size": 90393,
+      "sha256": "646954ff522865696cf3597120adce271a8562f6d65be27caa849b003084b3d8"
+    },
+    {
+      "path": "www/audio/effect/yi_mi_4.mp3",
+      "size": 4392,
+      "sha256": "5dbf6a9e70c366ed895725be9620dbb3fd35a8255edb9e292c8e4856d7de9377"
+    },
+    {
+      "path": "www/audio/effect/ye_dan_3.mp3",
+      "size": 24958,
+      "sha256": "3f2c6746c15409ac320f965794b7a4679677c104c343fe0248d32b6973f8a6a4"
+    },
+    {
+      "path": "www/audio/effect/yi_mi_2.mp3",
+      "size": 14254,
+      "sha256": "9155a6e1ccf933905679b66a2160aef8e92f429079edcda3ea5a4afa4ab6f43a"
+    },
+    {
+      "path": "www/audio/effect/yi_wai_shou_shang.mp3",
+      "size": 11309,
+      "sha256": "ae2c5d11fa797ff2bb5c5e794ebc720f155457ec7ca10aaaee076f447659cee1"
+    },
+    {
+      "path": "www/audio/effect/yi_mi_3.mp3",
+      "size": 10035,
+      "sha256": "c1997c97235c953d8653e0e213635f9309f74cfb9dfaeb48614c5dad00ac14f0"
+    },
+    {
+      "path": "www/audio/effect/yin_hang_jing_bao_2.mp3",
+      "size": 62620,
+      "sha256": "eaf355cd929d3006c6949b59542fb6f4bb10714cc460e5f4355f40dd9d2205a0"
+    },
+    {
+      "path": "www/audio/effect/yin_hang_jing_bao_1.mp3",
+      "size": 81628,
+      "sha256": "9a158e9d6fc2d9305f79d918b728d389352c9849292aafb948816aebd763ae63"
+    },
+    {
+      "path": "www/audio/effect/eating_1.mp3",
+      "size": 28293,
+      "sha256": "a817fbff2b96e49282a5979b38487fb5da70d7085d1c68ff43a0e6d3eed26937"
+    },
+    {
+      "path": "www/audio/effect/eating_3.mp3",
+      "size": 5927,
+      "sha256": "22b1b22f908bac833cd271a465817a06653ea45525f39d5a2bd170cc75ee1701"
+    },
+    {
+      "path": "www/audio/effect/eating_2.mp3",
+      "size": 10375,
+      "sha256": "71d4626d9470694a96c05aed87fe4d7d1b4d5e6b324c0b101004b5458ef4fb39"
+    },
+    {
+      "path": "www/audio/effect/eating_4.mp3",
+      "size": 38496,
+      "sha256": "17c81250e1a74f7cf4f26841898acfad7870a742ad8f1f990d7cb6901017d153"
+    },
+    {
+      "path": "www/audio/effect/gta_sa_clip1.mp3",
+      "size": 111751,
+      "sha256": "475302d88987f389fb0e15afc2fc7081272e2c52c0376426fd8eff402da6077d"
+    },
+    {
+      "path": "www/audio/effect/hunger_4.mp3",
+      "size": 23449,
+      "sha256": "16b25c64bdc9da744a59678012f1fc4c55e0a2bcdbc9b95a0dd05a0bfcb024ab"
+    },
+    {
+      "path": "www/audio/effect/hunger_3.mp3",
+      "size": 22044,
+      "sha256": "b944a71f692ef2433dc811c0f4ac3ae2e63dcda4e14fa68e2c88df8d4f80a231"
+    },
+    {
+      "path": "www/audio/effect/restaurant_1.mp3",
+      "size": 50564,
+      "sha256": "9032d412a42e7ec2108e1255a7aee485a517f9f578129894d47493fdd7dc2f51"
+    },
+    {
+      "path": "www/audio/effect/shotgun_mult_2.mp3",
+      "size": 25545,
+      "sha256": "8c7b7f333a50c85e3021bb1989684e5c561cea256e34822d57dede509c84c7dd"
+    },
+    {
+      "path": "www/audio/effect/restaurant_3.mp3",
+      "size": 54283,
+      "sha256": "b587a6befd8f09032d5bc08ba6750cea38339608767078d93e214fe7c60f48ff"
+    },
+    {
+      "path": "www/audio/effect/hunger_2.mp3",
+      "size": 32054,
+      "sha256": "18c8942e012eeeeaa57cf99483c9472bbe02d03b38ec4050aceae5c67aa30fdf"
+    },
+    {
+      "path": "www/audio/effect/restaurant_4.mp3",
+      "size": 58447,
+      "sha256": "812c077b6a0e91e89c6cffe5c8f53da1b5a3a78fe51f0b73f58faf6e74417001"
+    },
+    {
+      "path": "www/audio/effect/the_next_episode_clip1.mp3",
+      "size": 120983,
+      "sha256": "73aa8d292bccb2d8ecec68e50962526424934a3b9d5a98d7d83dbc525a0a3a44"
+    },
+    {
+      "path": "www/audio/effect/restaurant_2.mp3",
+      "size": 56571,
+      "sha256": "c9fa1f644cfcdb3f654ab273331b405548201f61da5d48ee3071b1f2e61fc68c"
+    },
+    {
+      "path": "www/audio/effect/shotgun_mult_1.mp3",
+      "size": 20530,
+      "sha256": "5d11bbdd262cc1a9844fe6649aedb0e0a93deeabc5ffbe1a625b29b7491de046"
+    },
+    {
+      "path": "www/audio/effect/hunger_1.mp3",
+      "size": 16135,
+      "sha256": "22967306b2f9fa1e121266e6b3e1788a16e7b59dd46f366199ce556a99345111"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_attack_3.mp3",
+      "size": 26584,
+      "sha256": "886f6a665b2ac00f2f1819275f3f595f7a00d2d0b1af890802af4f8257f197fe"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_attack_4.mp3",
+      "size": 33898,
+      "sha256": "73066af601ff11cf1b938c53ef9329d12a4dd6ef3fd3b518e3111dd55ce99a55"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_delaypay_1.mp3",
+      "size": 37660,
+      "sha256": "1a94922c589f28625282635703db044817d7769fa487359ca456894b6cd96131"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_delaypay_2.mp3",
+      "size": 45183,
+      "sha256": "0fa3eb7aa0916f5e9bb82185c0a73e6c2c0888a4bc807db08b0dd0e929ee9efb"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_attack_2.mp3",
+      "size": 14463,
+      "sha256": "1323cf7a646954150e105725b24c0294a979afbc35d9545386ef69fe421ad4f1"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_delaypay_4.mp3",
+      "size": 46019,
+      "sha256": "ff80bfcf594ca7702a77bcce08739e00bed3e2a407f8e3ae2b091711cd6fb17c"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_delaypay_3.mp3",
+      "size": 44765,
+      "sha256": "58301216d16284c2920db6e7a9d1abe8fd5ececdf02adc60352f3e48d217ebff"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_delaypay_5.mp3",
+      "size": 24912,
+      "sha256": "ba2212d607ce6c1ac14aca32b7754c4cc594e293afd5440c65d0d418ee5a9eec"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_attack_5.mp3",
+      "size": 40168,
+      "sha256": "651ed623c424f65af3e007d3b4b23ec65c0e56b0038c96e0f58d077e58d13f1f"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_harmurge_1.mp3",
+      "size": 56050,
+      "sha256": "326a208e9a40c5e86526de0971de902f29c18dc1699eda57b851acee53cb866d"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_harmurge_3.mp3",
+      "size": 33062,
+      "sha256": "ce1e3f4e4b9460ef6db1288d063204edb1fd64440b270d289519a2204d5231d0"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_harmurge_2.mp3",
+      "size": 39332,
+      "sha256": "901edd0e3ccfc150617941c2efdb99477718dbb6e054f5136b6f2cd6959660d1"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_harmurge_5.mp3",
+      "size": 28883,
+      "sha256": "b95a406b481a4ab6f9f5d4469205e94a4464872e41a233eb00efaca12ddb2778"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_househide_3.mp3",
+      "size": 31599,
+      "sha256": "b4cfd30520b8c0dac782cc4ac4fae2ac130630b5ba84b141648508576037f6bf"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_househide_1.mp3",
+      "size": 40586,
+      "sha256": "a63e15395d56295dba1dd85beb01806be6d25f782444483cfb922a5f82b23ac8"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_harmurge_4.mp3",
+      "size": 29928,
+      "sha256": "598f5bd63a4bf40c984eb3771751c946d8051012ce79bcfce4147d237392aa99"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_househide_2.mp3",
+      "size": 41421,
+      "sha256": "3450793b4135ef15d4a95a2ef0b40888ee0a3455d55c4371d4d908a4beb55449"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_househide_5.mp3",
+      "size": 31181,
+      "sha256": "f79eb75605e792823d7136cd907c1d84d1953fd9030e17dbb625adb37526fd33"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_kindurge_2.mp3",
+      "size": 23449,
+      "sha256": "6c8e6227b1f59ab3b9f13bea335aa1094a49e3c09c1f6d5f17268a2c2a6b3128"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_payedcomm_2.mp3",
+      "size": 25748,
+      "sha256": "befb4afca50d094d599b67257c1511beaec9f125c878c304739391385a96e1e3"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_househide_4.mp3",
+      "size": 24285,
+      "sha256": "c136b2d9fa24a010353b25a6f4d3dd453f203e4ee8131c8cbee370b60491c6aa"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_kindurge_5.mp3",
+      "size": 33480,
+      "sha256": "5df640160578bd9dd2f1491abd76a9c242adc9b59bc60462876d12fa92fb2d4b"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_kindurge_3.mp3",
+      "size": 28465,
+      "sha256": "3f15e0acdd118327c7b437fecd8353bf6fdddd07b9670b2b2adbf6a2395ed481"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_payedcomm_1.mp3",
+      "size": 34734,
+      "sha256": "50d8bb3817123c9a5a0d495ffbcef9196e7e14e0bd552953a53c08eec25c6809"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_payedcomm_3.mp3",
+      "size": 36824,
+      "sha256": "54c64ce6b62a31d035af63951eaea034463254f15b81742911dab670a6d4a29e"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_undueremind_1.mp3",
+      "size": 38914,
+      "sha256": "51eb491fcf81771ee835d7d9782ff0a19ce16f719c1c353b8df6e034bba7cbc4"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_payedcomm_4.mp3",
+      "size": 35361,
+      "sha256": "87b71fa23b30c9a1760424e8fac80ec6014e2cd6ccc25e96271ff22def7b91db"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_undueremind_4.mp3",
+      "size": 23867,
+      "sha256": "99e529a4eab2b1aa7fa950510d8df723d771904452c3059eeae2c28f26c13dca"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_attack_1.mp3",
+      "size": 15926,
+      "sha256": "e93acb31dca3edafa34d375e4460cd266720033766b3857942bd8e00fc24cf54"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_undueremind_3.mp3",
+      "size": 28256,
+      "sha256": "6777677e7278a53e6363eaf31ba43fd47d504b39f1c4fde2c3c757077f23b785"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_payedcomm_5.mp3",
+      "size": 52288,
+      "sha256": "59da6ee4bfbba58f6a62d129a169f04c995fc1c76342e747a0e1a5fa814c9e00"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_attack_1.mp3",
+      "size": 23240,
+      "sha256": "f459e784273ae66215c195ed759fa71a52756d921f7874f69735791d829d36b7"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_attack_3.mp3",
+      "size": 36615,
+      "sha256": "1b6899f2cdd67614f33652062003515b9d4300bdcbb02994a1dee89c8f0c4ab2"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_undueremind_2.mp3",
+      "size": 16971,
+      "sha256": "203adce176f5aa1a8c78fc051c6f1c0fec7861f7fa8b7ff233cc644745d1b0c6"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_kindurge_4.mp3",
+      "size": 34943,
+      "sha256": "de3dd00890bd3593384ed66547be81667f015e3d6db62c9e325b3aed54c58cfa"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_attack_2.mp3",
+      "size": 22195,
+      "sha256": "d9dff3ae39536294985791b241c80433bd5e6522f104a0a52d627b2cc8a6f25e"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_undueremind_5.mp3",
+      "size": 31599,
+      "sha256": "86e5201616566c0968ebd6555e633b2f5f7a97c98de31af5952fb522141f92fe"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_100_kindurge_1.mp3",
+      "size": 26375,
+      "sha256": "135e8085bf5bc1a5cbbfc98f6980948995febff2a0aba1d4a9855f05068ed0a6"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_delaypay_4.mp3",
+      "size": 65454,
+      "sha256": "4f6d03eaf6a26d85ec34f198a60436114c7105732698255ae1f9de56cd026510"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_delaypay_1.mp3",
+      "size": 54378,
+      "sha256": "4cdfe3a50c93aa73bdd5a157ae175a706dea02f0114da00ed2fdf54f4034d84f"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_delaypay_3.mp3",
+      "size": 63782,
+      "sha256": "34d99af81db4472941238587b4ee334f58448fdd819a3138df1ef24448083727"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_harmurge_2.mp3",
+      "size": 54796,
+      "sha256": "439c38314a8b7031ef4ec1ab2802c24fa783d26c59acf50914490defffa9ef98"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_attack_5.mp3",
+      "size": 51453,
+      "sha256": "21d77bb4d6b5306eae12e0129cc6de0bf9c4dc521b5ef98c5d90aa928899af0a"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_delaypay_2.mp3",
+      "size": 63573,
+      "sha256": "bcad6be99e2fc1fddd4bc52e66f9b2c1b26699b6942d493688cdae30bec701f4"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_harmurge_3.mp3",
+      "size": 41421,
+      "sha256": "6370571fe162a9613f21c01687416f69d293af0c8ba14199eecf3fe444c5e907"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_harmurge_5.mp3",
+      "size": 42675,
+      "sha256": "70ed31cbcd4778643e21ce089ac250cf40179a3a98a5c7e7d25ea321e8499be4"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_harmurge_4.mp3",
+      "size": 38914,
+      "sha256": "46294a2d724b9fcd09049648b1c3dbe63baa2b21f75d717dbfc09c21040e3250"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_harmurge_1.mp3",
+      "size": 77157,
+      "sha256": "04c847dacbca9405c3d7eb853b8401e097bccf1db890a65f7a756be843f653ee"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_househide_5.mp3",
+      "size": 45392,
+      "sha256": "2081f2ed5d5e3788901b6ed42b172bef6bdc118105fd77d414cd9ffbcdcb5b6e"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_househide_2.mp3",
+      "size": 56886,
+      "sha256": "f2cd78047cb071b795b3ae0dfbf50a2e605095fa8e43f10d0618e082af0dddc0"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_househide_4.mp3",
+      "size": 34734,
+      "sha256": "ee15f744cc806d2d44831a6f9a6beb3cef6233647a4a57ab9c429eeb939329ae"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_househide_3.mp3",
+      "size": 42884,
+      "sha256": "540392ede8a69da0528bc4abfa1a6171ad1d82a1a14f9653f9c56382091e416c"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_delaypay_5.mp3",
+      "size": 35570,
+      "sha256": "3552c2e46d690e0afe5c58007aab8d7cbdd6a151dcbfbd65880a3bfb9c8a866c"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_kindurge_2.mp3",
+      "size": 31808,
+      "sha256": "2c1f6ee0586f625ec9c52cacdb6958910b588c8f287508fa2870c9b9b1bfcca6"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_kindurge_3.mp3",
+      "size": 43093,
+      "sha256": "8f25bdfe8752c76bb3e74ec0e641f1e76ebdb6c0ff1ddccc1440e9e7c9432f16"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_kindurge_5.mp3",
+      "size": 45183,
+      "sha256": "4aadd1939c46251b68ff55a2eab127ee839428b866c381b795ecff0a3fb46331"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_kindurge_4.mp3",
+      "size": 48109,
+      "sha256": "0d9b55907199bb36565e32a7ac6ef0ff537a42a3ffc5a46f9308e40c24764a1f"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_payedcomm_3.mp3",
+      "size": 52288,
+      "sha256": "6634564f7cb1312114e2466d5e7a672842df05272512e47cd12db053e7bfc289"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_househide_1.mp3",
+      "size": 55005,
+      "sha256": "955c44ffcd0b93af5d121d78338db04dec9dc8f755a58033fc1bbefc5500a3bb"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_payedcomm_2.mp3",
+      "size": 35988,
+      "sha256": "bbd010ed085ae114ea808085980c35e8c62a69797be238677cf71ce735c13fef"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_payedcomm_1.mp3",
+      "size": 48318,
+      "sha256": "e88bd514acafbc2aa1a7cc22e6a9939941b6183fff84598b8ce842fbcab3b1f1"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_payedcomm_5.mp3",
+      "size": 73813,
+      "sha256": "df22b678e38d87145c8271e240c97e21bd3d0ff69e2b13365efed54f7e447509"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_undueremind_4.mp3",
+      "size": 25539,
+      "sha256": "ae15a2b83dac243dec30d6be54c93039456eca0fc65c96ff62a8ca9b03acbb6e"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_undueremind_2.mp3",
+      "size": 37033,
+      "sha256": "0f4011cb5d64adf2204bfa7246a2b6151bea5984c12de07a9c43b3d525903b7c"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_102_attack_1.mp3",
+      "size": 58976,
+      "sha256": "ae0465446572843ab99501eb93c45560187fb0d5e1e3266215ef6639f9284e6b"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_undueremind_3.mp3",
+      "size": 36406,
+      "sha256": "f855855adb9c23235ef25d4937c6300b121357956917a8a870c2c79b94e78c79"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_undueremind_1.mp3",
+      "size": 42884,
+      "sha256": "b37f3cbab5a88fa59f8313e350b0daa2316a037e01313cecf6a6e3aa9a895bf6"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_102_attack_4.mp3",
+      "size": 23449,
+      "sha256": "a3aa0f82fc200a423a87271077d87ab9f043b49125dfbbb20531265ab9cffcf5"
+    },
+    {
+      "path": "www/audio/voice/jp/jp_101_undueremind_5.mp3",
+      "size": 55214,
+      "sha256": "16d594ada9207ce352e1557474d339e0e257ef6139b65c39d91340579067896c"
+    },
+    {
+      "path": "electron/preload.js",
+      "size": 2777,
+      "sha256": "84b6bedd0aef928af2bce1bbe06f7e8c54a959528a8e17edcc98e90b98d37b44"
+    }
+  ]
+}

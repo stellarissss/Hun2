@@ -1,0 +1,36 @@
+name: Fetch Hun2 APK
+
+# 手动触发：GitHub 网页 Actions 页面点 "Run workflow" 即可
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetcher (逆向 iefans 接口取签名链接并下载)
+        run: python3 fetch_apk.py
+
+      - name: 校验 APK
+        run: |
+          ls -la hun2.apk
+          head -c 4 hun2.apk | xxd
+          echo "MD5: $(md5sum hun2.apk | cut -d' ' -f1)"
+          echo "SHA256: $(sha256sum hun2.apk | cut -d' ' -f1)"
+
+      - name: 发布为 Release 资源
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-${{ github.run_number }}
+          name: "混二 APK build ${{ github.run_number }}"
+          files: hun2.apk
+          body: |
+            由 GitHub Actions 自动抓取。
+            文件: hun2.apk (包名 com.hao.hun)
+            下载回程: 可经 ghfast.top 加速拉取。

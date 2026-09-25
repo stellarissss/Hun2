@@ -1,6 +1,6 @@
 {
   "name": "hun-japan-pc",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "《混在日本》PC 单机版 —— 完全离线的策略养成游戏",
   "main": "electron/main.js",
   "author": "",

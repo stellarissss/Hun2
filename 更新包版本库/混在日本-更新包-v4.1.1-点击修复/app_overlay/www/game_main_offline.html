@@ -1,0 +1,1594 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+/* ===== 离线版：资源路径函数桩（必须早于页面内联脚本）===== */
+(function(g){
+    g.__HUN_OFFLINE__ = true;
+    var LOCAL = ".";
+    g.getResPath_CORS_Web   = function(){ return LOCAL; };
+    g.getResPath_UNCORS_Web = function(){ return LOCAL; };
+    g.getResPath_By_CDN     = function(){ return LOCAL; };
+    g.getVersionInfo        = function(){ return "json/version.json"; };
+    g.hasGameEnv_Dev        = function(){ return false; };
+    try { if (!g.channel) g.channel = "pc"; } catch(e){}
+})(window);
+</script>
+
+	<meta charset="utf-8">
+	<title>混二</title>
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+	<meta name="full-screen" content="true"/>
+	<meta name="screen-orientation" content="portrait"/>
+	<meta name="x5-fullscreen" content="true"/>
+	<meta name="360-fullscreen" content="true"/>
+
+	<meta name="msapplication-tap-highlight" content="no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="混二">
+
+
+
+	<!--加载js文件——国内版本 START -->
+	<!--【重要】【重要】【重要】 腾讯云的CDN，由于不稳定，所以废弃 -->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+
+	<!-- 阿里云的对象存储  上海区-->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!--加载js文件——国内版本 END -->
+
+
+	<!-- 阿里云的对象存储  香港区-->
+
+
+<!--加载js文件——香港版本 END -->
+
+
+	<!-- iOS 美国审核版 -->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+
+	<!--加载js文件——国外版本 START   -->
+	<!-- 阿里云的对象存储 弗吉尼亚区 -->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!--加载js文件——国外版本 END -->
+
+	<!---->
+
+	<!---->
+	<!--<script src='https://vjs.zencdn.net/7.4.1/video.js'></script>-->
+
+
+	<!-- 逻辑脚本 -->
+	<script type="text/javascript">
+		"use strict";
+
+		//父页面的域名
+		var fatherDomain;
+
+		//游戏名字
+		var MY_GAME_NAME="";
+		var MY_GAME_NAME_WORD_LENGTH=4;
+
+		//美国APP版本
+		var PK_NAME_VERSION_USA="com.hao.hun";
+
+		//资料片版本(美国，日本)
+		var EXPENSION_PACK_VERSION_USA="usa";
+		var EXPENSION_PACK_VERSION_JAPAN="jp";
+
+
+		var KEY_CACHE_LANGUAGE="game_language";
+		var LANGUAGE_ZH=0;
+		var LANGUAGE_ZH_FAN=1;
+		var LANGUAGE_EN=2;
+		var LANGUAGE_JA=3;
+		var LANGUAGE_CHOICE=LANGUAGE_ZH;
+
+		var hasAppInScreenFront=true;//app是否在前台显示
+
+		var hasProgressLoadError=false;//是否载入进度失败
+
+		// alert("Hello");
+		var hasStorageOpenId=false;//是否存储中的openId
+
+		var httpPrefix=document.location.protocol;//http协议头
+		//当前的Host
+		var cur_host = window.location.host;
+		var baseURL = httpPrefix + "//" + cur_host;
+
+
+		var WORLD_ERROR="";
+
+		var CHANNEL_ANDROID="android";
+		var CHANNEL_IOS="ios";
+		var CHANNEL_PC="pc";
+		var CHANEEL_WECHAT_APP="wechat_app";
+		var CHANNEL_TOUTIAO_APP="toutiao_app";
+
+		var hasEnvDev=null;//是否开发环境
+
+		var hasShowHunCoin=true;
+		var hasReviewVersion=false;
+
+
+		//是否开发环境
+		function hasGameEnv_Dev() {
+			/* 离线版：恒为非开发环境 */
+			return false;
+			if(hasEnvDev==null)
+			{
+				//如果是本地环境
+				//  || cur_host.indexOf("127.0.0.1")!=-1   127.0.0.1模拟生产环境了
+				if(cur_host.indexOf("192.168")!=-1 || cur_host.indexOf("127.0.0.1")!=-1)
+				{
+					hasEnvDev=true;
+					// alert("开发环境...");
+				}
+				else{
+					hasEnvDev=false;
+					// alert("生产环境...");
+				}
+			}
+			return hasEnvDev;
+		}
+
+		/**
+		 * 得到腾讯云COS，前缀path
+		 * @param path
+		 */
+		function getQloudCos_PrefixPath(path) {
+			if(hasGameEnv_Dev())
+			{
+				return "dev/"+path;
+			}
+			else{
+				return "pro/"+path;
+			}
+		}
+
+		// var tttDev=hasGameEnv_Dev();
+
+		//向Body中添加Javascript标签
+		function addInBody_Javascript(src) {
+			var secScript = document.createElement("script");
+			secScript.setAttribute("type", "text/javascript");
+			secScript.setAttribute("src", src);
+			document.head.insertBefore(secScript, document.head.lastChild);
+		}
+
+
+
+		//得到当前的秒
+		function getCurrentSecond() {
+			return parseInt(new Date().getTime()/1000);
+		}
+
+		//得到页面参数
+		function getPageParamValue(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) return unescape(r[2]);
+			return null;
+		}
+
+		//随机数
+		function RandomNumBoth_HTML(Min,Max){
+			if(Max<Min){
+				var temp=Max;
+				Max=Min;
+				Min=temp;
+			}
+			// var Range = Max - Min;
+			// var Rand = Math.randopm();
+			// var num = Min + Math.round(Rand * Range); //四舍五入
+			// return parseInt(num);
+			return Math.floor(Math.random() * (Max - Min + 1) + Min);
+		}
+
+		//得到系统语言
+		function getLanguageSystem() {
+			var backLanguage=LANGUAGE_ZH;
+			//Android
+			if(channel==CHANNEL_ANDROID)
+			{
+				//如果是中文
+				if(app_lg=="zh")
+				{
+					//如果是简体
+					if(lg_sc=="Hans")
+					{
+						backLanguage=LANGUAGE_ZH;
+					}
+					//如果是繁体
+					else if(lg_sc=="Hant")
+					{
+						backLanguage=LANGUAGE_ZH_FAN;
+					}
+				}
+				//如果是英文
+				else if(app_lg=="en")
+				{
+					backLanguage=LANGUAGE_EN;
+				}
+				//其他情况
+				else{
+					//如果是美国版本，那么英文
+					if(pkname==PK_NAME_VERSION_USA) {
+						backLanguage=LANGUAGE_EN
+					}
+					//如果是中国版本，那么中文
+					else{
+						backLanguage=LANGUAGE_ZH
+					}
+				}
+			}
+			//iOS
+			else if(channel==CHANNEL_IOS)
+			{
+				//中文简体
+				if(app_lg.startsWith("zh-Hans"))
+				{
+					backLanguage=LANGUAGE_ZH;
+				}
+				//简体粤语
+				if(app_lg.startsWith("yue-Hans"))
+				{
+					backLanguage=LANGUAGE_ZH;
+				}
+				//上海
+				if(app_lg.startsWith("wuu"))
+				{
+					backLanguage=LANGUAGE_ZH;
+				}
+				//中文繁体（台湾、香港、澳门，新加坡）
+				else if(app_lg.startsWith("zh-Hant"))
+				{
+					backLanguage=LANGUAGE_ZH_FAN;
+				}
+				//其他中文
+				else if(app_lg.startsWith("zh")){
+					backLanguage=LANGUAGE_ZH;
+				}
+				//英文
+				else if(app_lg.startsWith("en"))
+				{
+					backLanguage=LANGUAGE_EN;
+				}
+				//日文
+				else if(app_lg.startsWith("ja"))
+				{
+					backLanguage=LANGUAGE_JA;
+				}
+				//其他情况
+				else{
+					backLanguage=LANGUAGE_EN
+				}
+			}
+			return backLanguage;
+		}
+
+		/**
+		 * 确认游戏语言
+		 */
+		function confirmLanguage() {
+			//得到存储中的openid
+			var game_language=localStorage.getItem(KEY_CACHE_LANGUAGE);
+			//如果存储中有game_language
+			if(game_language!=null && game_language!='null')
+			{
+
+			}
+			//如果存储中没有game_language，那么把当前的game_language记录下来
+			else{
+				//得到系统语言
+				game_language=getLanguageSystem();
+				//保存系统语言
+				// localStorage.setItem(KEY_CACHE_LANGUAGE,game_language);
+			}
+			LANGUAGE_CHOICE=game_language;//设置当前的语言
+
+			//测试
+			// LANGUAGE_CHOICE=LANGUAGE_ZH_FAN;//默认设置成中文简体
+
+			//如果是美国资料篇版本
+			if(expension_pack_version==EXPENSION_PACK_VERSION_USA) {
+
+				// //美国版本现阶段强制为英文版
+				// LANGUAGE_CHOICE=LANGUAGE_EN;
+
+				// if(LANGUAGE_CHOICE==LANGUAGE_ZH_FAN)
+				// {
+				// 	MY_GAME_NAME="寧有種乎";
+				// 	MY_GAME_NAME_WORD_LENGTH=4;
+				// }
+				// else{
+				MY_GAME_NAME="Buying a Mansion";
+				MY_GAME_NAME_WORD_LENGTH=10;
+				// }
+
+			}
+			//如果是中文版
+			else{
+				MY_GAME_NAME="混";
+				MY_GAME_NAME_WORD_LENGTH=4;
+			}
+		}
+
+		/**
+		 * 得到语言js
+		 * @param languageChoice
+		 */
+		function getLanguageJS(languageChoice){
+			var jsFile="/js/hun_japan/word/cn.js";
+			if(languageChoice==LANGUAGE_ZH)
+			{
+				jsFile="/js/hun_japan/word/cn.js";
+			}
+			else if(languageChoice==LANGUAGE_ZH_FAN)
+			{
+				jsFile="/js/hun_japan/word/cn_fan.js";
+			}
+			else if(languageChoice==LANGUAGE_EN)
+			{
+				jsFile="/js/hun_japan/word/en.js";
+			}
+			else if(languageChoice==LANGUAGE_JA)
+			{
+				jsFile="/js/hun_japan/word/ja.js";
+			}
+
+			//完整路径
+			jsFile=getResPath_CORS_Web()+jsFile;
+			return jsFile;
+		}
+
+		//父页面改变loading文字
+		function fatherPage_changeLoadingHunText(text) {
+			if(fatherDomain!=null)
+			{
+				var pMsg=new Object();
+				pMsg.id="changeLoadingHunText";
+				pMsg.text=text;
+				var sendMsg = JSON.stringify(pMsg);
+				window.parent.postMessage(sendMsg,fatherDomain)
+			}
+		}
+
+		//得到父页面域名
+		fatherDomain=getPageParamValue("fdomain");
+		// console.log("fatherDomain="+fatherDomain);
+		if(fatherDomain!=null)
+		{
+			fatherDomain=decodeURIComponent(fatherDomain);
+			// console.log("decode fatherDomain="+fatherDomain);
+		}
+		else{
+			// console.log("没有父页面域名");
+		}
+
+
+
+		//url带来的参数
+		var openid = getPageParamValue("openid");
+		var pkname=getPageParamValue("pkname");
+		var url_route=getPageParamValue("route");
+
+		//资料片版本
+		var expension_pack_version=getPageParamValue("epv");
+		//如果是美版app，那么去美国
+		if(pkname==PK_NAME_VERSION_USA){
+			expension_pack_version=EXPENSION_PACK_VERSION_USA;
+		}
+		//如果是国内版本
+		else {
+			//如果没有资料片版本属性，去日本
+			if(expension_pack_version==null)
+			{
+				expension_pack_version=EXPENSION_PACK_VERSION_JAPAN;
+			}
+		}
+
+		//为防止App的openid发生改变如重装系统
+		var rew_openid=getPageParamValue("rew_openid");//指定是否重写openid
+		//如果要重写openid
+		if(rew_openid=='y' && openid!=null)
+		{
+			localStorage.setItem("openid",openid);
+		}
+		//得到存储中的openid
+		var localOpenId=localStorage.getItem("openid");
+		//如果存储中有openid，那么当前openid为记录中的openid
+		if(localOpenId!=null && localOpenId!='null')
+		{
+			openid=localOpenId;
+			hasStorageOpenId=true;//是存储中的openId;
+		}
+		//如果存储中没有openid，那么把当前的openid记录下来
+		else{
+			localStorage.setItem("openid",openid);
+			hasStorageOpenId=false;//不是存储中的openId;
+		}
+
+
+		//url带的参数
+		var urlParams=getPageParamValue("pm");
+
+
+		var channel = getPageParamValue("channel");
+		// alert("channel="+channel);
+		var app_version=getPageParamValue("app_version");
+		var market_channel=getPageParamValue("mk");
+
+		var devicePlatForm=getPageParamValue("pf");//设备的版本，类如iphoneSE,iphone6S
+		if(devicePlatForm==null)
+		{
+			devicePlatForm="null";
+		}
+
+		var deviceTotalMemory=getPageParamValue("tmem");
+		if(deviceTotalMemory==null)
+		{
+			deviceTotalMemory="null";
+		}
+
+		var REVIEW_VERSION_IOS;
+		var REVIEW_VERSION_ANDROID;
+
+		if(openid==null || channel==null || openid=="null" || channel=="null" || openid=="null" || channel=="")
+		{
+			//【PC 单机版改造】原版此处会跳转 "http://<随机数>.com"（防刷/下载引导）。
+			//离线版不得访问任何外站，改为就地补全本地默认值，直接进入游戏。
+			//注意：此处只能处理已声明的 openid / channel；epv、mk、app_lg 等
+			//变量在下方才声明，交由各自的默认值逻辑处理。
+			if(openid==null||openid=="null"||openid=="")openid="local_player";
+			if(channel==null||channel=="null"||channel=="")channel="pc";
+		}
+
+
+		//app的语言
+		// 安卓  app_lg(zh：汉语 en：英语)  lg_sc(Hans:简体  Hant:繁体 )  lg_cr(CN:大陆  TW:台湾)
+		//iOS中简体中文“zh-Hans”，繁体中文“zh-Hant”，英文“en”。PS 繁体中文分为‘香港’和‘台湾’还没有查看
+		var app_lg=getPageParamValue("app_lg");
+		var lg_sc=getPageParamValue("lg_sc");
+		var lg_cr=getPageParamValue("lg_cr");
+
+		var gameVersion = getPageParamValue("front_version");//前端版本
+		if(gameVersion==null)
+		{
+			gameVersion=1;
+		}
+
+		var imgVersion = getPageParamValue("img_version");//图片版本
+		if(imgVersion==null)
+		{
+			imgVersion=1;
+		}
+
+		var fcVersion=getPageParamValue("fc_version");//FC模拟器版本
+		if(fcVersion==null)
+		{
+			fcVersion=1;
+		}
+
+		//确认语言
+		confirmLanguage();
+
+		//COS instance
+		var qloudCos;//COS instance
+		var QCLOUD_BUCKET;
+		var QCLOUD_REGION;
+
+
+
+		//根据环境添加JS路径
+		//根据设备类型得到_支持跨域的数据路径（比如.png  .mp3   .jpg)
+		function getResPath_CORS_By_Device() {
+			// //如果是Android
+			// if(channel==CHANNEL_ANDROID){
+			// 	return "http://0.0.0.0:8888/local_res";
+			// }
+			// //如果是iOS
+			// else if(channel==CHANNEL_IOS){
+			// 	// return "http://localhost:8088/local_res";
+			// 	return getResPath_CORS_Web();
+			// 	// return "https://hun2cos-1300260944.file.myqcloud.com/static";//测试跨域
+			// }
+			// //其他平台
+			// else{
+			// 	return getResPath_CORS_Web();
+			// }
+			return getResPath_CORS_Web();
+		}
+
+		//根据设备类型得到_不支持跨域的数据路径(比如  .json   .html)
+		function  getResPath_UNCORS_By_Device() {
+			//如果是Android
+			if(channel==CHANNEL_ANDROID){
+				return "http://0.0.0.0:8888/local_res";
+			}
+			//如果是iOS
+			else if(channel==CHANNEL_IOS){
+				return "http://localhost:8088/local_res";
+				// return getResPath_UNCORS_Web();
+			}
+			//其他平台
+			else{
+				return getResPath_UNCORS_Web();
+			}
+		}
+
+		/**
+		 * 得到版本号
+		 * @returns {string}
+		 */
+		function getVersionInfo() {
+			/* 离线版：版本信息走本地 */
+			return "json/version.json";
+			//是否开发环境
+			if(hasGameEnv_Dev())
+			{
+				return baseURL+"/static/json/version.json";
+			}
+			//正式环境
+			else{
+				//如果是美国app版本
+				if(pkname==PK_NAME_VERSION_USA) {
+					// return "https://nbn2cos-1300260944.cos.na-ashburn.myqcloud.com/static/json/version.json";
+
+					//本地加载
+					// return "http://localhost:8088/local_res/static/json/version.json";
+
+					//阿里云的对象服务（弗吉尼亚）
+					// return "https://hun2-en.oss-us-east-1.aliyuncs.com/static";
+					//阿里云的对象服务（弗吉尼亚）全球加速
+					return "https://hun2-en.oss-accelerate.aliyuncs.com/static/json/version.json";
+				}
+				//中国版本
+				else{
+					// return "https://hun2cos-1300260944.file.myqcloud.com/static/json/version.json";
+
+					//【重要】【重要】【重要】腾讯云的服务，已经废弃
+					//CDN
+					// return "https://allopen.hun333.com/hun2/static/json/version.json";
+					//COS
+					// return "https://allopen-1300260944.cos-website.ap-shanghai.myqcloud.com/hun2/static/json/version.json";
+
+					// //阿里云的对象服务（上海）
+					// return "https://hun2-cn.oss-cn-hangzhou.aliyuncs.com/static/json/version.json";
+
+					//阿里云的对象服务（香港）
+					return "http://route.hun333.com/static/json/version.json";
+				}
+			}
+		}
+
+
+		//得到WEB静态路径_支持跨域的路径
+		function getResPath_CORS_Web() {
+			/* 离线版：路径已本地化 */
+			return ".";
+		}
+
+		//得到WEB静态路径_不支持跨域的路径
+		function getResPath_UNCORS_Web() {
+			/* 离线版：路径已本地化 */
+			return ".";
+		}
+
+		//如果是开发环境
+		var path_static_Javascript=getResPath_CORS_Web()+"/js/lib/";
+
+		// //开始向Body中添加Js脚本 （直接使用标签导入），废弃会异步加载
+		// addInBody_Javascript(path_static_Javascript+"jquery.min.js");
+		// addInBody_Javascript(path_static_Javascript+"LAB.min.js");
+		// addInBody_Javascript(path_static_Javascript+"howler.core.min.js");
+		// addInBody_Javascript(path_static_Javascript+"cos-js-sdk-v5.min.js?v=1");
+	</script>
+
+
+	<!-- 样式脚本 -->
+	<style>
+		*{
+			-webkit-touch-callout:none; /*系统默认菜单被禁用*/
+			-webkit-user-select:none; /*webkit浏览器*/
+			-khtml-user-select:none; /*早期浏览器*/
+			-moz-user-select:none;/*火狐*/
+			-ms-user-select:none; /*IE10*/
+			user-select:none;
+		}
+		input,textarea {
+			-webkit-user-select:auto; /*webkit浏览器*/
+			margin: 0px;
+			padding: 0px;
+			outline: none;
+		}
+
+		body {
+			background: #000000;
+			padding: 0;
+			border: 0;
+			margin: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		input {
+			border: 0px;
+			background-color: transparent;
+			z-index: -999
+		}
+
+		textarea {
+			border: 0px;
+			background-color: transparent;
+			z-index: -9
+		}
+
+		#game_emulator_label_timeout {
+			width: 150px;
+			height: 80px;
+			/*border: 1px solid red;*/
+			right: 0px;
+			top:50px;
+			position: absolute;
+			color:red;
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
+
+		#game_emulator_btn_exit_no {
+			width: 150px;
+			height: 100px;
+			border: 0px solid red;
+			right: 0px;
+			top:0px;
+			position: absolute;
+			background-color: white;
+			color:black;
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
+
+		#game_emulator_btn_exit_yes {
+			width: 150px;
+			height: 100px;
+			border: 0px solid red;
+			right: 0px;
+			top: 0px;
+			position: absolute;
+			background-color: red;
+			color: white;
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
+
+
+		#redeem_code_container {
+			display: block;
+			overflow: hidden;
+			position: fixed;
+			left: 8vw;
+			width: 84vw;
+			top: 6%;
+			height: 88%;
+			box-shadow: white 0px 0px 15px 5px;
+			border-radius: 1vw;
+		}
+
+		.Redeem_topNav {
+			width: 100%;
+			height: 6vh;
+			/*height: 1rem;*/
+			padding-bottom: 5px;
+			border-bottom: 1px solid #e5e5e5;
+			position: sticky;
+			top: 0;
+			/*background-color: black;*/
+			display: flex;
+		}
+
+		.redeem_code_get_item_container {
+			position: absolute;
+			left: 3%;
+			top: 1vh;
+			height: 4vh;
+			width: 94%;
+			color: white;
+			display: flex;
+			padding: 2px;
+			border: 1px solid currentColor;
+			border-radius: 5px;
+			margin: 0 0 30px;
+
+		}
+
+		#redeemList {
+			/*position: absolute;*/
+			/*bottom: 0px;*/
+			/*background-color: black;*/
+			width: 99%;
+			/*padding:5px;*/
+			/*border: 3px;*/
+			/*border-style: solid;*/
+			/*border-color: red;*/
+			height: 87vh;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			/*border-top: 1px solid red;*/
+		}
+
+		.get_redeem_Detail {
+			margin: 2vw;
+			/*width: 89vw;*/
+			height: 17vh;
+			background-color: rgba(0, 0, 0, 0.5);
+			color: #fff;
+			box-sizing: border-box;
+			border: 1px solid #fff;
+			border-radius: 4px;
+			white-space: nowrap;
+		}
+
+		.img_redeem_get {
+			position: relative;
+			height: 98%;
+			margin-top: calc(17vh / 2 / 100);
+			margin-left: 2px;
+			/*margin: 1vw;*/
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.redeem_memo {
+			position: relative;
+			height: 90%;
+			margin: 1vw;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.redeem_memo_title {
+			margin-left: 2vw;
+			margin-top: 0px;
+			font-size: 18px;
+			color: gold;
+		}
+
+		.redeem_memo_type {
+			margin-left: 2vw;
+			margin-top: 1vh;
+			font-size: 16px;
+		}
+
+		.redeem_btn_get_item {
+			position: relative;
+			width: 32vw;
+			box-sizing: border-box;
+			text-align: center;
+			text-decoration: none;
+			background-color: rgba(129, 129, 129, 0.5);
+			color: #fff;
+			border: 1px solid #fff;
+			border-radius: 6px;
+
+		}
+
+		.redeem_memo_btn_play {
+			position: relative;
+			font-size: 16px;
+			width: 32vw;
+			margin-top: 2vh;
+			margin-left: 2vw;
+			line-height: 6vh;
+			box-sizing: border-box;
+			text-align: center;
+			text-decoration: none;
+			background-color: rgba(129, 129, 129, 0.5);
+			color: #fff;
+			border: 1px solid #fff;
+			border-radius: 6px;
+
+		}
+
+	</style>
+
+	<!-- 设置html根元素的font-size -->
+	<script type="text/javascript">
+		var docEl=document.documentElement;         //documentElement 属性是根节点
+		var clientWidth = docEl.clientWidth;
+		docEl.style.fontSize = parseInt(clientWidth/16)+ 'px';//设置html根元素的font-size
+	</script>
+
+
+<!-- ===== 离线版：本地依赖库（jQuery 须最先，页面内联脚本依赖 $）===== -->
+<script src="js/lib/jquery.min.js"></script>
+<script src="offline/boot.js"></script>
+<script>
+/* ===== 离线版：兜底路径覆写（主逻辑已在 <head> 首部与内联脚本中完成）===== */
+window.__HUN_OFFLINE__ = true;
+window.__applyLocalPaths = function(){
+    try{
+        if (typeof getResPath_CORS_Web === 'function') getResPath_CORS_Web = function(){ return "."; };
+        if (typeof getResPath_UNCORS_Web === 'function') getResPath_UNCORS_Web = function(){ return "."; };
+        if (typeof getResPath_By_CDN === 'function') getResPath_By_CDN = function(){ return "."; };
+        if (typeof getVersionInfo === 'function') getVersionInfo = function(){ return "json/version.json"; };
+    }catch(e){ console.warn('[离线版] 路径覆写异常', e); }
+    window.__pathsApplied = true;
+};
+</script>
+</head>
+
+<body>
+
+<!-- ===== 离线版：其余本地依赖库 ===== -->
+<script src="js/lib/crypto-js.js"></script>
+<script src="js/lib/LAB.min.js"></script>
+<script src="js/lib/howler.core.min.js"></script>
+<script src="js/lib/pako.min.js"></script>
+<script src="js/lib/pathfinding/pathfinding-browser.min.js"></script>
+<!-- ===== 离线适配层（须在 hun_min.js 之前）===== -->
+<script src="offline/offline.js"></script>
+<script src="offline/native-bridge.js"></script>
+<script src="offline/event-engine.js"></script>
+<script src="offline/load-order.js"></script>
+
+
+<div id="maskingDom"
+	 style="background-color: rgba(0,0,0,0.8); display: none;z-index: 9999;position: fixed;top: 0px;left: 0px;width: 100%;height: 100%">
+	<div style="width: 100%;display: flex;align-content: center;justify-content: center;margin-top: 25vh">
+		<img src="pics/loading_hun_hd.png" style="width: 85%;height: auto;margin: 0 auto;">
+	</div>
+	<div style="width: 100%;display: flex;align-content: center;justify-content: center;margin-top: 30vh">
+		<img src="pics/time.gif" style="width: 7%;height: auto;margin: 0 auto;">
+	</div>
+</div>
+
+<!-- 离线版：兑换码（IAP）对话框已按裁剪策略移除 -->
+
+
+
+<canvas id="gameCanvas" style="position:absolute;z-index:9">
+</canvas>
+
+<div id="loadingDiv" style="position:absolute;z-index:12;width: 100%;height: 100%">
+	<div id="loadingDiv_Hun" style="color: #FFFFFF;font-size: 25vw; text-align: center;margin-top: 33vh">混</div>
+	<div id="loadingDiv_Percent" style="color: #FFFFFF;font-size: 6vw;text-align: center;margin-top: 26vh">20%</div>
+</div>
+
+<textarea id="textAreaBase" style="font-size: 1.2rem"></textarea>
+
+<!--<input type="text" id="inputBase"></input>--><!--iOS输入问题弃用 -->
+
+<iframe id="gameContainer"  style="position:absolute;z-index:-999;display: none" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" security="restricted" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<canvas id="btnCanvas" style="position:absolute;left:100px;top:150px;z-index:-999;display: none">
+</canvas>
+
+<iframe id="innerWebView"  style="position:absolute;z-index:-999;display: none" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" security="restricted" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<canvas id="btnCanvasClose" style="position:absolute;left:100px;top:150px;z-index:-999;display: none">
+</canvas>
+
+<iframe id="game_emulator"  style="position:absolute;z-index:-999;display: none" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" security="restricted" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<canvas id="btnEmulatorClose" style="position:absolute;left:100px;top:150px;z-index:-999;display: none"></canvas>
+<div id="game_emulator_label_timeout" style="z-index:-999;display: none">30秒</div>
+<div id="game_emulator_coverDivId" style="position: absolute;width: 100%;height: 100%;background-color:rgb(0,0,0);display:none;
+	filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity: 0.7;
+	top: 0px;left: 0px;">
+</div>
+<button type="button" id="game_emulator_btn_exit_no" style="z-index:-999;display: none" onclick="onClick_Btn_game_emulator_btn_exit_no()">不关闭</button>
+<button type="button" id="game_emulator_btn_exit_yes" style="z-index:-999;display: none"  onclick="onClick_Btn_game_emulator_btn_exit_yes()">关闭</button>
+
+
+<!--<video id="video_component" style="position:absolute;z-index:-99" controls preload="auto" webkit-playsinline="" playsinline="true"></video>-->
+<!--<video id='example_video_1' class='video-js'  preload='auto' style="position:absolute;z-index:-99"-->
+<!--poster='https://www.baidu.com/img/bd_logo1.png' data-setup='{}' webkit-playsinline="" playsinline="true" >-->
+<!--&lt;!&ndash;<source id="videoMP4" type="video/mp4"/>&ndash;&gt;-->
+<!--</video>-->
+
+
+<!-- 主逻辑程序 -->
+<script type="text/javascript">
+
+	//显示载入中
+	var showLoadingCount = 0;
+	var enableShowLoading = true;
+
+	// function showLoading_Old() {
+	// 	//如果继续显示loading
+	// 	if (enableShowLoading) {
+	// 		var t_canvasObject = document.getElementById("gameCanvas");
+	// 		t_canvasObject.width = window.innerWidth;
+	// 		t_canvasObject.height = window.innerHeight;
+	//
+	// 		var graphic = t_canvasObject.getContext("2d");
+	// 		var sWidth = window.innerWidth;
+	// 		var sHeight = window.innerHeight;
+	// 		graphic.fillStyle = "#000000";
+	// 		graphic.fillRect(0, 0, sWidth, sHeight);
+	//
+	// 		graphic.textAlign = "center";
+	// 		graphic.textBaseline = "middle";
+	// 		graphic.fillStyle = "#FFFFFF";
+	//
+	// 		graphic.font = "bold " + sWidth / MY_GAME_NAME_WORD_LENGTH + "px Arial";
+	// 		graphic.fillText(MY_GAME_NAME, sWidth / 2, sHeight * 40 / 100);
+	//
+	// 		graphic.font = "bold " + sWidth / 12 + "px Arial";
+	// 		graphic.fillText(showLoadingCount + "%", sWidth / 2, sHeight * 80 / 100);
+	//
+	//
+	// 		showLoadingCount++;
+	// 		// console.log("执行showLoading.....................");
+	// 		//延迟1.5秒后执行获取物品
+	// 		setTimeout(function () {
+	// 			showLoading();
+	// 		}, 500);
+	// 	}
+	// }
+
+	function showLoading() {
+		//如果继续显示loading
+		if (enableShowLoading) {
+			var loadingWord_Hun = document.getElementById("loadingDiv_Hun");
+			if(loadingWord_Hun!=null){
+				//如果是美国资料篇版本
+				if(expension_pack_version==EXPENSION_PACK_VERSION_USA) {
+					loadingWord_Hun.style.fontSize="9vw";
+				}
+				//如果是中文版
+				else{
+					loadingWord_Hun.style.fontSize="25vw";
+				}
+				loadingWord_Hun.innerText=MY_GAME_NAME;
+			}
+
+			var loadingWord_Percent = document.getElementById("loadingDiv_Percent");
+			if(loadingWord_Percent!=null){
+				loadingWord_Percent.innerText=showLoadingCount + "%";
+			}
+
+
+			showLoadingCount++;
+			// console.log("执行showLoading.....................");
+			//延迟1.5秒后执行获取物品
+			setTimeout(function () {
+				showLoading();
+			}, 500);
+		}
+	}
+
+	function stopShowLoading_RemoveDom(){
+		enableShowLoading = false;
+		var loadingDivDom = document.getElementById("loadingDiv");
+		loadingDivDom.style.display="none";
+		setTimeout(function () {
+			loadingDivDom.parentNode.removeChild(loadingDivDom);
+		}, 1000);
+	}
+
+
+
+	// alert("showLoading");
+
+	showLoading();
+	//--- 先显示载入中...wechatApiReady
+
+
+	//微信API是否准备好
+	var wechatApiReady = false;
+
+	// var pageParams;//参数
+	// if (pagePM != null) {
+	// 	pageParams = eval("("+pagePM+")");
+	// 	upid = pageParams.upid;
+	// 	upcn = pageParams.upcn;
+	// 	httpPrefix=pageParams.hpp;
+	// 	gameVersion = pageParams.gv;
+	// 	imgVersion = pageParams.iv;
+	// 	// var name=decodeURIComponent(pageParams.name,"UTF-8");//中文需要转码
+	// }
+
+
+	//添加QQ分享
+	if (channel == "qq") {
+		var new_element = document.createElement("script");
+		new_element.setAttribute("type", "text/javascript");
+		new_element.setAttribute("src", "https://qzonestyle.gtimg.cn/qzone/qzact/common/share/share.js");
+		document.body.appendChild(new_element);
+	}
+	//如果是微信小程序
+	else if(channel==CHANEEL_WECHAT_APP)
+	{
+		var new_element = document.createElement("script");
+		new_element.setAttribute("type", "text/javascript");
+		new_element.setAttribute("src", "https://res.wx.qq.com/open/js/jweixin-1.3.2.js");
+		document.body.appendChild(new_element);
+	}
+	//如果是头条小程序
+	else if(channel===CHANNEL_TOUTIAO_APP)
+	{
+		var new_element = document.createElement("script");
+		new_element.setAttribute("type", "text/javascript");
+		new_element.setAttribute("src", "https://s3.pstatp.com/toutiao/tmajssdk/jssdk-1.0.1.js");
+		document.body.appendChild(new_element);
+	}
+
+	//用户数据
+	var userBaseInfo = null;
+
+	//分享相关
+	var arrShareInfo;
+
+
+	//游戏版本
+	var jsVersion = "?v=" + gameVersion;
+	// jsVersion = "?v=36";// to do测试用
+	//var cur_domain = document.domain;
+
+	/**
+	 * 开始载入游戏
+	 * */
+	function startLoadGameWithVersion() {
+		//请求游戏版本号,并执行加载逻辑。其实也是注册
+		$.ajax({
+			url:  getVersionInfo()+ "?c="+ new Date().getTime(),  //请求的URL
+			timeout: 10000, //超时时间设置，单位毫秒
+			type: 'get',  //请求方式，get或post
+			dataType: 'json',//返回的数据格式
+			success: function (result) { //请求成功的回调函数
+				var version = result.FRONT_VERSION;
+
+				// alert("verson="+version);
+				// alert("gameVersion="+gameVersion);
+
+				REVIEW_VERSION_IOS=result.REVIEW_VERSION_IOS;
+				REVIEW_VERSION_ANDROID=result.REVIEW_VERSION_ANDROID;
+
+				imgVersion=result.IMG_VERSION;
+
+				fcVersion=result.FC_VERSION;
+
+				//alert("version="+version+";gameVersion="+gameVersion);
+
+				//如果版本滞后,那么重新加载吧
+				if (version != gameVersion) {
+					//alert("版本不相同，要跳转");
+					// var str = location.href; //取得整个地址栏
+					// var params = null;
+					// var num = str.indexOf("?")
+					// //如果有参数
+					// if (num != -1) {
+					// 	params = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
+					// }
+
+					// //后跟参数替换版本号
+					// pageParams.gv=version;
+					// pageParams.c=new Date().getMilliseconds() + "_" + new Date().getMinutes();
+					//
+					// var params=JSON.stringify(pageParams);
+					// params=encodeURIComponent(params);
+
+					//重新载入的地址
+					var reloadGameURL;
+
+					var domainURL=baseURL+window.location.pathname;
+
+					//考虑过带有上级参数，及其他参数的情况
+					reloadGameURL = domainURL+"?"
+							+"openid="+openid+"&channel="+channel
+							+"&front_version="+version+"&app_version="+app_version
+							+"&fc_version="+fcVersion
+							+"&img_version="+imgVersion
+							+"&pkname="+pkname
+							+"&app_lg="+app_lg
+							+"&mk="+market_channel
+							+"&rew_openid="+rew_openid
+							+"&pf="+devicePlatForm
+							+"&tmem="+deviceTotalMemory
+							+"&lg_sc="+lg_sc
+							+"&lg_cr="+lg_cr
+							+"&epv="+expension_pack_version
+							+"&route="+url_route
+							+"&pm="+urlParams;
+
+					//如果有父页面域名，那么添加上
+					if(fatherDomain!=null)
+					{
+						reloadGameURL+="&fdomain="+encodeURIComponent(fatherDomain);
+					}
+
+					//画面比例
+					var cscale=getPageParamValue("cscale");
+					if(cscale!=null)
+					{
+						reloadGameURL+="&cscale="+cscale;
+					}
+
+					window.location = reloadGameURL;
+
+				}
+				//如果是最新版本
+				else {
+					//alert("当前版本:"+channel);
+					// var shareInfo=result.shareInfo[RandomNumBoth_HTML(0,result.shareInfo.length-1)];
+					// share_content = shareInfo.content;
+					// share_pic = shareInfo.pic;
+					// share_title = shareInfo.title;
+					arrShareInfo=result.shareInfo;
+
+					if(channel==CHANNEL_ANDROID)
+					{
+						// var mk_review_version=result.MK_REVIEW_VERSION;
+						// for(var i=0;i<mk_review_version.length;i++)
+						// {
+						// 	var curMK=mk_review_version[i];
+						// 	if(curMK.mk==market_channel)
+						// 	{
+						// 		if(curMK.version==parseInt(app_version))
+						// 		{
+						// 			hasReviewVersion=true;
+						// 			hasShowHunCoin=false;
+						// 		}
+						// 		break;
+						// 	}
+						// }
+						if(parseInt(app_version)==REVIEW_VERSION_ANDROID)
+						{
+							hasReviewVersion=true;
+							hasShowHunCoin=true;
+						}
+					}
+					else if(channel==CHANNEL_IOS && parseInt(app_version)==REVIEW_VERSION_IOS)
+					{
+						hasReviewVersion=true;
+						hasShowHunCoin=true;
+					}
+					//测试用
+					else{
+						hasReviewVersion=false;
+						hasShowHunCoin=true;
+					}
+
+
+					// //START 测试审核版本
+					// hasReviewVersion=true;
+					// hasShowHunCoin=true;
+					// //END 测试审核版本
+
+
+					//如果是审核版，那么必须中文
+					if(hasReviewVersion)
+					{
+						LANGUAGE_CHOICE=LANGUAGE_ZH;
+					}
+
+
+					//加载JS吧
+					loadDependentJS();
+				}
+
+
+			},
+			//请求完成后最终执行参数
+			complete: function (XMLHttpRequest, status) {
+				//超时,status还有success,error等值的情况
+				if (status == 'timeout') {
+					//alert("超时");
+
+					//直接加载JS吧
+					loadDependentJS();
+				}
+			}
+		});
+	}
+
+
+	// //延迟几秒加载游戏,为了先刷新出来载入画面
+	// setTimeout(function () {
+	startLoadGameWithVersion();//开始加载了
+	// }, 200);
+
+
+
+
+
+	//加载依赖的JSPlayer
+	function loadDependentJS() {
+		fatherPage_changeLoadingHunText("开始载入资料脚本...");
+
+		var jsBaseURL = baseURL + "/js/dev";
+		var jsEnvPro=getResPath_CORS_Web()+"/js";
+
+		//复制代码
+		$LAB.script(
+				// jsBaseURL +"/hun_japan/word/cn.js",
+				// "https://hun2cos-1300260944.file.myqcloud.com/static/js/lib/pako.min.js",
+				path_static_Javascript+"pako.min.js",
+				getLanguageJS(LANGUAGE_CHOICE)+jsVersion,
+
+				//*** start 生产用
+				jsEnvPro+"/hun_min.js"+jsVersion
+				//*** end 生产用
+
+				//***** dev开发用
+				// dependentJS
+		)
+				.wait(function () {// 等待所有script加载完再执行这个代码块
+					//加载完成JS依赖
+					loadJsFinish();
+					//请求微信JS函数库的参数
+//	        requestWeChatJsApiParams();
+					//qqShareFriends("分享标题","分享内容",baseURL+"/h2/sharecoming.do");
+				});
+	}
+
+
+	//主管理器
+	var mainManager;
+
+
+	// //载入用户进度
+	// //如果是美国版本且不是开发环境，那么用美国的COS
+	// if(pkname==PK_NAME_VERSION_USA && !hasGameEnv_Dev()) {
+	// 	QCLOUD_BUCKET='nbn2persistence-1300260944';
+	// 	QCLOUD_REGION='na-ashburn';
+	// 	// QCLOUD_BUCKET='hun2persistence-1300260944';
+	// 	// QCLOUD_REGION='ap-shanghai';
+	// }
+	// //中国版本
+	// else{
+	// 	QCLOUD_BUCKET='hun2persistence-1300260944';
+	// 	QCLOUD_REGION='ap-shanghai';
+	// }
+
+
+	function requestUserProgress() {
+		qloudCos = new COS({
+			getAuthorization: function (options, callback) {
+				// 异步获取临时密钥
+				$.get(baseURL+'/h2/qcloud_temp_credential.do', {
+					openid: openid,
+					channel: channel,
+					uid:userBaseInfo.id,
+					cache:new Date().getMilliseconds()+"_"+new Date().getMinutes()
+				}, function (backData) {
+					var data= JSON.parse(backData);
+					var credentials =data.credentials;
+					callback({
+						TmpSecretId: credentials.tmpSecretId,
+						TmpSecretKey: credentials.tmpSecretKey,
+						XCosSecurityToken: credentials.sessionToken,
+						ExpiredTime: data.expiredTime
+					});
+				});
+			}
+		});
+
+
+		var fileKey=getQloudCos_PrefixPath("progress/")+userBaseInfo.id+'.txt';
+		qloudCos.getObject({
+			Bucket: QCLOUD_BUCKET,
+			Region: QCLOUD_REGION,
+			ResponseExpires:""+RandomNumBoth_HTML(0,10)+"",
+			ResponseCacheControl:""+RandomNumBoth_HTML(-99999999,10)+"",
+			Key: fileKey,
+		}, function(err, data) {
+			// console.log(err || data.Body);
+			userBaseInfo.progressObject=null;
+
+			// alert("cos data:"+data);
+
+			//如果报错了
+			if(err!=null)
+			{
+				//如果新用户没有进度,那么属于正常
+				if(err.statusCode!=null && err.statusCode==404)
+				{
+					hasProgressLoadError=false;
+				}
+				//其他错误，那么不正常
+				else {
+					hasProgressLoadError=true;
+				}
+			}
+			//如果有进度数据
+			else if(data!=null)
+			{
+				var resultProgress=data.Body;
+				//游戏进度
+				if(resultProgress!=null && resultProgress!="" && resultProgress!="NONE"){
+					try {
+						//解压进度数据
+						var unzip=unzip_sh(resultProgress);
+						//解码数据
+						// var decodeString=decodeURIComponent(unzip,"UTF-8")
+						//给用户进度数据赋值
+						userBaseInfo.progressObject=JSON.parse(unzip);
+					}
+					catch(err){
+						userBaseInfo.loadError=resultProgress;
+						hasProgressLoadError=true;
+					}
+				}
+			}
+
+			// hasProgressLoadError=true;
+
+			//初始化游戏
+			initGame();
+		});
+	}
+
+	//载入用户信息
+	function requestUserInfo() {
+		//加载用户进度
+		$.ajax({
+			url:baseURL+"/h2/loadProgress.do",  //请求的URL
+			timeout : 10000, //超时时间设置，单位毫秒
+			type : 'post',  //请求方式，get或post
+			data :{
+				c:new Date().getMilliseconds()+"_"+new Date().getMinutes(),
+				openid:openid,
+				channel:channel,
+				market_channel:market_channel,
+				app_lg:app_lg,
+				app_version:app_version,
+				pkname:pkname
+			},  //请求所传参数，json格式
+			dataType:'json',//返回的数据格式
+			success:function(result){ //请求成功的回调函数
+				if(result.userBaseInfo!=null){
+					//用户基本信息
+					userBaseInfo=result.userBaseInfo;
+					userBaseInfo.currentTimeMillis_server=parseInt(result.currentTimeMillis_server);
+					userBaseInfo.currentTimeMillis_local=parseInt(new Date().getTime());
+					QCLOUD_BUCKET=result.QCLOUD_BUCKET;
+					QCLOUD_REGION=result.QCLOUD_REGION;
+
+					//载入游戏进度
+					requestUserProgress();
+				}
+			},
+			//请求完成后最终执行参数
+			complete : function(XMLHttpRequest,status){
+				//超时,status还有success,error等值的情况
+				if(status=='timeout'){
+					//重新加载整个页面
+					window.location.href=location.href;
+				}
+			}
+		});
+	}
+
+
+	/**
+	 *  加载完成JS依赖
+	 **/
+	function loadJsFinish() {
+		requestUserInfo();
+	}
+
+
+	// /**
+	//  *  加载完成JS依赖
+	//  **/
+	// function loadJsFinish() {
+	// 	//加载用户进度
+	// 	$.ajax({
+	// 		url:baseURL+"/h2/loadProgress.do",  //请求的URL
+	// 		timeout : 10000, //超时时间设置，单位毫秒
+	// 		type : 'post',  //请求方式，get或post
+	// 		data :{
+	// 			c:new Date().getMilliseconds()+"_"+new Date().getMinutes(),
+	// 			openid:openid,
+	// 			channel:channel
+	// 		},  //请求所传参数，json格式
+	// 		dataType:'json',//返回的数据格式
+	// 		success:function(result){ //请求成功的回调函数
+	// 			if(result.userBaseInfo!=null){
+	// 				//用户基本信息
+	// 				userBaseInfo=result.userBaseInfo;
+	// 				//游戏进度
+	// 				if(result.userProgress!=null && result.userProgress!="" && result.userProgress!="NONE"){
+	// 					try {
+	// 						//解压进度数据
+	// 						var unzip=unzip_sh(result.userProgress);
+	// 						//解码数据
+	// 						// var decodeString=decodeURIComponent(unzip,"UTF-8")
+	// 						//给用户进度数据赋值
+	// 						userBaseInfo.progressObject=JSON.parse(unzip);
+	// 					}
+	// 					catch(err){
+	// 					}
+	// 				}
+	// 			}
+	// 			//初始化游戏
+	// 			initGame();
+	// 		},
+	// 		//请求完成后最终执行参数
+	// 		complete : function(XMLHttpRequest,status){
+	// 			//超时,status还有success,error等值的情况
+	// 			if(status=='timeout'){
+	// 				//重新加载整个页面
+	// 				window.location.href=location.href;
+	// 			}
+	// 		}
+	// 	});
+	// }
+
+	function initGame() {
+		//hun2.jsp停止显示loading
+		stopShowLoading_RemoveDom();
+
+		//移除APP闪屏
+		// alert("移除闪屏");
+
+		//如果是正式版本，那么移除闪屏
+		if(!hasReviewVersion)
+		{
+			call_removeSplash();
+		}
+
+		//有可能是子页面，父页面移除载入Masking
+		fatherPage_CloseMaskLoading();
+
+		// alert("channel="+CHANNEL_ANDROID+";app_version="+app_version);
+		//安卓机器重新设置baseURL
+		callAndroid_base_url(baseURL);
+
+		// alert("2初始用户的channel="+channel);
+		domainRoot = baseURL;
+		mainManager = new MainManager();
+		mainManager.init();
+
+		threadLoop(50);
+
+		//初始化输入框CSS
+		initInputBaseCSS();
+
+		//如果是微信小程序
+		if (channel == "wechat_app") {
+			//alert("准备向外部加载成功消息");
+			//wx.miniProgram.postMessage({ data: 'foo' });
+			//wx.miniProgram.postMessage({ data: {share_revive_token: '1190'} });
+			//alert("向外部加载成功消息,完毕");
+
+			document.title = "混二";
+		}
+		//非小程序
+		else {
+			document.title = "混二";
+		}
+
+		/**
+		 * to do
+		 * 》页面一加载就给后台发送，说页面需要重新加载。
+		 * 》页面MainManager初始化加载完成就给后台发送不需要刷新页面。
+		 * 》微信小程序页面onHide时做好标识，为再次onShow判断刷新做好准备
+		 * 》微信小程序页面再次onShow的时候，判断是否之前后过onHide，如果onHide过,那么向后台请求得到是否需要刷新页面。
+		 */
+		// 检测网页是否切换到后台
+		document.addEventListener("visibilitychange", function () {
+			// document.title = document.hidden ? "用户离开了" : "用户回来了";
+			// mainManager.startMenuManager.addNoticeSimple("我来了");
+
+			//如果隐藏了，那么关闭BGM
+			if (document.hidden) {
+				//切到后台
+				hasAppInScreenFront=false;
+
+				// showAlert("检测网页是否切换到后台");
+				if (mainManager.loadResManager != null) {
+					mainManager.loadResManager.pauseBGM();
+
+					//如果在游戏中，并且不是job那么保存进度
+					if(mainManager.getScene()===SCENE_PLAY &&
+							mainManager.playManager.cityManager.curCity!=null &&
+							!mainManager.playManager.cityManager.curCity.hasInJob())
+					{
+						// showAlert("保存游戏了");
+						//给支付预留60秒
+						if(getCurrentSecond()-LAST_PAY_TIME_SECOND>60)
+						{
+							// showAlert("检测网页是否切换到后台:保存进度");
+							mainManager.progressManager.saveProgress(true,false,false);
+						}
+						else{
+							// showAlert("检测网页是否切换到后台:由于支付，不保存进度");
+						}
+					}
+				}
+			}
+			else {
+				//切到前台
+				hasAppInScreenFront=true;
+
+				if (mainManager.loadResManager != null) {
+					mainManager.appBackToFront();
+					// mainManager.loadResManager.resumeBGM();
+					// mainManager.loadResManager.playAudioMainBMG();
+					// mainManager.reloadHunCoinUI();
+
+				}
+			}
+		});
+	}
+
+	// 兼容性处理
+	window.requestAnimFrame = (function() {
+		return (
+				window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function(callback, element) {
+					window.setTimeout(callback, 50)
+				}
+		)
+	})();
+
+	function threadLoop(time) {
+		requestAnimationFrame(
+				function(){
+					mainManager.gameLoop();
+				}
+		);
+		// setTimeout(function () {
+		// 	mainManager.gameLoop();
+		// }, 50);
+	}
+
+
+	//初始化输入框CSS
+	function initInputBaseCSS() {
+		var eleInputBase = document.getElementById("textAreaBase");
+//eleInputBase.style.backgroundColor="#FFFFFF";
+		eleInputBase.style.width = window.innerWidth + "px";
+		eleInputBase.style.height = (window.innerHeight * 45 / 100 - (window.innerWidth / 6) * 2 / 3) + "px";
+	}
+
+
+</script>
+
+
+<!-- ===== 离线版：模块裁剪器（须在 hun_min.js 之后）===== -->
+<script src="offline/module-cutter.js"></script>
+<!-- ===== 离线版：启动引导 ===== -->
+<script src="offline/start.js"></script>
+<!-- ===== PC 交互层：鼠标拖曳 / 滚轮缩放 / 双击复位 ===== -->
+<script src="offline/pc-ux.js"></script>
+</body>
+</html>

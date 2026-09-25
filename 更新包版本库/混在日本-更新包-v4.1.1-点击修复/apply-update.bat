@@ -249,7 +249,14 @@ rem ============================================================
 set "VERIFYOK=0"
 set "D=%~1"
 if "!D!"=="" exit /b
-if not exist "!D!\" exit /b
+rem 盘符形式（C: 或 C:\）统一成 C:\
+if "!D:~1,1!"==":" (
+    if "!D:~2!"=="" set "D=!D!\"
+    if "!D:~2!"=="\" set "D=!D:~0,2!\"
+)
+rem 用 dir 判断目录可访问性（比 if exist 更稳，可正确处理盘根）
+dir /b /ad "!D!" >nul 2>&1
+if errorlevel 1 exit /b
 
 rem 排除更新包自身及其全部子目录
 rem （更新包只含 app_overlay，不含游戏主体；若不排除会自己覆盖自己）
@@ -310,6 +317,13 @@ rem  用 for /f + dir /b /ad 实现，兼容含空格/中文/括号的路径
 rem ============================================================
 :scan
 set "S=%~1"
+if "!S!"=="" exit /b
+rem 若传入的是盘符（如 C:），转由 :scan_drive 处理
+call :is_drive "!S!"
+if "!ISDRV!"=="1" (
+    call :scan_drive "!S!"
+    exit /b
+)
 if not exist "!S!\" exit /b
 rem 更新包自身的 app_overlay 不是游戏，跳过整个更新包目录
 if /i "!S!"=="!PKGDIR!" exit /b
@@ -363,16 +377,34 @@ exit /b
 rem ============================================================
 rem  子过程：scan_parents —— 向上逐级查找（最多 5 级）
 rem  每到达一级祖先，就对该级做一次完整递归扫描：
-rem  这样即使更新包与游戏位于仓库的两个不同分支也能找到
+rem  这样即使更新包与游戏位于仓库的两个不同分支也能找到。
+rem  到达盘符根（如 C:）时改用 :scan_drive，以确保能覆盖盘根。
 rem ============================================================
 :scan_parents
 set "P=%~1"
 for /l %%I in (1,1,5) do (
     call :up P
     if not "!P!"=="" (
-        call :scan "!P!"
+        call :is_drive "!P!"
+        if "!ISDRV!"=="1" (
+            call :scan_drive "!P!"
+        ) else (
+            call :scan "!P!"
+        )
     )
 )
+exit /b
+
+rem ============================================================
+rem  子过程：is_drive —— 判断 %~1 是否为盘符形式（如 C: ），返回 ISDRV=1
+rem ============================================================
+:is_drive
+set "ISDRV=0"
+set "DS=%~1"
+if "!DS!"=="" exit /b
+call :strlen "!DS!"
+if !SL! NEQ 2 exit /b
+if /i "!DS:~1,1!"==":" set "ISDRV=1"
 exit /b
 
 rem ============================================================
@@ -396,16 +428,22 @@ exit /b
 
 rem ============================================================
 rem  子过程：scan_drive —— 扫描指定盘符根 + 2 层下探
+rem  注意：不用 if exist "C:\" 判断盘根（该写法在部分环境下
+rem        会被当作「当前目录」而误判），改用 dir 的退出码。
 rem ============================================================
 :scan_drive
 set "S=%~1"
 if "!S!"=="" exit /b
-if not exist "!S!\" exit /b
+rem 统一成 X:\ 形式，便于拼接
+if /i "!S:~-1!" neq "\" set "S=!S!\"
+rem 用 dir 探测盘根是否可访问
+dir /b /ad "!S!" >nul 2>&1
+if errorlevel 1 exit /b
 if /i "!S!"=="!PKGDIR!" exit /b
 call :verify "!S!"
 if "!VERIFYOK!"=="1" call :add "!S!"
 for /f "delims=" %%D in ('dir /b /ad "!S!" 2^>nul') do (
-    set "E1=!S!\%%D"
+    set "E1=!S!%%D"
     call :verify "!E1!"
     if "!VERIFYOK!"=="1" call :add "!E1!"
     for /f "delims=" %%E in ('dir /b /ad "!E1!" 2^>nul') do (
